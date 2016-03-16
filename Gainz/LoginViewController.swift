@@ -63,6 +63,7 @@ class LoginViewController: UIViewController {
             }
         }
 
+        // username
         let user = PFUser()
         user.username = "testUser"
         user.password = "testPassword"
