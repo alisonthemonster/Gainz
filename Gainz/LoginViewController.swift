@@ -24,6 +24,50 @@ class LoginViewController: UIViewController {
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("Object has been saved.")
         }
+        var exerciseId:String = "nil"
+        
+        let workout = PFObject(className: "Workout")
+        
+        let exercise = PFObject(className: "Exercise")
+        exercise["name"] = "Squats"
+        exercise["sets"] = 3
+        exercise["reps"] = 10
+        exercise["weight"] = 40
+        exercise["rating"] = 0
+        exercise.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                exerciseId = exercise.objectId!
+                workout.addObject(exerciseId, forKey: "exerciseArray")
+                workout.saveInBackground()
+            }
+            else {
+                print ("it failed")
+            }
+        }
+        
+        var exerciseId2:String = "nil"
+        let exercise2 = PFObject(className: "Exercise")
+        exercise2["name"] = "Bench"
+        exercise2["sets"] = 3
+        exercise2["reps"] = 10
+        exercise2["weight"] = 40
+        exercise2["rating"] = 0
+        exercise2.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                exerciseId2 = exercise2.objectId!
+                workout.addObject(exerciseId2, forKey: "exerciseArray")
+                workout.saveInBackground()
+            }
+            else {
+                print ("it failed")
+            }
+        }
+
+        let user = PFUser()
+        user.username = "testUser"
+        user.password = "testPassword"
+        user.signUpInBackground()
+        
     }
 
     override func didReceiveMemoryWarning() {
