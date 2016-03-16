@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		853323A31C97759100C9EFB2 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323A11C97759100C9EFB2 /* Bolts.framework */; };
-		853323A41C97759100C9EFB2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323A21C97759100C9EFB2 /* Parse.framework */; };
 		853323A61C97760700C9EFB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323A51C97760700C9EFB2 /* AudioToolbox.framework */; };
 		853323A81C97760F00C9EFB2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323A71C97760F00C9EFB2 /* CFNetwork.framework */; };
 		853323AA1C97761900C9EFB2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323A91C97761900C9EFB2 /* CoreGraphics.framework */; };
@@ -26,11 +24,11 @@
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
 		B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FB1C7E704000D11A22 /* Assets.xcassets */; };
 		B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */; };
+		B2DFDF9F1C99DB76006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDF9D1C99DB76006F5ED3 /* Bolts.framework */; };
+		B2DFDFA01C99DB76006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDF9E1C99DB76006F5ED3 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		853323A11C97759100C9EFB2 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		853323A21C97759100C9EFB2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		853323A51C97760700C9EFB2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		853323A71C97760F00C9EFB2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		853323A91C97761900C9EFB2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -50,6 +48,8 @@
 		B20C67FB1C7E704000D11A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B20C67FE1C7E704000D11A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B20C68001C7E704000D11A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2DFDF9D1C99DB76006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B2DFDF9E1C99DB76006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +64,11 @@
 				853323B01C97763300C9EFB2 /* Security.framework in Frameworks */,
 				853323AE1C97762B00C9EFB2 /* QuartzCore.framework in Frameworks */,
 				853323AC1C97762400C9EFB2 /* CoreLocation.framework in Frameworks */,
+				B2DFDF9F1C99DB76006F5ED3 /* Bolts.framework in Frameworks */,
 				853323AA1C97761900C9EFB2 /* CoreGraphics.framework in Frameworks */,
 				853323A81C97760F00C9EFB2 /* CFNetwork.framework in Frameworks */,
+				B2DFDFA01C99DB76006F5ED3 /* Parse.framework in Frameworks */,
 				853323A61C97760700C9EFB2 /* AudioToolbox.framework in Frameworks */,
-				853323A41C97759100C9EFB2 /* Parse.framework in Frameworks */,
-				853323A31C97759100C9EFB2 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +88,8 @@
 				853323A91C97761900C9EFB2 /* CoreGraphics.framework */,
 				853323A71C97760F00C9EFB2 /* CFNetwork.framework */,
 				853323A51C97760700C9EFB2 /* AudioToolbox.framework */,
-				853323A11C97759100C9EFB2 /* Bolts.framework */,
-				853323A21C97759100C9EFB2 /* Parse.framework */,
+				B2DFDF9D1C99DB76006F5ED3 /* Bolts.framework */,
+				B2DFDF9E1C99DB76006F5ED3 /* Parse.framework */,
 			);
 			name = Frameworks;
 			path = Gainz;
