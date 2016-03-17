@@ -19,7 +19,16 @@ class CreateAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let backgroundImage = UIImage(named: "barbells.jpg")
+        var imageView: UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -23,11 +23,15 @@
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
 		B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FB1C7E704000D11A22 /* Assets.xcassets */; };
 		B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */; };
-		B2DFDFA31C99DC62006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFA11C99DC62006F5ED3 /* Bolts.framework */; };
-		B2DFDFA41C99DC62006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFA21C99DC62006F5ED3 /* Parse.framework */; };
 		B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */; };
 		B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */; };
 		B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */; };
+		B2DFDFB41C9A3749006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */; };
+		B2DFDFB51C9A3749006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFB31C9A3749006F5ED3 /* Parse.framework */; };
+		B2DFDFBB1C9A3993006F5ED3 /* lockerRoom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFB71C9A3993006F5ED3 /* lockerRoom.jpg */; };
+		B2DFDFBC1C9A3993006F5ED3 /* weight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFB81C9A3993006F5ED3 /* weight.jpg */; };
+		B2DFDFBE1C9A3993006F5ED3 /* floor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFBA1C9A3993006F5ED3 /* floor.jpg */; };
+		B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,11 +53,15 @@
 		B20C67FB1C7E704000D11A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B20C67FE1C7E704000D11A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B20C68001C7E704000D11A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2DFDFA11C99DC62006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		B2DFDFA21C99DC62006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutsViewController.swift; sourceTree = "<group>"; };
 		B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		B2DFDFAC1C9A28AD006F5ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B2DFDFB31C9A3749006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B2DFDFB71C9A3993006F5ED3 /* lockerRoom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lockerRoom.jpg; sourceTree = "<group>"; };
+		B2DFDFB81C9A3993006F5ED3 /* weight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = weight.jpg; sourceTree = "<group>"; };
+		B2DFDFBA1C9A3993006F5ED3 /* floor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floor.jpg; sourceTree = "<group>"; };
+		B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = barbells.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +77,9 @@
 				853323AE1C97762B00C9EFB2 /* QuartzCore.framework in Frameworks */,
 				853323AC1C97762400C9EFB2 /* CoreLocation.framework in Frameworks */,
 				853323AA1C97761900C9EFB2 /* CoreGraphics.framework in Frameworks */,
-				B2DFDFA31C99DC62006F5ED3 /* Bolts.framework in Frameworks */,
+				B2DFDFB41C9A3749006F5ED3 /* Bolts.framework in Frameworks */,
 				853323A81C97760F00C9EFB2 /* CFNetwork.framework in Frameworks */,
-				B2DFDFA41C99DC62006F5ED3 /* Parse.framework in Frameworks */,
+				B2DFDFB51C9A3749006F5ED3 /* Parse.framework in Frameworks */,
 				853323A61C97760700C9EFB2 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,8 +92,8 @@
 			children = (
 				853323B71C97765B00C9EFB2 /* libsqlite3.tbd */,
 				853323B51C97765200C9EFB2 /* libz.tbd */,
-				B2DFDFA11C99DC62006F5ED3 /* Bolts.framework */,
-				B2DFDFA21C99DC62006F5ED3 /* Parse.framework */,
+				B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */,
+				B2DFDFB31C9A3749006F5ED3 /* Parse.framework */,
 				853323B31C97764500C9EFB2 /* SystemConfiguration.framework */,
 				853323B11C97763900C9EFB2 /* StoreKit.framework */,
 				853323AF1C97763300C9EFB2 /* Security.framework */,
@@ -119,6 +127,7 @@
 		B20C67F01C7E704000D11A22 /* Gainz */ = {
 			isa = PBXGroup;
 			children = (
+				B2DFDFB61C9A3969006F5ED3 /* Images */,
 				B20C67F11C7E704000D11A22 /* AppDelegate.swift */,
 				B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */,
 				B20C67F31C7E704000D11A22 /* ViewController.swift */,
@@ -131,6 +140,17 @@
 				B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */,
 			);
 			path = Gainz;
+			sourceTree = "<group>";
+		};
+		B2DFDFB61C9A3969006F5ED3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */,
+				B2DFDFB71C9A3993006F5ED3 /* lockerRoom.jpg */,
+				B2DFDFB81C9A3993006F5ED3 /* weight.jpg */,
+				B2DFDFBA1C9A3993006F5ED3 /* floor.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +211,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DFDFBC1C9A3993006F5ED3 /* weight.jpg in Resources */,
+				B2DFDFBE1C9A3993006F5ED3 /* floor.jpg in Resources */,
+				B2DFDFBB1C9A3993006F5ED3 /* lockerRoom.jpg in Resources */,
 				B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */,
+				B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */,
 				B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */,
 				B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */,
 			);
