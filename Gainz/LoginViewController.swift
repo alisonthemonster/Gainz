@@ -103,8 +103,7 @@ class LoginViewController: UIViewController {
                     alertController.addAction(okAction)
                     
                     self.presentViewController(alertController, animated: true, completion:nil)
-                    print("username does not exist") //TODO confirm this is correct
-                }
+                    print("username does not exist")                }
             }
         }
     }

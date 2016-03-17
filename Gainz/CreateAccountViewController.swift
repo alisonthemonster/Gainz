@@ -34,11 +34,36 @@ class CreateAccountViewController: UIViewController {
         var alertController = UIAlertController()
         
         if (password1?.characters.count != password2?.characters.count) {
-            //TODO passwords dont match
+            alertController = UIAlertController(title: "Passwords dont match!", message: "Please try again", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            alertController.addAction(okAction)
+            
+            self.presentViewController(alertController, animated: true, completion:nil)
+            print("passwords dont match") 
+
         } else if (username?.characters.count < 5) {
-            //TODO
+            alertController = UIAlertController(title: "Username is too short", message: "Usernames must be longer than 5 characters", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            alertController.addAction(okAction)
+            
+            self.presentViewController(alertController, animated: true, completion:nil)
+            print("username too short")
         } else if (password1?.characters.count < 5) {
-            //TODO
+            alertController = UIAlertController(title: "Password is too short", message: "Password must be longer than 5 characters", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            alertController.addAction(okAction)
+            
+            self.presentViewController(alertController, animated: true, completion:nil)
+            print("password too short")
         } else {
             let user = PFUser()
             user.username = username
