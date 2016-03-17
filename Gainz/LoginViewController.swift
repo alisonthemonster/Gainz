@@ -94,8 +94,8 @@ class LoginViewController: UIViewController {
                 })
             } else {
                 print("login failed, error: " + String(error!.code))
-                if error!.code == 250 {
-                    alertController = UIAlertController(title: "Invalid Username", message: "Username does not exist", preferredStyle: UIAlertControllerStyle.Alert)
+                if error!.code == 101 {
+                    alertController = UIAlertController(title: "Invalid Username or Password", message: "Please try again", preferredStyle: UIAlertControllerStyle.Alert)
                     
                     let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
                         print("Ok Button Pressed 1");
