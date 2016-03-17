@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
         
+        // commit test
 //        var exerciseId:String = "nil"
 //        
 //        let workout = PFObject(className: "Workout")
