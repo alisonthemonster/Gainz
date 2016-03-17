@@ -8,13 +8,31 @@
 
 import UIKit
 import Parse
+import ParseUI
 
-class ModifyWorkoutsViewController: UITableViewController {
+class ModifyWorkoutsViewController: PFQueryTableViewController {
 
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     var currentWorkout:PFObject?
     
+    
+    override func queryForTable() -> PFQuery {
+        let innerQuery = PFQuery(className: "Workout")
+        innerQuery.whereKey("saved", equalTo: false)
+        let query = PFQuery(className: "Exercise")
+        query.whereKey("workout", matchesQuery: innerQuery)
+        return query
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("modifyCell", forIndexPath: indexPath) as! ModifyWorkoutExerciseViewCell
+        cell.nameField.text = object?.objectForKey("name") as? String
+        
+        return cell
+    }
+    
+    /*
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,7 +60,7 @@ class ModifyWorkoutsViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
-    }
+    } */
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

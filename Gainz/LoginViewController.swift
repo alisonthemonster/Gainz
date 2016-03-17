@@ -29,43 +29,53 @@ class LoginViewController: UIViewController {
         self.view.sendSubviewToBack(imageView)
         
         // commit test
-//        var exerciseId:String = "nil"
-//        
-//        let workout = PFObject(className: "Workout")
-//        
-//        let exercise = PFObject(className: "Exercise")
-//        exercise["name"] = "Squats"
-//        exercise["sets"] = 3
-//        exercise["reps"] = 10
-//        exercise["weight"] = 40
-//        exercise["rating"] = 0
-//        exercise.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-//            if (success) {
-//                exerciseId = exercise.objectId!
-//                workout.addObject(exerciseId, forKey: "exerciseArray")
-//                workout.saveInBackground()
-//            }
-//            else {
-//                print ("it failed")
-//            }
-//        }
-//        
-//        var exerciseId2:String = "nil"
+        
+        let workout = PFObject(className: "Workout")
+        //workout["saved"] = false
+        
+        let exercise = PFObject(className: "Exercise")
+        exercise["name"] = "Squats Saved"
+        exercise["sets"] = 3
+        exercise["reps"] = 10
+        exercise["weight"] = 40
+        exercise["rating"] = 0
+        exercise["workout"] = workout
+        exercise.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                print ("success")
+            }
+            else {
+                print ("it failed")
+            }
+        }
+//
 //        let exercise2 = PFObject(className: "Exercise")
 //        exercise2["name"] = "Bench"
 //        exercise2["sets"] = 3
 //        exercise2["reps"] = 10
 //        exercise2["weight"] = 40
 //        exercise2["rating"] = 0
+//        exercise2["workout"] = workout
 //        exercise2.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
 //            if (success) {
-//                exerciseId2 = exercise2.objectId!
-//                workout.addObject(exerciseId2, forKey: "exerciseArray")
-//                workout.saveInBackground()
+//                print ("success")
 //            }
 //            else {
 //                print ("it failed")
 //            }
+//        }
+//        
+//        sleep(3)
+//        
+//        let innerQuery = PFQuery(className: "Workout")
+//        innerQuery.whereKey("saved", equalTo: false)
+//        innerQuery.findObjectsInBackgroundWithBlock { (comments: [PFObject]?, error: NSError?) -> Void in
+//            print (String(comments))
+//        }
+//        let query = PFQuery(className: "Exercise")
+//        query.whereKey("workout", matchesQuery: innerQuery)
+//        query.findObjectsInBackgroundWithBlock { (comments: [PFObject]?, error: NSError?) -> Void in
+//            print (String(comments))
 //        }
 //
 //        // username

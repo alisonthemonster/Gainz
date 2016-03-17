@@ -19,6 +19,7 @@
 		853323B81C97765B00C9EFB2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323B71C97765B00C9EFB2 /* libsqlite3.tbd */; };
 		853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323B91C97778800C9EFB2 /* LoginViewController.swift */; };
 		853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */; };
+		853323CC1C9B1A0D00C9EFB2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323CB1C9B1A0D00C9EFB2 /* ParseUI.framework */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
 		B20C67F41C7E704000D11A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F31C7E704000D11A22 /* ViewController.swift */; };
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
@@ -45,6 +46,7 @@
 		853323B71C97765B00C9EFB2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		853323B91C97778800C9EFB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutExerciseViewCell.swift; sourceTree = "<group>"; };
+		853323CB1C9B1A0D00C9EFB2 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20C67F11C7E704000D11A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B20C67F31C7E704000D11A22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				853323A81C97760F00C9EFB2 /* CFNetwork.framework in Frameworks */,
 				B2DFDFB51C9A3749006F5ED3 /* Parse.framework in Frameworks */,
 				853323A61C97760700C9EFB2 /* AudioToolbox.framework in Frameworks */,
+				853323CC1C9B1A0D00C9EFB2 /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +91,7 @@
 			children = (
 				853323B71C97765B00C9EFB2 /* libsqlite3.tbd */,
 				853323B51C97765200C9EFB2 /* libz.tbd */,
+				853323CB1C9B1A0D00C9EFB2 /* ParseUI.framework */,
 				B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */,
 				B2DFDFB31C9A3749006F5ED3 /* Parse.framework */,
 				853323B31C97764500C9EFB2 /* SystemConfiguration.framework */,
@@ -129,11 +133,11 @@
 				B20C67F31C7E704000D11A22 /* ViewController.swift */,
 				853323B91C97778800C9EFB2 /* LoginViewController.swift */,
 				B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */,
-				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
 				B20C67FB1C7E704000D11A22 /* Assets.xcassets */,
 				B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */,
 				B20C68001C7E704000D11A22 /* Info.plist */,
 				B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */,
+				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
 				B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */,
 			);
 			path = Gainz;

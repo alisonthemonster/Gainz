@@ -7,23 +7,14 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
-class ModifyWorkoutExerciseViewCell: UITableViewCell {
+class ModifyWorkoutExerciseViewCell: PFTableViewCell {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var weightField: UITextField!
     @IBOutlet weak var repsField: UITextField!
     @IBOutlet weak var setsField: UITextField!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }
