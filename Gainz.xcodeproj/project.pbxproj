@@ -28,9 +28,6 @@
 		B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */; };
 		B2DFDFB41C9A3749006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */; };
 		B2DFDFB51C9A3749006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFB31C9A3749006F5ED3 /* Parse.framework */; };
-		B2DFDFBB1C9A3993006F5ED3 /* lockerRoom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFB71C9A3993006F5ED3 /* lockerRoom.jpg */; };
-		B2DFDFBC1C9A3993006F5ED3 /* weight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFB81C9A3993006F5ED3 /* weight.jpg */; };
-		B2DFDFBE1C9A3993006F5ED3 /* floor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFBA1C9A3993006F5ED3 /* floor.jpg */; };
 		B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */; };
 /* End PBXBuildFile section */
 
@@ -58,9 +55,6 @@
 		B2DFDFAC1C9A28AD006F5ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B2DFDFB31C9A3749006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		B2DFDFB71C9A3993006F5ED3 /* lockerRoom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lockerRoom.jpg; sourceTree = "<group>"; };
-		B2DFDFB81C9A3993006F5ED3 /* weight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = weight.jpg; sourceTree = "<group>"; };
-		B2DFDFBA1C9A3993006F5ED3 /* floor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floor.jpg; sourceTree = "<group>"; };
 		B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = barbells.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,9 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */,
-				B2DFDFB71C9A3993006F5ED3 /* lockerRoom.jpg */,
-				B2DFDFB81C9A3993006F5ED3 /* weight.jpg */,
-				B2DFDFBA1C9A3993006F5ED3 /* floor.jpg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -211,9 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2DFDFBC1C9A3993006F5ED3 /* weight.jpg in Resources */,
-				B2DFDFBE1C9A3993006F5ED3 /* floor.jpg in Resources */,
-				B2DFDFBB1C9A3993006F5ED3 /* lockerRoom.jpg in Resources */,
 				B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */,
 				B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */,
 				B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */,
