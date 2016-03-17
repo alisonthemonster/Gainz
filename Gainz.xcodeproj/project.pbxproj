@@ -18,6 +18,7 @@
 		853323B61C97765200C9EFB2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323B51C97765200C9EFB2 /* libz.tbd */; };
 		853323B81C97765B00C9EFB2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323B71C97765B00C9EFB2 /* libsqlite3.tbd */; };
 		853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323B91C97778800C9EFB2 /* LoginViewController.swift */; };
+		853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
 		B20C67F41C7E704000D11A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F31C7E704000D11A22 /* ViewController.swift */; };
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
@@ -43,6 +44,7 @@
 		853323B51C97765200C9EFB2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		853323B71C97765B00C9EFB2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		853323B91C97778800C9EFB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutExerciseViewCell.swift; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20C67F11C7E704000D11A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B20C67F31C7E704000D11A22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				B20C67F31C7E704000D11A22 /* ViewController.swift */,
 				853323B91C97778800C9EFB2 /* LoginViewController.swift */,
 				B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */,
+				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
 				B20C67FB1C7E704000D11A22 /* Assets.xcassets */,
 				B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */,
 				B20C68001C7E704000D11A22 /* Info.plist */,
@@ -218,6 +221,7 @@
 			files = (
 				B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */,
 				853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */,
+				853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */,
 				B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */,
 				B20C67F41C7E704000D11A22 /* ViewController.swift in Sources */,
 				B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */,

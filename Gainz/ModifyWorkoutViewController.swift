@@ -1,20 +1,15 @@
 //
-//  ModifyWorkoutsViewController.swift
+//  ModifyWorkoutViewController.swift
 //  Gainz
 //
-//  Created by Alison on 3/16/16.
+//  Created by Siena McFetridge on 3/16/16.
 //  Copyright © 2016 cs378. All rights reserved.
 //
 
 import UIKit
-import Parse
 
-class ModifyWorkoutsViewController: UITableViewController {
+class ModifyWorkoutViewController: UITableViewController {
 
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var doneButton: UIBarButtonItem!
-    var currentWorkout:PFObject?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,8 +18,6 @@ class ModifyWorkoutsViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
