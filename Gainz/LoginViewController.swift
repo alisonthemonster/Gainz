@@ -84,25 +84,29 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(sender: AnyObject) {
         let username = userNameField.text
         let password = passwordField.text
-        
-        if (username?.characters.count < 5) {
-            //TODO
-        } else if (password?.characters.count < 5) {
-            //TODO
-        } else {
-            PFUser.logInWithUsernameInBackground(username!, password:password!) {
-                (user: PFUser?, error: NSError?) -> Void in
-                if user != nil {
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("modifyWorkouts") as! UITableViewController
-                        self.presentViewController(viewController, animated: true, completion: nil)
-                    })
-                } else {
-                    print("login failed")
+        var alertController = UIAlertController()
+        PFUser.logInWithUsernameInBackground(username!, password:password!) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("modifyWorkouts") as! UITableViewController
+                    self.presentViewController(viewController, animated: true, completion: nil)
+                })
+            } else {
+                print("login failed, error: " + String(error!.code))
+                if error!.code == 250 {
+                    alertController = UIAlertController(title: "Invalid Username", message: "Username does not exist", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
+                        print("Ok Button Pressed 1");
+                    }
+                    alertController.addAction(okAction)
+                    
+                    self.presentViewController(alertController, animated: true, completion:nil)
+                    print("username does not exist") //TODO confirm this is correct
                 }
             }
         }
-
     }
     
     

@@ -31,6 +31,7 @@ class CreateAccountViewController: UIViewController {
         let username = usernameField.text
         let password1 = passwordField1.text
         let password2 = passwordField2.text
+        var alertController = UIAlertController()
         
         if (password1?.characters.count != password2?.characters.count) {
             //TODO passwords dont match
@@ -46,6 +47,17 @@ class CreateAccountViewController: UIViewController {
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
                     print(error)
+                    if error.code == 202 {
+                        alertController = UIAlertController(title: "Username already taken", message: "Please select a new username", preferredStyle: UIAlertControllerStyle.Alert)
+                        
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
+                            print("Ok Button Pressed 1");
+                        }
+                        alertController.addAction(okAction)
+    
+                        self.presentViewController(alertController, animated: true, completion:nil)
+                        print("Username taken. Please select another")
+                    }
                 } else {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("modifyWorkouts") as! UITableViewController
