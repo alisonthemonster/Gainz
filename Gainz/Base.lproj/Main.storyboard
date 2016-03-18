@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nnw-ta-o5f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JM9-lw-uoG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -296,6 +296,9 @@
                             <state key="normal" title="Add a new workout">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="addExerciseAction:" destination="omF-wQ-1XX" eventType="touchUpInside" id="I9w-AZ-ySm"/>
+                            </connections>
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="modifyCell" rowHeight="73" id="2uw-pd-9Yy" customClass="ModifyWorkoutExerciseViewCell" customModule="Gainz" customModuleProvider="target">
@@ -367,7 +370,11 @@
                     <tabBarItem key="tabBarItem" id="mnT-eb-LCs"/>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="paq-Vl-LLw"/>
-                        <barButtonItem style="plain" systemItem="done" id="pLn-Ib-lu4"/>
+                        <barButtonItem style="plain" systemItem="done" id="pLn-Ib-lu4">
+                            <connections>
+                                <action selector="doneAction:" destination="omF-wQ-1XX" id="nHf-ko-rlH"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>

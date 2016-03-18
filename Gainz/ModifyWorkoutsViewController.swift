@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import ParseUI
 
-class ModifyWorkoutsViewController: PFQueryTableViewController {
+class ModifyWorkoutsViewController: PFQueryTableViewController{
 
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var doneButton: UIBarButtonItem!
@@ -18,94 +18,102 @@ class ModifyWorkoutsViewController: PFQueryTableViewController {
     
     
     override func queryForTable() -> PFQuery {
+        print ("query")
         let innerQuery = PFQuery(className: "Workout")
         innerQuery.whereKey("saved", equalTo: false)
         let query = PFQuery(className: "Exercise")
         query.whereKey("workout", matchesQuery: innerQuery)
+        innerQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if (error != nil) {
+                print (error)
+            } else {
+                self.currentWorkout = objects![0]
+            }
+            
+        }
         return query
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
         let cell = tableView.dequeueReusableCellWithIdentifier("modifyCell", forIndexPath: indexPath) as! ModifyWorkoutExerciseViewCell
+        
+        object?.pinInBackgroundWithName("localExercises")
+        print ("cellforrow")
+        print (object)
+        
+        setTextField(cell.setsField, key: "sets", object: object)
+        setTextField(cell.repsField, key: "reps", object: object)
+        setTextField(cell.weightField, key: "weight", object: object)
         cell.nameField.text = object?.objectForKey("name") as? String
+        cell.exercise = object
         
         return cell
     }
     
-    /*
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
+    func setTextField (textField: UITextField, key: String, object: PFObject?) {
+        if let sets = (object?.objectForKey(key) as? Int) {
+            textField.text = String(sets)
+            print (sets)
+        } else {
+            textField.text = ""
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    } */
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
+    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            print ("deleteExercise")
+            let object = objectAtIndexPath(indexPath)
+            object?.unpinInBackground()
+            object?.deleteInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    print ("successful Delete")
+                    self.loadObjects()
+                    self.tableView.reloadData()
+                }
+                else {
+                    print ("it failed")
+                }
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++) {
+//            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0)) as! ModifyWorkoutExerciseViewCell
+//            if (!cell.completed()) {
+//                let alertController = UIAlertController(title: "Invalid Workout data", message: "Please make sure every field is properly filled out", preferredStyle: UIAlertControllerStyle.Alert)
+//                
+//                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
+//                    print("Ok Button Pressed 1");
+//                }
+//                alertController.addAction(okAction)
+//                
+//                self.presentViewController(alertController, animated: true, completion:nil)
+//            }
+//        }
+//    }
+    
+    @IBAction func addExerciseAction(sender: AnyObject) {
+        //print (String(currentWorkout))
+        print ("addExercise")
+        let exercise = PFObject(className: "Exercise")
+        exercise["workout"] = currentWorkout
+        exercise.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                print ("successful save")
+                self.loadObjects()
+                self.tableView.reloadData()
+            } else {
+                print ("it failed")
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
-    */
+    
 
     /*
     // MARK: - Navigation

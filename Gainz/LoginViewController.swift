@@ -30,24 +30,24 @@ class LoginViewController: UIViewController {
         
         // commit test
         
-        let workout = PFObject(className: "Workout")
-        //workout["saved"] = false
-        
-        let exercise = PFObject(className: "Exercise")
-        exercise["name"] = "Squats Saved"
-        exercise["sets"] = 3
-        exercise["reps"] = 10
-        exercise["weight"] = 40
-        exercise["rating"] = 0
-        exercise["workout"] = workout
-        exercise.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                print ("success")
-            }
-            else {
-                print ("it failed")
-            }
-        }
+//        let workout = PFObject(className: "Workout")
+//        workout["saved"] = false
+//        
+//        let exercise = PFObject(className: "Exercise")
+//        exercise["name"] = "Squats Saved"
+//        exercise["sets"] = 3
+//        exercise["reps"] = 10
+//        exercise["weight"] = 40
+//        exercise["rating"] = 0
+//        exercise["workout"] = workout
+//        exercise.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+//            if (success) {
+//                print ("success")
+//            }
+//            else {
+//                print ("it failed")
+//            }
+//        }
 //
 //        let exercise2 = PFObject(className: "Exercise")
 //        exercise2["name"] = "Bench"
