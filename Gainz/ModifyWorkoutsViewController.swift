@@ -15,13 +15,13 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     var currentWorkout:PFObject?
+    weak var changedDataDelegate:ReloadViewDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "backButton:")
         self.navigationItem.setLeftBarButtonItem(backButton, animated: true)
-
     }
     
     // Checks that all data has been properly filled in before popping the view off the stack
@@ -30,7 +30,6 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
         for (var row = 0; row < tableView.numberOfRowsInSection(0); row++) {
             let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0)) as! ModifyWorkoutExerciseViewCell
             completed = cell.completed() && completed
-            print (completed)
             if (!completed) {
                 let alertController = UIAlertController(title: "Invalid Workout data", message: "Please make sure every field is properly filled out", preferredStyle: UIAlertControllerStyle.Alert)
                 
@@ -45,12 +44,12 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
         }
 
         if (completed) {
+            changedDataDelegate?.dataDidChange()
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
     
     override func queryForTable() -> PFQuery {
-        print ("query")
         let innerQuery = PFQuery(className: "Workout")
         innerQuery.whereKey("saved", equalTo: false)
         let query = PFQuery(className: "Exercise")
@@ -82,7 +81,6 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
     func setTextField (textField: UITextField, key: String, object: PFObject?) {
         if let sets = (object?.objectForKey(key) as? Int) {
             textField.text = String(sets)
-            print (sets)
         } else {
             textField.text = ""
         }
@@ -122,5 +120,4 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
     override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         self.view.endEditing(true)
     }
-
 }

@@ -23,8 +23,10 @@
 		853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D31C9BCC9B00C9EFB2 /* weight.png */; };
 		853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D41C9BCC9B00C9EFB2 /* weight@2x.png */; };
 		853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D51C9BCC9B00C9EFB2 /* weight@3x.png */; };
+		853323DC1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323DB1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift */; };
+		853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */; };
+		853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
-		B20C67F41C7E704000D11A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F31C7E704000D11A22 /* ViewController.swift */; };
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
 		B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FB1C7E704000D11A22 /* Assets.xcassets */; };
 		B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */; };
@@ -53,9 +55,11 @@
 		853323D31C9BCC9B00C9EFB2 /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
 		853323D41C9BCC9B00C9EFB2 /* weight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@2x.png"; sourceTree = "<group>"; };
 		853323D51C9BCC9B00C9EFB2 /* weight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@3x.png"; sourceTree = "<group>"; };
+		853323DB1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysWorkoutTableViewController.swift; sourceTree = "<group>"; };
+		853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysWorkoutExerciseCell.swift; sourceTree = "<group>"; };
+		853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadViewDelegate.swift; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20C67F11C7E704000D11A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B20C67F31C7E704000D11A22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B20C67F91C7E704000D11A22 /* Gainz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gainz.xcdatamodel; sourceTree = "<group>"; };
 		B20C67FB1C7E704000D11A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B20C67FE1C7E704000D11A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -136,15 +140,17 @@
 				B2DFDFB61C9A3969006F5ED3 /* Images */,
 				B20C67F11C7E704000D11A22 /* AppDelegate.swift */,
 				B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */,
-				B20C67F31C7E704000D11A22 /* ViewController.swift */,
 				853323B91C97778800C9EFB2 /* LoginViewController.swift */,
 				B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */,
 				B20C67FB1C7E704000D11A22 /* Assets.xcassets */,
 				B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */,
 				B20C68001C7E704000D11A22 /* Info.plist */,
 				B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */,
+				853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */,
 				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
+				853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */,
 				B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */,
+				853323DB1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift */,
 			);
 			path = Gainz;
 			sourceTree = "<group>";
@@ -239,9 +245,11 @@
 				853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */,
 				853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */,
 				B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */,
-				B20C67F41C7E704000D11A22 /* ViewController.swift in Sources */,
+				853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */,
 				B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */,
 				B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */,
+				853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */,
+				853323DC1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
