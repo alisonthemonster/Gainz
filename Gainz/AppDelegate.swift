@@ -29,7 +29,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        var vc: UIViewController?
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            vc = storyboard.instantiateInitialViewController()
+            print("is logged in as: " + (currentUser?.username)!)
+        } else {
+            // Show the signup or login screen
+            vc = storyboard.instantiateViewControllerWithIdentifier("login")
+            print("not logged in")
+        }
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
         return true
     }
 
