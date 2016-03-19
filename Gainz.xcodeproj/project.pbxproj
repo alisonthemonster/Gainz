@@ -39,6 +39,7 @@
 		B2DFDFC41C9DE320006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFC11C9DE320006F5ED3 /* Bolts.framework */; };
 		B2DFDFC51C9DE320006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFC21C9DE320006F5ED3 /* Parse.framework */; };
 		B2DFDFC61C9DE320006F5ED3 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFC31C9DE320006F5ED3 /* ParseUI.framework */; };
+		B2DFDFC81C9DE8CC006F5ED3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		B2DFDFC11C9DE320006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B2DFDFC21C9DE320006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B2DFDFC31C9DE320006F5ED3 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				B2DFDFB61C9A3969006F5ED3 /* Images */,
 				B20C67F11C7E704000D11A22 /* AppDelegate.swift */,
 				B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */,
+				B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */,
 				853323B91C97778800C9EFB2 /* LoginViewController.swift */,
 				B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */,
 				B20C67FB1C7E704000D11A22 /* Assets.xcassets */,
@@ -259,6 +262,7 @@
 				B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */,
 				853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */,
 				B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */,
+				B2DFDFC81C9DE8CC006F5ED3 /* SettingsTableViewController.swift in Sources */,
 				B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */,
 				853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */,
 				853323DC1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift in Sources */,
