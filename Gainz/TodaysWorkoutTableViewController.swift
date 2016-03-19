@@ -41,6 +41,42 @@ class TodaysWorkoutTableViewController: PFQueryTableViewController, ReloadViewDe
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var alertController = UIAlertController()
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
+        alertController = UIAlertController(title: "Alert Controller", message: "Alert Controller with multiple buttons", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let buttonOne = UIAlertAction(title: "Easy", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            print("Button One Pressed")
+            cell.backgroundColor = UIColor.greenColor()
+            tableView.reloadData()
+        })
+        let buttonTwo = UIAlertAction(title: "Medium", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            print("Button Two Pressed")
+            cell.backgroundColor = UIColor.yellowColor()
+            tableView.reloadData()
+        })
+        let buttonThree = UIAlertAction(title: "Hard", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            print("Button Three Pressed")
+            cell.backgroundColor = UIColor.redColor()
+            tableView.reloadData()
+        })
+        let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
+            print("Cancel Button Pressed")
+        }
+        
+        alertController.addAction(buttonOne)
+        alertController.addAction(buttonTwo)
+        alertController.addAction(buttonThree)
+        alertController.addAction(buttonCancel)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+
+        
+        
+    }
+    
     func setTextField (textField: UITextField, key: String, object: PFObject?) {
         if let sets = (object?.objectForKey(key) as? Int) {
             textField.text = String(sets)
