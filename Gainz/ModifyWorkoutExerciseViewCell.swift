@@ -34,6 +34,7 @@ class ModifyWorkoutExerciseViewCell: PFTableViewCell, UITextFieldDelegate {
         return true
     }
     
+    // Saves exercise data of an exercise as the user finishes editing on any textField
     func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         exercise?["name"] = nameField.text
         setTextFieldInt(setsField, key: "sets")
@@ -50,19 +51,22 @@ class ModifyWorkoutExerciseViewCell: PFTableViewCell, UITextFieldDelegate {
         return true
     }
     
+    // Checks that all fields are filled with appropriate data
     func completed() -> Bool {
-        if (nameField.text != nil && setsField.text != nil && repsField.text != nil && weightField.text != nil) {
-            complete = true
-        } else {
+        if (nameField.text!.isEmpty || !isValidNum(setsField.text!) || repsField.text!.isEmpty || weightField.text!.isEmpty) {
             complete = false
+        } else {
+            complete = true
         }
         return complete
     }
     
+    func isValidNum(str: String) -> Bool {
+        return !str.isEmpty && Int(str) != nil
+    }
+    
     func setTextFieldInt(textField: UITextField, key: String) {
-        //print (key)
         if let num = Int(textField.text!) {
-            //print (num)
             exercise?[key] = num
         }
         exercise?.saveEventually()

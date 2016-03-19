@@ -10,12 +10,44 @@ import UIKit
 import Parse
 import ParseUI
 
-class ModifyWorkoutsViewController: PFQueryTableViewController{
+class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     var currentWorkout:PFObject?
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: "backButton:")
+        self.navigationItem.setLeftBarButtonItem(backButton, animated: true)
+
+    }
+    
+    // Checks that all data has been properly filled in before popping the view off the stack
+    func backButton(sender: UIButton!) {
+        var completed:Bool = true
+        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++) {
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0)) as! ModifyWorkoutExerciseViewCell
+            completed = cell.completed() && completed
+            print (completed)
+            if (!completed) {
+                let alertController = UIAlertController(title: "Invalid Workout data", message: "Please make sure every field is properly filled out", preferredStyle: UIAlertControllerStyle.Alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
+                    print("Ok Button Pressed 1");
+                }
+                alertController.addAction(okAction)
+                
+                self.presentViewController(alertController, animated: true, completion:nil)
+                break
+            }
+        }
+
+        if (completed) {
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+    }
     
     override func queryForTable() -> PFQuery {
         print ("query")
@@ -29,7 +61,6 @@ class ModifyWorkoutsViewController: PFQueryTableViewController{
             } else {
                 self.currentWorkout = objects![0]
             }
-            
         }
         return query
     }
@@ -38,8 +69,6 @@ class ModifyWorkoutsViewController: PFQueryTableViewController{
         let cell = tableView.dequeueReusableCellWithIdentifier("modifyCell", forIndexPath: indexPath) as! ModifyWorkoutExerciseViewCell
         
         object?.pinInBackgroundWithName("localExercises")
-        print ("cellforrow")
-        print (object)
         
         setTextField(cell.setsField, key: "sets", object: object)
         setTextField(cell.repsField, key: "reps", object: object)
@@ -59,10 +88,8 @@ class ModifyWorkoutsViewController: PFQueryTableViewController{
         }
     }
     
-    
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            print ("deleteExercise")
             let object = objectAtIndexPath(indexPath)
             object?.unpinInBackground()
             object?.deleteInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
@@ -78,25 +105,7 @@ class ModifyWorkoutsViewController: PFQueryTableViewController{
         }
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++) {
-//            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0)) as! ModifyWorkoutExerciseViewCell
-//            if (!cell.completed()) {
-//                let alertController = UIAlertController(title: "Invalid Workout data", message: "Please make sure every field is properly filled out", preferredStyle: UIAlertControllerStyle.Alert)
-//                
-//                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
-//                    print("Ok Button Pressed 1");
-//                }
-//                alertController.addAction(okAction)
-//                
-//                self.presentViewController(alertController, animated: true, completion:nil)
-//            }
-//        }
-//    }
-    
     @IBAction func addExerciseAction(sender: AnyObject) {
-        //print (String(currentWorkout))
-        print ("addExercise")
         let exercise = PFObject(className: "Exercise")
         exercise["workout"] = currentWorkout
         exercise.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
@@ -113,16 +122,5 @@ class ModifyWorkoutsViewController: PFQueryTableViewController{
     override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         self.view.endEditing(true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

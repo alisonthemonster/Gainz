@@ -179,6 +179,23 @@
             <point key="canvasLocation" x="1010" y="715"/>
         </scene>
         <!--Item-->
+        <scene sceneID="uJ1-pt-n3B">
+            <objects>
+                <navigationController id="BYX-U2-XuY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="bOU-Xv-Ggz"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0V2-L3-3xB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2X8-zP-GBv" kind="relationship" relationship="rootViewController" id="tQK-R9-wCD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DC4-hN-2mV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-187" y="593"/>
+        </scene>
+        <!--Today's Workout-->
         <scene sceneID="drG-E6-eMI">
             <objects>
                 <tableViewController id="2X8-zP-GBv" sceneMemberID="viewController">
@@ -186,16 +203,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u5J-Cd-KIK">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="todayCell" rowHeight="73" id="CYF-kt-qki">
-                                <rect key="frame" x="0.0" y="72" width="414" height="73"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYF-kt-qki" id="xbr-1D-5KX">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
@@ -252,15 +262,22 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="Hey-90-rsl"/>
                     <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="D01-0F-rYE"/>
-                        <barButtonItem style="plain" systemItem="done" id="OlU-do-iJ9"/>
+                        <barButtonItem enabled="NO" style="plain" id="D01-0F-rYE"/>
                     </toolbarItems>
+                    <navigationItem key="navigationItem" title="Today's Workout" id="FbF-zv-EFX">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ndm-sY-g6W"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="5Gy-ER-e11">
+                            <connections>
+                                <segue destination="omF-wQ-1XX" kind="show" identifier="editSegue" id="Qtn-f2-PzB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZz-3q-6J7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-429" y="610"/>
+            <point key="canvasLocation" x="-427" y="1430"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="ZGq-m1-cfZ">
@@ -273,23 +290,16 @@
             </objects>
             <point key="canvasLocation" x="-870" y="610"/>
         </scene>
-        <!--Modify Workouts View Controller-->
+        <!--Edit Workout-->
         <scene sceneID="D1h-RU-XWR">
             <objects>
-                <tableViewController storyboardIdentifier="modifyWorkouts" id="omF-wQ-1XX" customClass="ModifyWorkoutsViewController" customModule="Gainz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="modifyWorkouts" title="Edit Workout" id="omF-wQ-1XX" customClass="ModifyWorkoutsViewController" customModule="Gainz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" id="RBj-c5-zad">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modify Workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cJL-8t-Fu9">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oqZ-4a-fC1">
-                            <rect key="frame" x="0.0" y="145" width="414" height="61"/>
+                            <rect key="frame" x="0.0" y="165" width="414" height="61"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -302,7 +312,7 @@
                         </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="modifyCell" rowHeight="73" id="2uw-pd-9Yy" customClass="ModifyWorkoutExerciseViewCell" customModule="Gainz" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="414" height="73"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2uw-pd-9Yy" id="N3w-SW-GQe">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
@@ -368,24 +378,16 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" id="mnT-eb-LCs"/>
-                    <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="paq-Vl-LLw"/>
-                        <barButtonItem style="plain" systemItem="done" id="pLn-Ib-lu4">
-                            <connections>
-                                <action selector="doneAction:" destination="omF-wQ-1XX" id="nHf-ko-rlH"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="addButton" destination="oqZ-4a-fC1" id="nht-KZ-Nt0"/>
-                        <outlet property="doneButton" destination="pLn-Ib-lu4" id="i3h-Jl-4D2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sbE-n4-eim" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="610"/>
+            <point key="canvasLocation" x="109" y="1430"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ZUe-ak-q6X">
@@ -460,14 +462,13 @@
                     </tabBar>
                     <connections>
                         <segue destination="pv5-af-Zjq" kind="relationship" relationship="viewControllers" id="R8b-Eg-rc9"/>
-                        <segue destination="2X8-zP-GBv" kind="relationship" relationship="viewControllers" id="0RV-4U-zuh"/>
-                        <segue destination="omF-wQ-1XX" kind="relationship" relationship="viewControllers" id="0Cb-n2-Spg"/>
+                        <segue destination="BYX-U2-XuY" kind="relationship" relationship="viewControllers" id="0gA-wg-za9"/>
                         <segue destination="mPL-pA-OZR" kind="relationship" relationship="viewControllers" id="R0T-Iw-Myr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yj9-VX-j6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="-299"/>
+            <point key="canvasLocation" x="780" y="-277"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="aze-9z-DHW">

@@ -20,6 +20,9 @@
 		853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323B91C97778800C9EFB2 /* LoginViewController.swift */; };
 		853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */; };
 		853323CC1C9B1A0D00C9EFB2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323CB1C9B1A0D00C9EFB2 /* ParseUI.framework */; };
+		853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D31C9BCC9B00C9EFB2 /* weight.png */; };
+		853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D41C9BCC9B00C9EFB2 /* weight@2x.png */; };
+		853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D51C9BCC9B00C9EFB2 /* weight@3x.png */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
 		B20C67F41C7E704000D11A22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F31C7E704000D11A22 /* ViewController.swift */; };
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
@@ -47,6 +50,9 @@
 		853323B91C97778800C9EFB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutExerciseViewCell.swift; sourceTree = "<group>"; };
 		853323CB1C9B1A0D00C9EFB2 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		853323D31C9BCC9B00C9EFB2 /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
+		853323D41C9BCC9B00C9EFB2 /* weight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@2x.png"; sourceTree = "<group>"; };
+		853323D51C9BCC9B00C9EFB2 /* weight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@3x.png"; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20C67F11C7E704000D11A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B20C67F31C7E704000D11A22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +152,9 @@
 		B2DFDFB61C9A3969006F5ED3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				853323D31C9BCC9B00C9EFB2 /* weight.png */,
+				853323D41C9BCC9B00C9EFB2 /* weight@2x.png */,
+				853323D51C9BCC9B00C9EFB2 /* weight@3x.png */,
 				B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */,
 			);
 			name = Images;
@@ -210,7 +219,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */,
+				853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */,
+				853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */,
 				B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */,
+				853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */,
 				B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */,
 				B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */,
 			);
