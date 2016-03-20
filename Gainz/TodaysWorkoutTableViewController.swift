@@ -36,9 +36,21 @@ class TodaysWorkoutTableViewController: PFQueryTableViewController, ReloadViewDe
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
         print("loading cell!!!")
         
-        cell.sets.text = object?.objectForKey("sets") as? String
-        cell.reps.text = object?.objectForKey("reps") as? String
-        cell.weights.text = object?.objectForKey("weight") as? String
+        if let sets = (object?.objectForKey("sets") as? Int) {
+            cell.sets.text = String(sets)
+        } else {
+            cell.sets.text = ""
+        }
+        if let reps = (object?.objectForKey("reps") as? Int) {
+            cell.reps.text = String(reps)
+        } else {
+            cell.reps.text = ""
+        }
+        if let weight = (object?.objectForKey("weight") as? Int) {
+            cell.weights.text = String(weight)
+        } else {
+            cell.weights.text = ""
+        }
         cell.nameLabel.text = object?.objectForKey("name") as? String
         cell.exercise = object
         
@@ -92,6 +104,14 @@ class TodaysWorkoutTableViewController: PFQueryTableViewController, ReloadViewDe
             presentViewController(self.alertController!, animated: true, completion: nil)
         }
         
+    }
+    
+    func setTextField (textField: UITextField, key: String, object: PFObject?) {
+        if let sets = (object?.objectForKey(key) as? Int) {
+            textField.text = String(sets)
+        } else {
+            textField.text = ""
+        }
     }
     
     
