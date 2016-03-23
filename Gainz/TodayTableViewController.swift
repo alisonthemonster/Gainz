@@ -95,7 +95,6 @@ class TodayTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
-        cell.nameLabel.text = "hello!"
         
         let object = self.todaysExercises[indexPath.row]
 
@@ -136,87 +135,94 @@ class TodayTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(String(indexPath.row))
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
-        
         print("selected cell is: " + cell.nameLabel.text!)
         
-        print(cell.backgroundColor)
-        //TODO eventually read this from the object and not the cell's color
-        if (cell.backgroundColor != UIColor.greenColor() || cell.backgroundColor != UIColor.yellowColor() || cell.backgroundColor != UIColor.redColor()) {
-            //cell has not yet been rated
-            print("creating alert controller")
-            self.alertController = UIAlertController(title: "Rate this workout", message: "Was this workout easy, medium, or hard? We'll plan your next workout based on your feedback.", preferredStyle: UIAlertControllerStyle.Alert)
+        let exercise = self.todaysExercises[indexPath.row]
+        let exerciseName = exercise.objectForKey("name") as? String
+        print("the parse object is: " + exerciseName!)
+        
+        
+        print("creating alert controller")
+        self.alertController = UIAlertController(title: "Rate this workout", message: "Was this workout easy, medium, or hard? We'll plan your next workout based on your feedback.", preferredStyle: UIAlertControllerStyle.Alert)
+        if let rating = (exercise.objectForKey("rating") as? Int) {
+            if (rating==0 || rating==1 || rating==2) {
+                print("already rated!")
+                self.alertController?.title = "Re-Rate this workout"
+                self.alertController?.message = "NOTICE: you already rated this workout, you will be overwriting your previous rating."
+            }
+        }
+        
+        let buttonOne = UIAlertAction(title: "Easy", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            print("Button One Pressed")
+            print("changing this cell's color: " + cell.nameLabel.text!)
+            cell.complete = true
             
-            let buttonOne = UIAlertAction(title: "Easy", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                print("Button One Pressed")
-                print("changing this cell's color: " + cell.nameLabel.text!)
-                cell.complete = true
-                
-                //update the rating in parse!
-                let query = PFQuery(className:"Exercise")
-                query.whereKey("name", equalTo: cell.nameLabel.text!)
-                //TODO currently relies on the fact that exercise names are unique
-                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-                    if (error != nil) {
-                        print (error)
-                    } else {
-                        let object = objects![0]
+            //update the rating in parse!
+            let query = PFQuery(className:"Exercise")
+            query.getObjectInBackgroundWithId(exercise.objectId!) {
+                (object, error) -> Void in
+                if error != nil {
+                    print(error)
+                } else {
+                    if let object = object {
                         object["rating"] = 0
                         object.saveInBackground()
                         tableView.reloadData()
                     }
                 }
-            })
-            let buttonTwo = UIAlertAction(title: "Medium", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                print("Button Two Pressed")
-                print("changing this cell's color: " + cell.nameLabel.text!)
-                cell.complete = true
-                
-                //update the rating in parse!
-                let query = PFQuery(className:"Exercise")
-                query.whereKey("name", equalTo: cell.nameLabel.text!)
-                //TODO currently relies on the fact that exercise names are unique
-                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-                    if (error != nil) {
-                        print (error)
-                    } else {
-                        let object = objects![0]
+            }
+        })
+        let buttonTwo = UIAlertAction(title: "Medium", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            print("Button Two Pressed")
+            print("changing this cell's color: " + cell.nameLabel.text!)
+            cell.complete = true
+            
+            //update the rating in parse!
+            let query = PFQuery(className:"Exercise")
+            query.getObjectInBackgroundWithId(exercise.objectId!) {
+                (object, error) -> Void in
+                if error != nil {
+                    print(error)
+                } else {
+                    if let object = object {
                         object["rating"] = 1
                         object.saveInBackground()
                         tableView.reloadData()
                     }
                 }
-            })
-            let buttonThree = UIAlertAction(title: "Hard", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                print("Button Three Pressed")
-                print("changing this cell's color: " + cell.nameLabel.text!)
-                cell.complete = true
-                
-                //update the rating in parse!
-                let query = PFQuery(className:"Exercise")
-                query.whereKey("name", equalTo: cell.nameLabel.text!)
-                //TODO currently relies on the fact that exercise names are unique
-                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-                    if (error != nil) {
-                        print (error)
-                    } else {
-                        let object = objects![0]
+            }
+        })
+        let buttonThree = UIAlertAction(title: "Hard", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            print("Button Three Pressed")
+            print("changing this cell's color: " + cell.nameLabel.text!)
+            cell.complete = true
+            
+            //update the rating in parse!
+            let query = PFQuery(className:"Exercise")
+            query.getObjectInBackgroundWithId(exercise.objectId!) {
+                (object, error) -> Void in
+                if error != nil {
+                    print(error)
+                } else {
+                    if let object = object {
                         object["rating"] = 2
                         object.saveInBackground()
                         tableView.reloadData()
                     }
                 }
-                
-            })
-            let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
-                print("Cancel Button Pressed")
             }
-            self.alertController!.addAction(buttonOne)
-            self.alertController!.addAction(buttonTwo)
-            self.alertController!.addAction(buttonThree)
-            self.alertController!.addAction(buttonCancel)
-            
-            presentViewController(self.alertController!, animated: true, completion: nil)
+        })
+        let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
+            print("Cancel Button Pressed")
         }
+        self.alertController!.addAction(buttonOne)
+        self.alertController!.addAction(buttonTwo)
+        self.alertController!.addAction(buttonThree)
+        self.alertController!.addAction(buttonCancel)
+        
+        presentViewController(self.alertController!, animated: true, completion: nil)
     }
+    
+    
 
 }
