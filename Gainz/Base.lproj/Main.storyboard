@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="x22-om-a1O">
             <objects>
                 <tableViewController id="mPL-pA-OZR" customClass="SettingsTableViewController" customModule="Gainz" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,7 +63,7 @@
                             <outlet property="delegate" destination="mPL-pA-OZR" id="Gcz-OJ-8uv"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="lIi-E6-b8E"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings.png" id="lIi-E6-b8E"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJK-T3-QGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,11 +116,11 @@
             </objects>
             <point key="canvasLocation" x="1010" y="715"/>
         </scene>
-        <!--Item-->
+        <!--Today-->
         <scene sceneID="uJ1-pt-n3B">
             <objects>
                 <navigationController id="BYX-U2-XuY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bOU-Xv-Ggz"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="today.png" id="bOU-Xv-Ggz"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0V2-L3-3xB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -206,7 +206,7 @@
                             <outlet property="delegate" destination="2X8-zP-GBv" id="R6j-vG-9bm"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Hey-90-rsl"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Hey-90-rsl"/>
                     <toolbarItems>
                         <barButtonItem enabled="NO" style="plain" id="D01-0F-rYE"/>
                     </toolbarItems>
@@ -225,11 +225,11 @@
             </objects>
             <point key="canvasLocation" x="-427" y="1430"/>
         </scene>
-        <!--Page View Controller-->
+        <!--History-->
         <scene sceneID="ZGq-m1-cfZ">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="pv5-af-Zjq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="history" id="kqq-v7-zNg"/>
+                    <tabBarItem key="tabBarItem" title="History" image="prev.png" id="kqq-v7-zNg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdd-J6-mdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,4 +486,9 @@
             <point key="canvasLocation" x="-759" y="-740"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="prev.png" width="30" height="30"/>
+        <image name="settings.png" width="30" height="30"/>
+        <image name="today.png" width="30" height="30"/>
+    </resources>
 </document>
