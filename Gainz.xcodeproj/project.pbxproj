@@ -19,7 +19,6 @@
 		853323B81C97765B00C9EFB2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323B71C97765B00C9EFB2 /* libsqlite3.tbd */; };
 		853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323B91C97778800C9EFB2 /* LoginViewController.swift */; };
 		853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */; };
-		853323CC1C9B1A0D00C9EFB2 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323CB1C9B1A0D00C9EFB2 /* ParseUI.framework */; };
 		853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D31C9BCC9B00C9EFB2 /* weight.png */; };
 		853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D41C9BCC9B00C9EFB2 /* weight@2x.png */; };
 		853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D51C9BCC9B00C9EFB2 /* weight@3x.png */; };
@@ -33,16 +32,8 @@
 		B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */; };
 		B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */; };
 		B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */; };
-		B2DFDFB41C9A3749006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */; };
-		B2DFDFB51C9A3749006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFB31C9A3749006F5ED3 /* Parse.framework */; };
 		B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */; };
-		B2DFDFC41C9DE320006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFC11C9DE320006F5ED3 /* Bolts.framework */; };
-		B2DFDFC51C9DE320006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFC21C9DE320006F5ED3 /* Parse.framework */; };
-		B2DFDFC61C9DE320006F5ED3 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFC31C9DE320006F5ED3 /* ParseUI.framework */; };
 		B2DFDFC81C9DE8CC006F5ED3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */; };
-		B2DFDFCE1C9E1973006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFCB1C9E1973006F5ED3 /* Bolts.framework */; };
-		B2DFDFCF1C9E1973006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFCC1C9E1973006F5ED3 /* Parse.framework */; };
-		B2DFDFD01C9E1973006F5ED3 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFCD1C9E1973006F5ED3 /* ParseUI.framework */; };
 		B2DFDFD21CA1D60E006F5ED3 /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFD11CA1D60E006F5ED3 /* today@2x.png */; };
 		B2DFDFD41CA1D6C4006F5ED3 /* today.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFD31CA1D6C4006F5ED3 /* today.png */; };
 		B2DFDFD61CA1D892006F5ED3 /* barbell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFD51CA1D892006F5ED3 /* barbell@2x.png */; };
@@ -51,6 +42,10 @@
 		B2DFDFDC1CA1D909006F5ED3 /* prev.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFDB1CA1D909006F5ED3 /* prev.png */; };
 		B2DFDFE21CA1DA40006F5ED3 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFE11CA1DA40006F5ED3 /* settings@2x.png */; };
 		B2DFDFE41CA1DA5D006F5ED3 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFE31CA1DA5D006F5ED3 /* settings.png */; };
+		B2DFDFEC1CA26103006F5ED3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFE91CA26103006F5ED3 /* Bolts.framework */; };
+		B2DFDFED1CA26103006F5ED3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFEA1CA26103006F5ED3 /* Parse.framework */; };
+		B2DFDFEE1CA26103006F5ED3 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2DFDFEB1CA26103006F5ED3 /* ParseUI.framework */; };
+		B2DFDFF01CA2624A006F5ED3 /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +61,6 @@
 		853323B71C97765B00C9EFB2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		853323B91C97778800C9EFB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutExerciseViewCell.swift; sourceTree = "<group>"; };
-		853323CB1C9B1A0D00C9EFB2 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		853323D31C9BCC9B00C9EFB2 /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
 		853323D41C9BCC9B00C9EFB2 /* weight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@2x.png"; sourceTree = "<group>"; };
 		853323D51C9BCC9B00C9EFB2 /* weight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@3x.png"; sourceTree = "<group>"; };
@@ -82,16 +76,8 @@
 		B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutsViewController.swift; sourceTree = "<group>"; };
 		B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		B2DFDFAC1C9A28AD006F5ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		B2DFDFB31C9A3749006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = barbells.jpg; sourceTree = "<group>"; };
-		B2DFDFC11C9DE320006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		B2DFDFC21C9DE320006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		B2DFDFC31C9DE320006F5ED3 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		B2DFDFCB1C9E1973006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		B2DFDFCC1C9E1973006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		B2DFDFCD1C9E1973006F5ED3 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B2DFDFD11CA1D60E006F5ED3 /* today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today@2x.png"; sourceTree = "<group>"; };
 		B2DFDFD31CA1D6C4006F5ED3 /* today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = today.png; sourceTree = "<group>"; };
 		B2DFDFD51CA1D892006F5ED3 /* barbell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbell@2x.png"; sourceTree = "<group>"; };
@@ -100,6 +86,10 @@
 		B2DFDFDB1CA1D909006F5ED3 /* prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prev.png; sourceTree = "<group>"; };
 		B2DFDFE11CA1DA40006F5ED3 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		B2DFDFE31CA1DA5D006F5ED3 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		B2DFDFE91CA26103006F5ED3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B2DFDFEA1CA26103006F5ED3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B2DFDFEB1CA26103006F5ED3 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,21 +101,15 @@
 				853323B61C97765200C9EFB2 /* libz.tbd in Frameworks */,
 				853323B41C97764500C9EFB2 /* SystemConfiguration.framework in Frameworks */,
 				853323B21C97763900C9EFB2 /* StoreKit.framework in Frameworks */,
-				B2DFDFC51C9DE320006F5ED3 /* Parse.framework in Frameworks */,
 				853323B01C97763300C9EFB2 /* Security.framework in Frameworks */,
-				B2DFDFC61C9DE320006F5ED3 /* ParseUI.framework in Frameworks */,
 				853323AE1C97762B00C9EFB2 /* QuartzCore.framework in Frameworks */,
 				853323AC1C97762400C9EFB2 /* CoreLocation.framework in Frameworks */,
 				853323AA1C97761900C9EFB2 /* CoreGraphics.framework in Frameworks */,
-				B2DFDFD01C9E1973006F5ED3 /* ParseUI.framework in Frameworks */,
-				B2DFDFCF1C9E1973006F5ED3 /* Parse.framework in Frameworks */,
-				B2DFDFB41C9A3749006F5ED3 /* Bolts.framework in Frameworks */,
+				B2DFDFEC1CA26103006F5ED3 /* Bolts.framework in Frameworks */,
 				853323A81C97760F00C9EFB2 /* CFNetwork.framework in Frameworks */,
-				B2DFDFCE1C9E1973006F5ED3 /* Bolts.framework in Frameworks */,
-				B2DFDFB51C9A3749006F5ED3 /* Parse.framework in Frameworks */,
+				B2DFDFED1CA26103006F5ED3 /* Parse.framework in Frameworks */,
 				853323A61C97760700C9EFB2 /* AudioToolbox.framework in Frameworks */,
-				853323CC1C9B1A0D00C9EFB2 /* ParseUI.framework in Frameworks */,
-				B2DFDFC41C9DE320006F5ED3 /* Bolts.framework in Frameworks */,
+				B2DFDFEE1CA26103006F5ED3 /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,15 +121,9 @@
 			children = (
 				853323B71C97765B00C9EFB2 /* libsqlite3.tbd */,
 				853323B51C97765200C9EFB2 /* libz.tbd */,
-				B2DFDFCB1C9E1973006F5ED3 /* Bolts.framework */,
-				B2DFDFCC1C9E1973006F5ED3 /* Parse.framework */,
-				B2DFDFCD1C9E1973006F5ED3 /* ParseUI.framework */,
-				853323CB1C9B1A0D00C9EFB2 /* ParseUI.framework */,
-				B2DFDFB21C9A3749006F5ED3 /* Bolts.framework */,
-				B2DFDFB31C9A3749006F5ED3 /* Parse.framework */,
-				B2DFDFC11C9DE320006F5ED3 /* Bolts.framework */,
-				B2DFDFC21C9DE320006F5ED3 /* Parse.framework */,
-				B2DFDFC31C9DE320006F5ED3 /* ParseUI.framework */,
+				B2DFDFE91CA26103006F5ED3 /* Bolts.framework */,
+				B2DFDFEA1CA26103006F5ED3 /* Parse.framework */,
+				B2DFDFEB1CA26103006F5ED3 /* ParseUI.framework */,
 				853323B31C97764500C9EFB2 /* SystemConfiguration.framework */,
 				853323B11C97763900C9EFB2 /* StoreKit.framework */,
 				853323AF1C97763300C9EFB2 /* Security.framework */,
@@ -189,6 +167,7 @@
 				B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */,
 				B20C68001C7E704000D11A22 /* Info.plist */,
 				B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */,
+				B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */,
 				853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */,
 				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
 				853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */,
@@ -300,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DFDFF01CA2624A006F5ED3 /* TodayTableViewController.swift in Sources */,
 				B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */,
 				853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */,
 				853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */,
