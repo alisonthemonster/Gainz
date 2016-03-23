@@ -141,6 +141,7 @@ class TodayTableViewController: UITableViewController {
         let exerciseName = exercise.objectForKey("name") as? String
         print("the parse object is: " + exerciseName!)
         
+        //TODO the issue is that the selected cell is wrong!!! everything else is right!!
         
         print("creating alert controller")
         self.alertController = UIAlertController(title: "Rate this workout", message: "Was this workout easy, medium, or hard? We'll plan your next workout based on your feedback.", preferredStyle: UIAlertControllerStyle.Alert)
