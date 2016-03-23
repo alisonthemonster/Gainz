@@ -15,6 +15,7 @@ class TodayTableViewController: UITableViewController {
     var alertController:UIAlertController? = nil
     var currentWorkout:PFObject?
     var todaysExercises = [PFObject]()
+    let blerg = ["hello", "hej", "bonjour"]
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -67,6 +68,8 @@ class TodayTableViewController: UITableViewController {
                 self.todaysExercises = objects!
                 print("we found todays exercises!")
                 print("there are " + String(self.todaysExercises.count) + " exercises for today")
+                print("reloading data")
+                self.tableView.reloadData()
             }
         }
     }
@@ -91,10 +94,14 @@ class TodayTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        print("in cell for row at index path")
+        
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
+        cell.nameLabel.text = "hello!"
         
         let object = self.todaysExercises[indexPath.row]
-        print("in cell for row at index path")
+
         if let sets = (object.objectForKey("sets") as? Int) {
             print("sets: " + String(sets))
             cell.sets.text = String(sets)
@@ -217,18 +224,7 @@ class TodayTableViewController: UITableViewController {
             self.alertController!.addAction(buttonCancel)
             
             presentViewController(self.alertController!, animated: true, completion: nil)
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        }
     }
 
 }
