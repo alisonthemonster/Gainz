@@ -15,7 +15,11 @@ class TodayTableViewController: UITableViewController {
     var alertController:UIAlertController? = nil
     var currentWorkout:PFObject?
     var todaysExercises = [PFObject]()
-    let blerg = ["hello", "hej", "bonjour"]
+    
+    let red = UIColor(red: 234/255, green: 101/255, blue: 89/255, alpha: 1)
+    let yellow = UIColor(red: 239/255, green: 255/255, blue: 119/255, alpha: 1)
+    let green = UIColor(red: 33/255, green: 208/255, blue: 119/255, alpha: 1)
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -118,11 +122,11 @@ class TodayTableViewController: UITableViewController {
         
         if let rating = (object.objectForKey("rating") as? Int) {
             if (rating==0) {
-                cell.backgroundColor = UIColor.greenColor()
+                cell.backgroundColor = self.green
             } else if (rating==1) {
-                cell.backgroundColor = UIColor.yellowColor()
+                cell.backgroundColor = self.yellow
             } else if (rating==2) {
-                cell.backgroundColor = UIColor.redColor()
+                cell.backgroundColor = self.red
             }
         } else {
             cell.backgroundColor = UIColor.whiteColor()
