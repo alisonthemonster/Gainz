@@ -88,14 +88,11 @@ class TodayTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("in number rows in section")
         return self.todaysExercises.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print("in cell for row at index path")
-        
         
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
         cell.nameLabel.text = "hello!"
@@ -103,7 +100,6 @@ class TodayTableViewController: UITableViewController {
         let object = self.todaysExercises[indexPath.row]
 
         if let sets = (object.objectForKey("sets") as? Int) {
-            print("sets: " + String(sets))
             cell.sets.text = String(sets)
         } else {
             cell.sets.text = ""
@@ -143,8 +139,9 @@ class TodayTableViewController: UITableViewController {
         
         print("selected cell is: " + cell.nameLabel.text!)
         
-        print(String(cell.backgroundColor))
-        if (cell.backgroundColor == UIColor(red: 1, green: 1, blue: 1, alpha: 1)) {
+        print(cell.backgroundColor)
+        //TODO eventually read this from the object and not the cell's color
+        if (cell.backgroundColor != UIColor.greenColor() || cell.backgroundColor != UIColor.yellowColor() || cell.backgroundColor != UIColor.redColor()) {
             //cell has not yet been rated
             print("creating alert controller")
             self.alertController = UIAlertController(title: "Rate this workout", message: "Was this workout easy, medium, or hard? We'll plan your next workout based on your feedback.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -152,68 +149,63 @@ class TodayTableViewController: UITableViewController {
             let buttonOne = UIAlertAction(title: "Easy", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                 print("Button One Pressed")
                 print("changing this cell's color: " + cell.nameLabel.text!)
-                cell.backgroundColor = UIColor.greenColor()
                 cell.complete = true
                 
-                //                //update the rating in parse!
-                //                var query = PFQuery(className:"Exercise")
-                //                query.whereKey("name", equalTo: cell.nameLabel.text!)
-                //                //TODO currently relies on the fact that exercise names are unique
-                //                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-                //                    if (error != nil) {
-                //                        print (error)
-                //                    } else {
-                //                        let object = objects![0]
-                //                        object["rating"] = 0
-                //                        object.saveInBackground()
-                //                    }
-                //                }
-                
-                tableView.reloadData()
+                //update the rating in parse!
+                let query = PFQuery(className:"Exercise")
+                query.whereKey("name", equalTo: cell.nameLabel.text!)
+                //TODO currently relies on the fact that exercise names are unique
+                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+                    if (error != nil) {
+                        print (error)
+                    } else {
+                        let object = objects![0]
+                        object["rating"] = 0
+                        object.saveInBackground()
+                        tableView.reloadData()
+                    }
+                }
             })
             let buttonTwo = UIAlertAction(title: "Medium", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                 print("Button Two Pressed")
                 print("changing this cell's color: " + cell.nameLabel.text!)
-                cell.backgroundColor = UIColor.yellowColor()
                 cell.complete = true
                 
-                //                //update the rating in parse!
-                //                var query = PFQuery(className:"Exercise")
-                //                query.whereKey("name", equalTo: cell.nameLabel.text!)
-                //                //TODO currently relies on the fact that exercise names are unique
-                //                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-                //                    if (error != nil) {
-                //                        print (error)
-                //                    } else {
-                //                        let object = objects![0]
-                //                        object["rating"] = 1
-                //                        object.saveInBackground()
-                //                    }
-                //                }
-                
-                tableView.reloadData()
+                //update the rating in parse!
+                let query = PFQuery(className:"Exercise")
+                query.whereKey("name", equalTo: cell.nameLabel.text!)
+                //TODO currently relies on the fact that exercise names are unique
+                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+                    if (error != nil) {
+                        print (error)
+                    } else {
+                        let object = objects![0]
+                        object["rating"] = 1
+                        object.saveInBackground()
+                        tableView.reloadData()
+                    }
+                }
             })
             let buttonThree = UIAlertAction(title: "Hard", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
                 print("Button Three Pressed")
                 print("changing this cell's color: " + cell.nameLabel.text!)
-                cell.backgroundColor = UIColor.redColor()
                 cell.complete = true
                 
-                //                //update the rating in parse!
-                //                var query = PFQuery(className:"Exercise")
-                //                query.whereKey("name", equalTo: cell.nameLabel.text!)
-                //                //TODO currently relies on the fact that exercise names are unique
-                //                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
-                //                    if (error != nil) {
-                //                        print (error)
-                //                    } else {
-                //                        let object = objects![0]
-                //                        object["rating"] = 2
-                //                        object.saveInBackground()
-                //                    }
-                //                }
+                //update the rating in parse!
+                let query = PFQuery(className:"Exercise")
+                query.whereKey("name", equalTo: cell.nameLabel.text!)
+                //TODO currently relies on the fact that exercise names are unique
+                query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+                    if (error != nil) {
+                        print (error)
+                    } else {
+                        let object = objects![0]
+                        object["rating"] = 2
+                        object.saveInBackground()
+                        tableView.reloadData()
+                    }
+                }
                 
-                tableView.reloadData()
             })
             let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
                 print("Cancel Button Pressed")
