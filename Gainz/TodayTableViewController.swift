@@ -134,14 +134,13 @@ class TodayTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(String(indexPath.row))
-        let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! TodaysWorkoutExerciseCell
         print("selected cell is: " + cell.nameLabel.text!)
         
         let exercise = self.todaysExercises[indexPath.row]
         let exerciseName = exercise.objectForKey("name") as? String
         print("the parse object is: " + exerciseName!)
         
-        //TODO the issue is that the selected cell is wrong!!! everything else is right!!
         
         print("creating alert controller")
         self.alertController = UIAlertController(title: "Rate this workout", message: "Was this workout easy, medium, or hard? We'll plan your next workout based on your feedback.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -156,7 +155,6 @@ class TodayTableViewController: UITableViewController {
         let buttonOne = UIAlertAction(title: "Easy", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             print("Button One Pressed")
             print("changing this cell's color: " + cell.nameLabel.text!)
-            cell.complete = true
             
             //update the rating in parse!
             let query = PFQuery(className:"Exercise")
@@ -176,7 +174,6 @@ class TodayTableViewController: UITableViewController {
         let buttonTwo = UIAlertAction(title: "Medium", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             print("Button Two Pressed")
             print("changing this cell's color: " + cell.nameLabel.text!)
-            cell.complete = true
             
             //update the rating in parse!
             let query = PFQuery(className:"Exercise")
@@ -196,7 +193,6 @@ class TodayTableViewController: UITableViewController {
         let buttonThree = UIAlertAction(title: "Hard", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             print("Button Three Pressed")
             print("changing this cell's color: " + cell.nameLabel.text!)
-            cell.complete = true
             
             //update the rating in parse!
             let query = PFQuery(className:"Exercise")
@@ -223,7 +219,5 @@ class TodayTableViewController: UITableViewController {
         
         presentViewController(self.alertController!, animated: true, completion: nil)
     }
-    
-    
 
 }
