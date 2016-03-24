@@ -95,7 +95,6 @@ class CreateAccountViewController: UIViewController {
                 } else {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         
-                        //TODO create first workout object here
                         let workout = PFObject(className: "Workout")
                         workout["saved"] = false
                         workout["user"] = user

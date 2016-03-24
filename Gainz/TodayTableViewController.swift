@@ -29,13 +29,11 @@ class TodayTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = PFUser.currentUser()!.username! + "'s Workout"
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-    
         
         //get the unsaved workout (today's workout)
         let innerQuery = PFQuery(className: "Workout")
@@ -96,10 +94,6 @@ class TodayTableViewController: UITableViewController {
         self.alertController!.addAction(buttonCancel)
         
         presentViewController(self.alertController!, animated: true, completion: nil)
-        
-
-        
-        
     }
     
     //builds the new workout based on the current workout and updates table
