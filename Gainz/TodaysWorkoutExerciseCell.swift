@@ -20,6 +20,7 @@ class TodaysWorkoutExerciseCell: PFTableViewCell, UITextFieldDelegate {
     
     var exercise:PFObject?
     var complete:Bool = false
+    var rating:Int?
     
 //    override func awakeFromNib() {
 //        self.setsField.delegate = self

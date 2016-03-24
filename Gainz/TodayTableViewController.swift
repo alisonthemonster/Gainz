@@ -12,6 +12,9 @@ import ParseUI
 
 class TodayTableViewController: UITableViewController {
     
+    
+
+    
     var alertController:UIAlertController? = nil
     var currentWorkout:PFObject?
     var todaysExercises = [PFObject]()
@@ -35,17 +38,12 @@ class TodayTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        //query for today's workout
-//        let now = NSDate()
-//        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
-//        let midnightOfToday = cal!.startOfDayForDate(now)
-//        let innerQuery = PFQuery(className:"Workout")
-//        innerQuery.whereKey("date", greaterThanOrEqualTo: midnightOfToday)
+    
         
         //get the unsaved workout (today's workout)
         let innerQuery = PFQuery(className: "Workout")
         innerQuery.whereKey("saved", equalTo: false)
+        innerQuery.whereKey("user", equalTo: PFUser.currentUser()!)
 
         //get the exercises that are in today's workout
         let query = PFQuery(className: "Exercise")
@@ -54,11 +52,14 @@ class TodayTableViewController: UITableViewController {
             if (error != nil) {
                 print (error)
                 print("a workout for today was not found")
-                //a workout hasn't been created for today
+                //an unsaved workout hasn't been created for today
+                //TODO create new workout here! 
+                    //use old data to build new exercise objects
+                    //if there is no old data then show message for first time users to direct them to modify screen
             } else {
                 //this is today's workout
                 self.currentWorkout = objects![0]
-                print("we found today's workout!")
+                print("we found the most recent non-finished workout!")
             }
             print("inside the block!")
         }
@@ -84,6 +85,31 @@ class TodayTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
+    @IBAction func doneBtn(sender: AnyObject) {
+        //TODO go through all exercises and update parse
+        for exercise: PFObject in todaysExercises {
+            let query = PFQuery(className:"Exercise")
+            query.getObjectInBackgroundWithId(exercise.objectId!) {
+                (object, error) -> Void in
+                if error != nil {
+                    print(error)
+                } else {
+                    if let object = object {
+                        object["rating"] = 0 //TODO read from the cell
+                        object.saveInBackground()
+                    }
+                }
+            }
+
+        }
+        //TODO generate new workout and display it?
+        //build new workout
+        //buid the exercises based on the current exercises ratings
+        //set the new workout as the currentWorkout
+        //reload
+    }
+    
     
     // MARK: - Table view data source
     
@@ -95,7 +121,7 @@ class TodayTableViewController: UITableViewController {
         return self.todaysExercises.count
     }
     
-    
+    //TODO update so it reads rating from the cell and not from parse
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
@@ -136,6 +162,7 @@ class TodayTableViewController: UITableViewController {
         return cell
     }
     
+    //TODO update change the rating locally and not in parse until save button pressed
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(String(indexPath.row))
         let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! TodaysWorkoutExerciseCell

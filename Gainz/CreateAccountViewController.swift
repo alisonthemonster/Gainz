@@ -94,8 +94,21 @@ class CreateAccountViewController: UIViewController {
                     }
                 } else {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("modifyWorkouts") as! UITableViewController
-                        self.presentViewController(viewController, animated: true, completion: nil)
+                        
+                        //TODO create first workout object here
+                        let workout = PFObject(className: "Workout")
+                        workout["saved"] = false
+                        workout["user"] = user
+                        workout.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                            if (success) {
+                                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("tabController") as! UITabBarController
+                                self.presentViewController(viewController, animated: true, completion: nil)
+
+                            } else {
+                                print(error)
+                            }
+                        }
+                        
                     })
                 }
             }
