@@ -52,6 +52,7 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
     override func queryForTable() -> PFQuery {
         let innerQuery = PFQuery(className: "Workout")
         innerQuery.whereKey("saved", equalTo: false)
+        innerQuery.whereKey("user", equalTo: PFUser.currentUser()!)
         let query = PFQuery(className: "Exercise")
         query.whereKey("workout", matchesQuery: innerQuery)
         innerQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
