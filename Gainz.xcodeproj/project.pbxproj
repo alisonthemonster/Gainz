@@ -22,7 +22,6 @@
 		853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D31C9BCC9B00C9EFB2 /* weight.png */; };
 		853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D41C9BCC9B00C9EFB2 /* weight@2x.png */; };
 		853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D51C9BCC9B00C9EFB2 /* weight@3x.png */; };
-		853323DC1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323DB1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift */; };
 		853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */; };
 		853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
@@ -64,7 +63,6 @@
 		853323D31C9BCC9B00C9EFB2 /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
 		853323D41C9BCC9B00C9EFB2 /* weight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@2x.png"; sourceTree = "<group>"; };
 		853323D51C9BCC9B00C9EFB2 /* weight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@3x.png"; sourceTree = "<group>"; };
-		853323DB1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysWorkoutExerciseCell.swift; sourceTree = "<group>"; };
 		853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadViewDelegate.swift; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,12 +165,11 @@
 				B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */,
 				B20C68001C7E704000D11A22 /* Info.plist */,
 				B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */,
-				B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */,
 				853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */,
-				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
-				853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */,
 				B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */,
-				853323DB1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift */,
+				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
+				B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */,
+				853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */,
 			);
 			path = Gainz;
 			sourceTree = "<group>";
@@ -289,7 +286,6 @@
 				B2DFDFC81C9DE8CC006F5ED3 /* SettingsTableViewController.swift in Sources */,
 				B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */,
 				853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */,
-				853323DC1C9CE60900C9EFB2 /* TodaysWorkoutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

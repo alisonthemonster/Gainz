@@ -12,9 +12,6 @@ import ParseUI
 
 class TodayTableViewController: UITableViewController {
     
-    
-
-    
     var alertController:UIAlertController? = nil
     var currentWorkout:PFObject?
     var todaysExercises = [PFObject]()
@@ -87,27 +84,75 @@ class TodayTableViewController: UITableViewController {
     
 
     @IBAction func doneBtn(sender: AnyObject) {
-        //TODO go through all exercises and update parse
-        for exercise: PFObject in todaysExercises {
-            let query = PFQuery(className:"Exercise")
-            query.getObjectInBackgroundWithId(exercise.objectId!) {
-                (object, error) -> Void in
-                if error != nil {
-                    print(error)
-                } else {
-                    if let object = object {
-                        object["rating"] = 0 //TODO read from the cell
-                        object.saveInBackground()
-                    }
-                }
-            }
-
+        self.alertController = UIAlertController(title: "All done?", message: "Are you sure you're finished? Once you press okay we'll generate your next workout for you and this workout can be found in your history. ", preferredStyle: UIAlertControllerStyle.Alert)
+        let done = UIAlertAction(title: "Done!", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            print("Button One Pressed")
+            self.createNewWorkout()
+        })
+        let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
+            print("Cancel Button Pressed")
         }
-        //TODO generate new workout and display it?
+        self.alertController!.addAction(done)
+        self.alertController!.addAction(buttonCancel)
+        
+        presentViewController(self.alertController!, animated: true, completion: nil)
+        
+
+        
+        
+    }
+    
+    //builds the new workout based on the current workout and updates table
+    func createNewWorkout() {
+        //save current workout
+        currentWorkout!["saved"] = true
+        currentWorkout?.saveInBackground()
+        
         //build new workout
+        let newWorkout = PFObject(className: "Workout")
+        newWorkout["saved"] = false
+        newWorkout["user"] = PFUser.currentUser()
+        
+        var newExercises = [PFObject]()
+        //build each new exercise based of off the last ones
+        for exercise in self.todaysExercises {
+            let newExercise = PFObject(className: "Exercise")
+            let rating = (exercise.objectForKey("rating") as? Int)
+            let reps = (exercise.objectForKey("reps") as? Int)
+            let weight = (exercise.objectForKey("weight") as? Int)
+            let sets = (exercise.objectForKey("sets") as? Int)
+            if (rating == 0) { //if last workout was too easy
+                newExercise["reps"] = reps! + 5
+                newExercise["weight"] = weight! + 5
+                newExercise["sets"] = sets! + 5
+            } else if (rating == 2) { //if last workout was too hard
+                newExercise["reps"] = reps! - 5
+                newExercise["weight"] = weight! - 5
+                newExercise["sets"] = sets! - 5
+            } else { //if last workout wasn't rated or was juuust right
+                newExercise["reps"] = reps!
+                newExercise["weight"] = weight!
+                newExercise["sets"] = sets!
+            }
+            newExercise["name"] = exercise.objectForKey("name") as? String
+            newExercise["workout"] = newWorkout
+            newExercise.saveInBackground()
+            newExercises.append(newExercise)
+        }
+        
         //buid the exercises based on the current exercises ratings
-        //set the new workout as the currentWorkout
-        //reload
+        newWorkout.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                //set the new workout as the currentWorkout
+                self.currentWorkout = newWorkout
+                self.todaysExercises = newExercises
+                //reload
+                self.tableView.reloadData()
+                
+            } else {
+                print(error)
+            }
+        }
     }
     
     
@@ -121,12 +166,12 @@ class TodayTableViewController: UITableViewController {
         return self.todaysExercises.count
     }
     
-    //TODO update so it reads rating from the cell and not from parse
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
         
         let object = self.todaysExercises[indexPath.row]
+        cell.object = object
 
         if let sets = (object.objectForKey("sets") as? Int) {
             cell.sets.text = String(sets)
@@ -162,6 +207,8 @@ class TodayTableViewController: UITableViewController {
         return cell
     }
     
+    
+    
     //TODO update change the rating locally and not in parse until save button pressed
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(String(indexPath.row))
@@ -175,6 +222,7 @@ class TodayTableViewController: UITableViewController {
         
         print("creating alert controller")
         self.alertController = UIAlertController(title: "Rate this workout", message: "Was this workout easy, medium, or hard? We'll plan your next workout based on your feedback.", preferredStyle: UIAlertControllerStyle.Alert)
+        
         if let rating = (exercise.objectForKey("rating") as? Int) {
             if (rating==0 || rating==1 || rating==2) {
                 print("already rated!")
@@ -186,6 +234,7 @@ class TodayTableViewController: UITableViewController {
         let buttonOne = UIAlertAction(title: "Easy", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             print("Button One Pressed")
             print("changing this cell's color: " + cell.nameLabel.text!)
+            cell.rating = 0
             
             //update the rating in parse!
             let query = PFQuery(className:"Exercise")
