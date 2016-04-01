@@ -16,11 +16,6 @@ class TodayTableViewController: UITableViewController {
     var currentWorkout:PFObject?
     var todaysExercises = [PFObject]()
     
-    let red = UIColor(red: 234/255, green: 101/255, blue: 89/255, alpha: 1)
-    let yellow = UIColor(red: 239/255, green: 255/255, blue: 119/255, alpha: 1)
-    let green = UIColor(red: 33/255, green: 208/255, blue: 119/255, alpha: 1)
-    
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -123,6 +118,15 @@ class TodayTableViewController: UITableViewController {
                 newExercise["reps"] = reps! - 5
                 newExercise["weight"] = weight! - 5
                 newExercise["sets"] = sets! - 5
+                if (reps! - 5 < 0) {
+                    newExercise["reps"] = 0
+                }
+                if (sets! - 5 < 0) {
+                    newExercise["sets"] = 0
+                }
+                if (weight! - 5 < 0) {
+                    newExercise["weight"] = 0
+                }
             } else { //if last workout wasn't rated or was juuust right
                 newExercise["reps"] = reps!
                 newExercise["weight"] = weight!
@@ -187,14 +191,15 @@ class TodayTableViewController: UITableViewController {
         
         if let rating = (object.objectForKey("rating") as? Int) {
             if (rating==0) {
-                cell.backgroundColor = self.green
+                cell.checkMark.image = UIImage(named: "green")
             } else if (rating==1) {
-                cell.backgroundColor = self.yellow
+                cell.checkMark.image = UIImage(named: "orange")
             } else if (rating==2) {
-                cell.backgroundColor = self.red
+                cell.checkMark.image = UIImage(named: "red")
             }
         } else {
-            cell.backgroundColor = UIColor.whiteColor()
+            //dont show the checkmark
+            cell.checkMark.image = UIImage()
         }
 
         
