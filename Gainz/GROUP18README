@@ -1,0 +1,23 @@
+Contributions:
+Alison Wyllie: 50%
+• Create main workout plan screen
+	• create view in the storyboard
+	• add checkmarks to show the completed activities
+	• pressing the done button submits the workout and generates a new workout
+• Create popups to allow users to rate the workout when they finish
+	• popups send rating data to parse
+	• checkmarks update based on rating
+
+Siena McFetridge: 50%
+• Create main workout plan screen
+	• pull relevant data from parse
+	• connect the table view elements to the matching data from parse
+• Creating the algorithm
+• Update the data model to have user specific workouts
+
+
+Differences:
+None
+
+Notes:
+History tab is to be finished for the final version along with more advanced settings. Autolayout in progress.

@@ -32,6 +32,9 @@
 		B2577B601CB8A19C00B19606 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5D1CB8A19C00B19606 /* Bolts.framework */; };
 		B2577B611CB8A19C00B19606 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5E1CB8A19C00B19606 /* Parse.framework */; };
 		B2577B621CB8A19C00B19606 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5F1CB8A19C00B19606 /* ParseUI.framework */; };
+		B254D1691CAEEC4B00E8F89E /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1661CAEEC4B00E8F89E /* orange.png */; };
+		B254D16A1CAEEC4B00E8F89E /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1671CAEEC4B00E8F89E /* red.png */; };
+		B254D16B1CAEEC4B00E8F89E /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1681CAEEC4B00E8F89E /* green.png */; };
 		B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */; };
 		B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */; };
 		B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */; };
@@ -76,6 +79,9 @@
 		B2577B5D1CB8A19C00B19606 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		B2577B5E1CB8A19C00B19606 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		B2577B5F1CB8A19C00B19606 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		B254D1661CAEEC4B00E8F89E /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
+		B254D1671CAEEC4B00E8F89E /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		B254D1681CAEEC4B00E8F89E /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutsViewController.swift; sourceTree = "<group>"; };
 		B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		B2DFDFAC1C9A28AD006F5ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +186,9 @@
 		B2DFDFB61C9A3969006F5ED3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B254D1661CAEEC4B00E8F89E /* orange.png */,
+				B254D1671CAEEC4B00E8F89E /* red.png */,
+				B254D1681CAEEC4B00E8F89E /* green.png */,
 				B2DFDFE31CA1DA5D006F5ED3 /* settings.png */,
 				B2DFDFE11CA1DA40006F5ED3 /* settings@2x.png */,
 				B2DFDFDB1CA1D909006F5ED3 /* prev.png */,
@@ -258,17 +267,20 @@
 				B2DFDFD81CA1D8B2006F5ED3 /* barbell.png in Resources */,
 				B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */,
 				B2DFDFE41CA1DA5D006F5ED3 /* settings.png in Resources */,
+				B254D16A1CAEEC4B00E8F89E /* red.png in Resources */,
 				853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */,
 				853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */,
 				B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */,
 				B2DFDFD61CA1D892006F5ED3 /* barbell@2x.png in Resources */,
 				853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */,
+				B254D1691CAEEC4B00E8F89E /* orange.png in Resources */,
 				B2DFDFD21CA1D60E006F5ED3 /* today@2x.png in Resources */,
 				B2DFDFDA1CA1D8F0006F5ED3 /* prev@2x.png in Resources */,
 				B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */,
 				B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */,
 				B2DFDFDC1CA1D909006F5ED3 /* prev.png in Resources */,
 				B2DFDFD41CA1D6C4006F5ED3 /* today.png in Resources */,
+				B254D16B1CAEEC4B00E8F89E /* green.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
