@@ -16,7 +16,6 @@ class TodaysWorkoutExerciseCell: PFTableViewCell, UITextFieldDelegate {
     @IBOutlet weak var sets: UILabel!
     @IBOutlet weak var reps: UILabel!
     @IBOutlet weak var weights: UILabel!
-    @IBOutlet weak var checkMark: UIImageView!
     
     
     var exercise:PFObject?
