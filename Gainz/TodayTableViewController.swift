@@ -42,16 +42,11 @@ class TodayTableViewController: UITableViewController {
             if (error != nil) {
                 print (error)
                 print("a workout for today was not found")
-                //an unsaved workout hasn't been created for today
-                //TODO create new workout here! 
-                    //use old data to build new exercise objects
-                    //if there is no old data then show message for first time users to direct them to modify screen
             } else {
                 //this is today's workout
                 self.currentWorkout = objects![0]
                 print("we found the most recent non-finished workout!")
             }
-            print("inside the block!")
         }
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if (error != nil) {
@@ -63,6 +58,12 @@ class TodayTableViewController: UITableViewController {
                 self.todaysExercises = objects!
                 print("we found todays exercises!")
                 print("there are " + String(self.todaysExercises.count) + " exercises for today")
+                if (self.todaysExercises.count == 0) {
+                    //there are no exercises for today
+                    print("moving to modify screen")
+                    let modifyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("modifyWorkouts") as? ModifyWorkoutsViewController
+                    self.navigationController?.pushViewController(modifyViewController!, animated: true)
+                }
                 print("reloading data")
                 self.tableView.reloadData()
             }
