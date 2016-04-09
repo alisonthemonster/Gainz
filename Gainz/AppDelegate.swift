@@ -12,7 +12,7 @@ import Parse
 import Bolts
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
 
@@ -43,6 +43,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
+        
+        return true
+    }
+    
+    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        NSLog("Switching")
+        if (viewController == tabBarController.viewControllers![1] && viewController == tabBarController.selectedViewController) {
+            return false
+        }
         return true
     }
 
