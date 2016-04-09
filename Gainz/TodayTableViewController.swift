@@ -201,9 +201,6 @@ class TodayTableViewController: UITableViewController {
         return cell
     }
     
-    
-    
-    //TODO update change the rating locally and not in parse until save button pressed
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(String(indexPath.row))
         let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! TodaysWorkoutExerciseCell
