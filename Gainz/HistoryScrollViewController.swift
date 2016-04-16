@@ -26,6 +26,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         workoutQuery.whereKey("saved", equalTo: true)
         workoutQuery.whereKey("user", equalTo: PFUser.currentUser()!)
         workoutQuery.orderByAscending("createdAt")
+        workoutQuery.skip = pastWorkouts.count
         workoutQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if (error != nil) {
                 print (error)
