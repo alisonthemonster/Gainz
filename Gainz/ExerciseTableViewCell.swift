@@ -15,6 +15,7 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var reps: UILabel!
     @IBOutlet weak var weight: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

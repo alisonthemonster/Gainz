@@ -25,7 +25,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         let workoutQuery = PFQuery(className: "Workout")
         workoutQuery.whereKey("saved", equalTo: true)
         workoutQuery.whereKey("user", equalTo: PFUser.currentUser()!)
-        workoutQuery.orderByDescending("createdAt")
+        workoutQuery.orderByAscending("createdAt")
         workoutQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if (error != nil) {
                 print (error)
@@ -51,49 +51,11 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         viewDidLoad()
         pageViews[index]?.reloadData()
     }
-/*
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.scrollView.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
-        self.scrollView.backgroundColor = UIColor.whiteColor()
-        self.scrollView.pagingEnabled = true
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.width * 2, self.scrollView.frame.height)
-        self.scrollView.delegate = self
-        self.scrollView.scrollsToTop = false
-//        
-//        tableViewLeft.dataSource = self
-//        tableViewLeft.delegate = self
-//        tableViewCenter.dataSource = self
-//        tableViewCenter.delegate = self
-        tableViewRight.dataSource = self
-        tableViewRight.delegate = self
-        
-        //Create a frame with size of the parent frame(fullscreen)
-        var firstFrame : CGRect = self.scrollView.frame;
-        
-        tableViewRight.frame = firstFrame
-        self.scrollView.addSubview(tableViewRight)
-        firstFrame.origin.x = tableViewRight.frame.size.width
-        var secondView : UIView = UIView(frame: firstFrame)
-        scrollView.addSubview(secondView)
-//        tableViewCenter.frame = firstFrame
-//        self.scrollView.addSubview(tableViewCenter)
-        //        self.scrollView.addSubview(tableViewLeft)
-        
-        self.pageControl.numberOfPages = 2
-        self.pageControl.currentPage = 1
-    }
-    
-
-
-    
-
-*/
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.automaticallyAdjustsScrollViewInsets = false
         self.scrollView.delegate = self
         self.scrollView.pagingEnabled = true
         
@@ -113,6 +75,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         let pagesScrollViewSize = scrollView.frame.size
         scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageCount),
             height: pagesScrollViewSize.height)
+        self.scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(pageCount-1), y: 0.0), animated: false)
         
         // Show something initially.
         loadVisiblePages()
