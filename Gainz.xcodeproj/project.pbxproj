@@ -25,6 +25,10 @@
 		853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */; };
 		853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */; };
 		857F7A901CB8967D001F964C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7A8F1CB8967D001F964C /* TabBarViewController.swift */; };
+		857F7A921CB8BD2A001F964C /* HistoryScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7A911CB8BD2A001F964C /* HistoryScrollViewController.swift */; };
+		857F7A981CBADF26001F964C /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7A971CBADF26001F964C /* Workout.swift */; };
+		857F7AA81CC17469001F964C /* ExerciseTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857F7AA71CC17469001F964C /* ExerciseTableCell.xib */; };
+		857F7AAA1CC1768D001F964C /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
 		B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FB1C7E704000D11A22 /* Assets.xcassets */; };
@@ -70,6 +74,10 @@
 		853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysWorkoutExerciseCell.swift; sourceTree = "<group>"; };
 		853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadViewDelegate.swift; sourceTree = "<group>"; };
 		857F7A8F1CB8967D001F964C /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		857F7A911CB8BD2A001F964C /* HistoryScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryScrollViewController.swift; sourceTree = "<group>"; };
+		857F7A971CBADF26001F964C /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		857F7AA71CC17469001F964C /* ExerciseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseTableCell.xib; sourceTree = "<group>"; };
+		857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20C67F11C7E704000D11A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B20C67F91C7E704000D11A22 /* Gainz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gainz.xcdatamodel; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		B20C67E51C7E704000D11A22 = {
 			isa = PBXGroup;
 			children = (
+				857F7AA71CC17469001F964C /* ExerciseTableCell.xib */,
 				B20C67F01C7E704000D11A22 /* Gainz */,
 				B20C67EF1C7E704000D11A22 /* Products */,
 				853323A01C97756D00C9EFB2 /* Frameworks */,
@@ -165,6 +174,8 @@
 			children = (
 				B2DFDFB61C9A3969006F5ED3 /* Images */,
 				B20C67F11C7E704000D11A22 /* AppDelegate.swift */,
+				857F7A911CB8BD2A001F964C /* HistoryScrollViewController.swift */,
+				857F7A971CBADF26001F964C /* Workout.swift */,
 				857F7A8F1CB8967D001F964C /* TabBarViewController.swift */,
 				B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */,
 				B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */,
@@ -179,6 +190,7 @@
 				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
 				B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */,
 				853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */,
+				857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */,
 			);
 			path = Gainz;
 			sourceTree = "<group>";
@@ -270,6 +282,7 @@
 				B254D16A1CAEEC4B00E8F89E /* red.png in Resources */,
 				853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */,
 				853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */,
+				857F7AA81CC17469001F964C /* ExerciseTableCell.xib in Resources */,
 				B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */,
 				B2DFDFD61CA1D892006F5ED3 /* barbell@2x.png in Resources */,
 				853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */,
@@ -293,11 +306,14 @@
 			files = (
 				B2DFDFF01CA2624A006F5ED3 /* TodayTableViewController.swift in Sources */,
 				B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */,
+				857F7A921CB8BD2A001F964C /* HistoryScrollViewController.swift in Sources */,
 				857F7A901CB8967D001F964C /* TabBarViewController.swift in Sources */,
 				853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */,
+				857F7AAA1CC1768D001F964C /* ExerciseTableViewCell.swift in Sources */,
 				853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */,
 				B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */,
 				853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */,
+				857F7A981CBADF26001F964C /* Workout.swift in Sources */,
 				B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */,
 				B2DFDFC81C9DE8CC006F5ED3 /* SettingsTableViewController.swift in Sources */,
 				B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */,

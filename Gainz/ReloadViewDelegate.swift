@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ReloadViewDelegate: class {
-    func dataDidChange()
+    func dataDidChange(index: Int)
 }

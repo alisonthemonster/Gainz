@@ -44,7 +44,7 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
         }
 
         if (completed) {
-            changedDataDelegate?.dataDidChange()
+            changedDataDelegate?.dataDidChange(0)
             self.navigationController?.popToRootViewControllerAnimated(true)
         }
     }
