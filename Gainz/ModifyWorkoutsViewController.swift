@@ -66,6 +66,7 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
         let cell = tableView.dequeueReusableCellWithIdentifier("modifyCell", forIndexPath: indexPath) as! ModifyWorkoutExerciseViewCell
         
         object?.pinInBackgroundWithName("localExercises")
@@ -75,6 +76,7 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
         setTextField(cell.weightField, key: "weight", object: object)
         cell.nameField.text = object?.objectForKey("name") as? String
         cell.exercise = object
+        cell.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
         
         return cell
     }

@@ -19,6 +19,10 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
+        self.tableView.rowHeight = 50.0
+        self.tableView.separatorColor = UIColor.clearColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,16 +43,19 @@ class SettingsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        var cell: UITableViewCell
+        
         if (indexPath.row == 0) { //CHANGE PASSWORD
-            let cell = tableView.dequeueReusableCellWithIdentifier("changePasswordCell", forIndexPath: indexPath)
-            return cell
+            cell = tableView.dequeueReusableCellWithIdentifier("changePasswordCell", forIndexPath: indexPath)
         } else if (indexPath.row == 1) { //LOG OUT
-            let cell = tableView.dequeueReusableCellWithIdentifier("logOutCell", forIndexPath: indexPath)
-            return cell
+            cell = tableView.dequeueReusableCellWithIdentifier("logOutCell", forIndexPath: indexPath)
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-            return cell
+            cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
         }
+        
+        cell.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
+        return cell
+        
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

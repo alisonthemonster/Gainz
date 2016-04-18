@@ -205,11 +205,11 @@ class TodayTableViewController: UITableViewController {
             } else if (rating==2) {
                 cell.checkMark.image = UIImage(named: "red")
             }
-            cell.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
+            cell.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
         } else {
             //dont show the checkmark
             cell.checkMark.image = UIImage()
-            cell.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
+            cell.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
         }
         
         return cell

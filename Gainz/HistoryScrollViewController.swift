@@ -14,6 +14,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    let pageOffset = 20
     
     var pastWorkouts: [Workout?] = []
     var pageViews: [UITableView?] = []  // Holds instances of UITableView to display each image.
@@ -88,9 +89,9 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         // Set the scroll view's content size.
         // Since we want horizontal scrolling it's a multiple of the scroll view width.
         let pagesScrollViewSize = scrollView.frame.size
-        scrollView.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageCount),
+        scrollView.contentSize = CGSize(width: (pagesScrollViewSize.width) * CGFloat(pageCount),
             height: pagesScrollViewSize.height)
-        self.scrollView.setContentOffset(CGPoint(x: pagesScrollViewSize.width * CGFloat(pageCount-1), y: 0.0), animated: false)
+        self.scrollView.setContentOffset(CGPoint(x: (pagesScrollViewSize.width) * CGFloat(pageCount-1), y: 0.0), animated: false)
         
         // Show something initially.
         loadVisiblePages()
@@ -110,11 +111,15 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
                 // Determine the origin to use; which will always be 0 for y, but for x it's
                 // the page (index) of the image * the width to scroll to that image horizontally.
                 var frame = scrollView.bounds
+                frame.size.width = frame.size.width
                 frame.origin.x = frame.size.width * CGFloat(page)
                 frame.origin.y = 0.0
                 
                 // Create a new image view and add.
                 let tableView = UITableView()
+                tableView.translatesAutoresizingMaskIntoConstraints = false
+                tableView.contentSize = CGSize(width: (frame.width - 40),
+                    height: frame.height)
                 tableView.dataSource = self
                 tableView.delegate = self
                 tableView.separatorColor = UIColor.clearColor()
@@ -150,7 +155,6 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         
         if page <= pastWorkouts.count - 1 && pastWorkouts.count > 0 {
             let date = pastWorkouts[page]?.workout.createdAt
-            print("Date" + String(date!))
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'"
             dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
@@ -218,6 +222,8 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
                     } else if (rating==2) {
                         cell.checkMark.image = UIImage(named: "red")
                     }
+                } else {
+                    cell.checkMark.image = UIImage()
                 }
                 cell.contentView.backgroundColor = UIColor.clearColor()
                 cell.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
