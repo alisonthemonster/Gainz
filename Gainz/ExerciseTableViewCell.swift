@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ExerciseTableViewCell: UITableViewCell {
 
@@ -14,17 +15,11 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var sets: UILabel!
     @IBOutlet weak var reps: UILabel!
     @IBOutlet weak var weight: UILabel!
+    @IBOutlet weak var checkMark: UIImageView!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    var exercise:PFObject?
+    var complete:Bool = false
+    var rating:Int = -1
+    var object:PFObject?
 
 }

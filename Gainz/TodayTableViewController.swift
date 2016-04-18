@@ -25,6 +25,27 @@ class TodayTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = PFUser.currentUser()!.username! + "'s Workout"
+        
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
+        self.tableView.rowHeight = 50.0
+        self.tableView.separatorColor = UIColor.clearColor()
+        let nib = UINib(nibName: "ExerciseTableCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "exerciseCell")
+    }
+    
+    @IBAction func doneButton(sender: AnyObject) {
+        self.alertController = UIAlertController(title: "All done?", message: "Are you sure you're finished? Once you press okay we'll generate your next workout for you and this workout can be found in your history. ", preferredStyle: UIAlertControllerStyle.Alert)
+        let done = UIAlertAction(title: "Done!", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+            print("Button One Pressed")
+            self.createNewWorkout()
+        })
+        let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
+            print("Cancel Button Pressed")
+        }
+        self.alertController!.addAction(done)
+        self.alertController!.addAction(buttonCancel)
+        
+        presentViewController(self.alertController!, animated: true, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -75,21 +96,6 @@ class TodayTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func doneBtn(sender: AnyObject) {
-        self.alertController = UIAlertController(title: "All done?", message: "Are you sure you're finished? Once you press okay we'll generate your next workout for you and this workout can be found in your history. ", preferredStyle: UIAlertControllerStyle.Alert)
-        let done = UIAlertAction(title: "Done!", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            print("Button One Pressed")
-            self.createNewWorkout()
-        })
-        let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
-            print("Cancel Button Pressed")
-        }
-        self.alertController!.addAction(done)
-        self.alertController!.addAction(buttonCancel)
-        
-        presentViewController(self.alertController!, animated: true, completion: nil)
-    }
     
     //builds the new workout based on the current workout and updates table
     func createNewWorkout() {
@@ -166,7 +172,7 @@ class TodayTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("todayCell", forIndexPath: indexPath) as! TodaysWorkoutExerciseCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("exerciseCell", forIndexPath: indexPath) as! ExerciseTableViewCell
         
         let object = self.todaysExercises[indexPath.row]
         cell.object = object
@@ -182,12 +188,14 @@ class TodayTableViewController: UITableViewController {
             cell.reps.text = ""
         }
         if let weight = (object.objectForKey("weight") as? Int) {
-            cell.weights.text = String(weight)
+            cell.weight.text = String(weight)
         } else {
-            cell.weights.text = ""
+            cell.weight.text = ""
         }
         cell.nameLabel.text = object.objectForKey("name") as? String
         cell.exercise = object
+        cell.contentView.backgroundColor = UIColor.clearColor()
+        
         
         if let rating = (object.objectForKey("rating") as? Int) {
             if (rating==0) {
@@ -197,18 +205,19 @@ class TodayTableViewController: UITableViewController {
             } else if (rating==2) {
                 cell.checkMark.image = UIImage(named: "red")
             }
+            cell.backgroundColor = UIColor(white: 1.0, alpha: 0.5)
         } else {
             //dont show the checkmark
             cell.checkMark.image = UIImage()
+            cell.backgroundColor = UIColor(white: 1.0, alpha: 0.6)
         }
-
         
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(String(indexPath.row))
-        let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! TodaysWorkoutExerciseCell
+        let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! ExerciseTableViewCell
         print("selected cell is: " + cell.nameLabel.text!)
         
         let exercise = self.todaysExercises[indexPath.row]

@@ -29,16 +29,17 @@
 		857F7A981CBADF26001F964C /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7A971CBADF26001F964C /* Workout.swift */; };
 		857F7AA81CC17469001F964C /* ExerciseTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857F7AA71CC17469001F964C /* ExerciseTableCell.xib */; };
 		857F7AAA1CC1768D001F964C /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */; };
+		857F7AAE1CC46D6A001F964C /* colorful_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 857F7AAD1CC46D6A001F964C /* colorful_background.jpg */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
 		B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FB1C7E704000D11A22 /* Assets.xcassets */; };
 		B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FD1C7E704000D11A22 /* LaunchScreen.storyboard */; };
-		B2577B601CB8A19C00B19606 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5D1CB8A19C00B19606 /* Bolts.framework */; };
-		B2577B611CB8A19C00B19606 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5E1CB8A19C00B19606 /* Parse.framework */; };
-		B2577B621CB8A19C00B19606 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5F1CB8A19C00B19606 /* ParseUI.framework */; };
 		B254D1691CAEEC4B00E8F89E /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1661CAEEC4B00E8F89E /* orange.png */; };
 		B254D16A1CAEEC4B00E8F89E /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1671CAEEC4B00E8F89E /* red.png */; };
 		B254D16B1CAEEC4B00E8F89E /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1681CAEEC4B00E8F89E /* green.png */; };
+		B2577B601CB8A19C00B19606 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5D1CB8A19C00B19606 /* Bolts.framework */; };
+		B2577B611CB8A19C00B19606 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5E1CB8A19C00B19606 /* Parse.framework */; };
+		B2577B621CB8A19C00B19606 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2577B5F1CB8A19C00B19606 /* ParseUI.framework */; };
 		B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */; };
 		B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */; };
 		B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */; };
@@ -78,18 +79,19 @@
 		857F7A971CBADF26001F964C /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		857F7AA71CC17469001F964C /* ExerciseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseTableCell.xib; sourceTree = "<group>"; };
 		857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		857F7AAD1CC46D6A001F964C /* colorful_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = colorful_background.jpg; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20C67F11C7E704000D11A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B20C67F91C7E704000D11A22 /* Gainz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gainz.xcdatamodel; sourceTree = "<group>"; };
 		B20C67FB1C7E704000D11A22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B20C67FE1C7E704000D11A22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B20C68001C7E704000D11A22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2577B5D1CB8A19C00B19606 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		B2577B5E1CB8A19C00B19606 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		B2577B5F1CB8A19C00B19606 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B254D1661CAEEC4B00E8F89E /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
 		B254D1671CAEEC4B00E8F89E /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		B254D1681CAEEC4B00E8F89E /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		B2577B5D1CB8A19C00B19606 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B2577B5E1CB8A19C00B19606 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B2577B5F1CB8A19C00B19606 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutsViewController.swift; sourceTree = "<group>"; };
 		B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		B2DFDFAC1C9A28AD006F5ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		B2DFDFB61C9A3969006F5ED3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				857F7AAD1CC46D6A001F964C /* colorful_background.jpg */,
 				B254D1661CAEEC4B00E8F89E /* orange.png */,
 				B254D1671CAEEC4B00E8F89E /* red.png */,
 				B254D1681CAEEC4B00E8F89E /* green.png */,
@@ -286,6 +289,7 @@
 				B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */,
 				B2DFDFD61CA1D892006F5ED3 /* barbell@2x.png in Resources */,
 				853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */,
+				857F7AAE1CC46D6A001F964C /* colorful_background.jpg in Resources */,
 				B254D1691CAEEC4B00E8F89E /* orange.png in Resources */,
 				B2DFDFD21CA1D60E006F5ED3 /* today@2x.png in Resources */,
 				B2DFDFDA1CA1D8F0006F5ED3 /* prev@2x.png in Resources */,

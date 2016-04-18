@@ -121,6 +121,7 @@
             <objects>
                 <navigationController storyboardIdentifier="navWorkout" id="BYX-U2-XuY" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Today" image="today.png" id="bOU-Xv-Ggz"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0V2-L3-3xB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -137,82 +138,10 @@
         <scene sceneID="drG-E6-eMI">
             <objects>
                 <tableViewController restorationIdentifier="todayWorkoutRestore" storyboardIdentifier="todayWorkout" id="2X8-zP-GBv" customClass="TodayTableViewController" customModule="Gainz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" id="wUk-9p-CiY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" id="wUk-9p-CiY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="61r-ra-FzN">
-                            <rect key="frame" x="0.0" y="141" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Done"/>
-                            <connections>
-                                <action selector="doneBtn:" destination="2X8-zP-GBv" eventType="touchUpInside" id="smd-lJ-jX3"/>
-                            </connections>
-                        </button>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="todayCell" rowHeight="49" id="CYF-kt-qki" customClass="TodaysWorkoutExerciseCell" customModule="Gainz" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="414" height="49"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CYF-kt-qki" id="xbr-1D-5KX">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="48.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytO-OP-x4B">
-                                            <rect key="frame" x="200" y="22" width="56" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USX-VB-iIb">
-                                            <rect key="frame" x="256" y="22" width="57" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deM-Bo-chb">
-                                            <rect key="frame" x="200" y="2" width="56" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TI4-c3-g9J">
-                                            <rect key="frame" x="256" y="2" width="56" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PP4-Wi-bDn">
-                                            <rect key="frame" x="313" y="2" width="56" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgf-Vl-QmZ">
-                                            <rect key="frame" x="313" y="22" width="56" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBp-r6-AeZ">
-                                            <rect key="frame" x="376" y="5" width="29" height="29"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmu-da-HrL">
-                                            <rect key="frame" x="19" y="-3" width="170" height="54"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="checkMark" destination="cBp-r6-AeZ" id="cEN-eE-C6N"/>
-                                    <outlet property="nameLabel" destination="gmu-da-HrL" id="kdo-sV-fOr"/>
-                                    <outlet property="reps" destination="TI4-c3-g9J" id="o70-P2-Fbr"/>
-                                    <outlet property="sets" destination="deM-Bo-chb" id="0vX-JO-hMs"/>
-                                    <outlet property="weights" destination="PP4-Wi-bDn" id="y0b-Lv-q5Q"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="2X8-zP-GBv" id="2yH-He-yz2"/>
                             <outlet property="delegate" destination="2X8-zP-GBv" id="R6j-vG-9bm"/>
@@ -223,13 +152,18 @@
                         <barButtonItem enabled="NO" style="plain" id="D01-0F-rYE"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Today's Workout" id="FbF-zv-EFX">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="ndm-sY-g6W"/>
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="5Gy-ER-e11">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="5Gy-ER-e11">
                             <connections>
                                 <segue destination="omF-wQ-1XX" kind="push" identifier="editSegue" id="Qtn-f2-PzB"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="ThO-vP-GXu">
+                            <connections>
+                                <action selector="doneButton:" destination="2X8-zP-GBv" id="8tJ-xr-h4f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
@@ -266,19 +200,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="KF4-GA-oWc">
+                            <pageControl opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="KF4-GA-oWc">
                                 <rect key="frame" x="187" y="350" width="39" height="37"/>
                             </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="f0h-8v-QxX">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-T0-aUR">
+                                <rect key="frame" x="-1" y="72" width="415" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="f0h-8v-QxX">
+                                <rect key="frame" x="-1" y="94" width="414" height="248"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f0h-8v-QxX" firstAttribute="top" secondItem="Yte-T0-aUR" secondAttribute="bottom" constant="8" symbolic="YES" id="7T6-Ek-UKa"/>
+                            <constraint firstItem="Yte-T0-aUR" firstAttribute="top" secondItem="Xh6-eM-SRg" secondAttribute="bottom" constant="8" symbolic="YES" id="J03-pY-qon"/>
+                            <constraint firstItem="Yte-T0-aUR" firstAttribute="leading" secondItem="uPd-d7-hIy" secondAttribute="leading" constant="1" id="NVy-RN-4gj"/>
+                            <constraint firstAttribute="trailing" secondItem="Yte-T0-aUR" secondAttribute="trailing" id="g1n-oV-8r0"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="prev.png" id="tdW-IA-MwY"/>
                     <navigationItem key="navigationItem" title="Workout History" id="gtm-sE-gK0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="dateLabel" destination="Yte-T0-aUR" id="KBO-2H-Kar"/>
                         <outlet property="pageControl" destination="KF4-GA-oWc" id="NnQ-xB-skG"/>
                         <outlet property="scrollView" destination="f0h-8v-QxX" id="BwM-ml-OpS"/>
                     </connections>

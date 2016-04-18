@@ -11,6 +11,7 @@ import Parse
 
 class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, ReloadViewDelegate {
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
@@ -25,6 +26,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         let workoutQuery = PFQuery(className: "Workout")
         workoutQuery.whereKey("saved", equalTo: true)
         workoutQuery.whereKey("user", equalTo: PFUser.currentUser()!)
+        workoutQuery.includeKey("createdAt")
         workoutQuery.orderByAscending("createdAt")
         workoutQuery.skip = pastWorkouts.count
         workoutQuery.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
@@ -55,6 +57,18 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backgroundImage = UIImage(named: "colorful_background.jpg")
+        var imageView: UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode = .ScaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = backgroundImage
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+        
+        self.dateLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.scrollView.delegate = self
@@ -103,12 +117,14 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
                 let tableView = UITableView()
                 tableView.dataSource = self
                 tableView.delegate = self
+                tableView.separatorColor = UIColor.clearColor()
+                tableView.rowHeight = 50.0
                 let nib = UINib(nibName: "ExerciseTableCell", bundle: nil)
                 tableView.registerNib(nib, forCellReuseIdentifier: "exerciseCell")
-                tableView.contentMode = .ScaleAspectFit
                 tableView.frame = frame
                 tableView.tag = page
                 scrollView.addSubview(tableView)
+                tableView.backgroundColor = UIColor.clearColor()
                 
                 // Load it into the array.
                 pageViews[page] = tableView
@@ -131,6 +147,16 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         // Note: 'floor' rounds a decimal to the lowest integer.
         let pageWidth = scrollView.frame.size.width
         let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
+        
+        if page <= pastWorkouts.count - 1 && pastWorkouts.count > 0 {
+            let date = pastWorkouts[page]?.workout.createdAt
+            print("Date" + String(date!))
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'"
+            dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
+            self.dateLabel.text = dateFormatter.stringFromDate(date! as NSDate)
+        }
+        
         
         // Update the page control.
         pageControl.currentPage = page
@@ -184,6 +210,18 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
                 setTextField(cell.sets, key: "sets", object: exercise)
                 setTextField(cell.reps, key: "reps", object: exercise)
                 setTextField(cell.weight, key: "weight", object: exercise)
+                if let rating = (exercise.objectForKey("rating") as? Int) {
+                    if (rating==0) {
+                        cell.checkMark.image = UIImage(named: "green")
+                    } else if (rating==1) {
+                        cell.checkMark.image = UIImage(named: "orange")
+                    } else if (rating==2) {
+                        cell.checkMark.image = UIImage(named: "red")
+                    }
+                }
+                cell.contentView.backgroundColor = UIColor.clearColor()
+                cell.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
+                
             }
         }
         print ("CellforRow")
