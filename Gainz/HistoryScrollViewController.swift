@@ -13,12 +13,12 @@ import SwiftCharts
 
 class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, ReloadViewDelegate {
     
+    @IBOutlet weak var chartView: UIScrollView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var chartView: UIView!
     
-    private var chart: Chart?
+    private var theChart: Chart? //arc
     
     let pageOffset = 20
     
@@ -170,17 +170,17 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
                 scrollView.contentSize = CGSizeMake(chartFrame.size.width, scrollViewFrame.size.height)
                 //        self.automaticallyAdjustsScrollViewInsets = false // nested view controller - this is in parent
                 
-                let chart = Chart(
+                self.theChart = Chart(
                     frame: chartFrame,
                     layers: [
                         xAxis,
                         yAxis,
-                        guidelinesLayer,
+                        //guidelinesLayer,
                         chartPointsLineLayer
                     ]
                 )
                 
-                scrollView.addSubview(chart.view)
+                scrollView.addSubview(self.theChart!.view)
                 self.chartView.addSubview(scrollView)
                 
             }
