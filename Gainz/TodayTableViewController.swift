@@ -108,6 +108,9 @@ class TodayTableViewController: UITableViewController {
         newWorkout["saved"] = false
         newWorkout["user"] = PFUser.currentUser()
         
+        var totalWeight = 0
+        var totalReps = 0
+        
         var newExercises = [PFObject]()
         //build each new exercise based of off the last ones
         for exercise in self.todaysExercises {
@@ -116,10 +119,14 @@ class TodayTableViewController: UITableViewController {
             let reps = (exercise.objectForKey("reps") as? Int)
             let weight = (exercise.objectForKey("weight") as? Int)
             let sets = (exercise.objectForKey("sets") as? Int)
+            
+
             if (rating == 0) { //if last workout was too easy
                 newExercise["reps"] = reps! + 5
                 newExercise["weight"] = weight! + 5
                 newExercise["sets"] = sets! + 5
+                totalWeight += weight!*reps!
+                totalReps += sets!*reps!
             } else if (rating == 2) { //if last workout was too hard
                 newExercise["reps"] = reps! - 5
                 newExercise["weight"] = weight! - 5
@@ -133,7 +140,15 @@ class TodayTableViewController: UITableViewController {
                 if (weight! - 5 < 0) {
                     newExercise["weight"] = 0
                 }
-            } else { //if last workout wasn't rated or was juuust right
+                totalWeight += weight!*reps!
+                totalReps += sets!*reps!
+            } else if (rating == 1) { //if last workout was juuust right
+                newExercise["reps"] = reps!
+                newExercise["weight"] = weight!
+                newExercise["sets"] = sets!
+                totalWeight += weight!*reps!
+                totalReps += sets!*reps!
+            } else {
                 newExercise["reps"] = reps!
                 newExercise["weight"] = weight!
                 newExercise["sets"] = sets!
@@ -142,6 +157,25 @@ class TodayTableViewController: UITableViewController {
             newExercise["workout"] = newWorkout
             newExercise.saveInBackground()
             newExercises.append(newExercise)
+        }
+        
+        //udpate the user object with the new total weights and sets
+        let query : PFQuery = PFUser.query()!
+        print("BEFORE QUERYYYYYYYYYYYYYYYYYYYY")
+        query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {
+            (object, error) -> Void in
+            if error != nil {
+                print(error)
+            } else {
+                if let object = object {
+                    print("updating user")
+                    let prevWeightTotal = object.objectForKey("totalWeight") as? Int
+                    object["totalWeight"] = prevWeightTotal! + totalWeight
+                    let prevRepsTotal = object.objectForKey("totalReps") as? Int
+                    object["totalReps"] = prevRepsTotal! + totalReps
+                    object.saveInBackground()
+                }
+            }
         }
         
         //buid the exercises based on the current exercises ratings

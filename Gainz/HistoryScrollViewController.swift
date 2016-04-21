@@ -25,6 +25,17 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         queryPastWorkouts()
     }
     
+    //for each user keep track of
+        //total weight ever listed (when they click done add the rated exercises weights
+        //total number of reps (sets * reps for rated exercises)
+    
+    //possible badges
+        //weight based badges
+        //rep based badges
+        //five easy in a row
+        //worked out five days in a row
+        
+    
     func queryPastWorkouts () {
         let workoutQuery = PFQuery(className: "Workout")
         workoutQuery.whereKey("saved", equalTo: true)

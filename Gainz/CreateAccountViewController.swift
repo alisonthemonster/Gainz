@@ -97,6 +97,8 @@ class CreateAccountViewController: UIViewController {
                         
                         let workout = PFObject(className: "Workout")
                         workout["saved"] = false
+                        workout["totalWeight"] = 0
+                        workout["totalReps"] = 0
                         workout["user"] = user
                         workout.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
                             if (success) {
