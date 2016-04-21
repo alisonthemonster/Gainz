@@ -7,22 +7,40 @@
 //
 
 import UIKit
+import Parse
 
 class CollectionViewController: UICollectionViewController {
 
     private let reuseIdentifier = "badge"
     private let sectionInsets = UIEdgeInsets(top: 25.0, left: 10.0, bottom: 25.0, right: 10.0)
     
-    private var badgeValues:[Bool] = [Bool]()
+    private var badgeValues:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     private var badges:Badges = Badges()
+    
+    override func viewWillAppear(animated: Bool) {
+        //get the badge values
+        let query : PFQuery = PFUser.query()!
+        query.whereKey("username", equalTo: (PFUser.currentUser()?.username)!)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                // The find succeeded.
+                if let objects = objects {
+                    let user = objects[0]
+                    self.badgeValues = user["badges"] as! [Bool]
+                    self.collectionView?.reloadData()
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = UIColor(hue: 0.1333, saturation: 0, brightness: 1, alpha: 0.25)
-        //TODO fetch badge values
-            //make sure to set all users values to all false
-        //14 long
-        badgeValues = [true, false, true, true, true, false, false, false,false,false,false,false,false,false]
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,6 +68,7 @@ class CollectionViewController: UICollectionViewController {
         // Get the image for this cell
         let picture:Picture = self.badges.getPicture(index: index)
         //if unachieved
+        print(index)
         if (!badgeValues[index]) {
             cell.image.image = picture.getGreyImage()
         } else {

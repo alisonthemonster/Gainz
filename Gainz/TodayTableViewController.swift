@@ -161,7 +161,6 @@ class TodayTableViewController: UITableViewController {
         
         //udpate the user object with the new total weights and sets
         let query : PFQuery = PFUser.query()!
-        print("BEFORE QUERYYYYYYYYYYYYYYYYYYYY")
         query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {
             (object, error) -> Void in
             if error != nil {

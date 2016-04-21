@@ -77,6 +77,9 @@ class CreateAccountViewController: UIViewController {
             let user = PFUser()
             user.username = username
             user.password = password1
+            user["totalWeight"] = 0
+            user["totalReps"] = 0
+            user["badges"] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
             user.signUpInBackgroundWithBlock {
                 (succeeded: Bool, error: NSError?) -> Void in
                 if let error = error {
