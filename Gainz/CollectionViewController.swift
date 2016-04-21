@@ -18,7 +18,7 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.collectionView?.backgroundColor = UIColor(hue: 0.1333, saturation: 0, brightness: 1, alpha: 0.25)
         //TODO fetch badge values
             //make sure to set all users values to all false
         //14 long
@@ -55,28 +55,29 @@ class CollectionViewController: UICollectionViewController {
         } else {
             cell.image.image = picture.getImage()
         }
-        cell.image.contentMode = UIViewContentMode.ScaleAspectFill
+        cell.image.image! = imageResize(cell.image.image!, sizeChange: CGSize(width: 130, height: 130))
+
         return cell
+    }
+    
+    func imageResize(imageObj:UIImage, sizeChange:CGSize)-> UIImage {
+                let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, false, scale)
+        imageObj.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext() // !!!
+        return scaledImage
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
     
-    // Responsible for telling the layout the size of a given cell
     func collectionView(collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            
-            let indexRow:Int = indexPath.row
-            let image:UIImage = self.badges.getPicture(index:indexRow).getImage()!
-            
-            var size = image.size
-            
-            // Make the image sizes small enough.
-            // The images are 500-something x 300-something - we need them smaller.
-            size.width *= 0.35
-            size.height *= 0.35
-            
-            return size
+            let size = 120
+            return CGSizeMake(CGFloat(size), CGFloat(size))
     }
     
     // Returns the spacing between the cells, headers, and footers
