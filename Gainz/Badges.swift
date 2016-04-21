@@ -32,7 +32,7 @@ class Badges: NSObject {
         super.init()
         list.append(Picture(id:"50reps", image:UIImage(named:"fiftyreps.png")!))
         list.append(Picture(id:"100reps", image:UIImage(named:"hundredreps.png")!))
-        list.append(Picture(id:"500reps", image:UIImage(named:"fiftyreps.png")!))
+        list.append(Picture(id:"500reps", image:UIImage(named:"fivehundredreps.png")!))
         list.append(Picture(id:"lion", image:UIImage(named:"lion.png")!))
         list.append(Picture(id:"elephant", image:UIImage(named:"elephant.png")!))
         list.append(Picture(id:"dino", image:UIImage(named:"dino.png")!))
