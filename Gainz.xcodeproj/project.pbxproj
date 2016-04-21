@@ -30,6 +30,24 @@
 		857F7AA81CC17469001F964C /* ExerciseTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 857F7AA71CC17469001F964C /* ExerciseTableCell.xib */; };
 		857F7AAA1CC1768D001F964C /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */; };
 		857F7AAE1CC46D6A001F964C /* colorful_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 857F7AAD1CC46D6A001F964C /* colorful_background.jpg */; };
+		B206217D1CC93E6600AAAD1E /* tenexercises.png in Resources */ = {isa = PBXBuildFile; fileRef = B20621721CC93E6600AAAD1E /* tenexercises.png */; };
+		B206217E1CC93E6600AAAD1E /* hundredexercises.png in Resources */ = {isa = PBXBuildFile; fileRef = B20621731CC93E6600AAAD1E /* hundredexercises.png */; };
+		B206217F1CC93E6600AAAD1E /* fiftyexercises.png in Resources */ = {isa = PBXBuildFile; fileRef = B20621741CC93E6600AAAD1E /* fiftyexercises.png */; };
+		B20621801CC93E6600AAAD1E /* twentyfiveexercises.png in Resources */ = {isa = PBXBuildFile; fileRef = B20621751CC93E6600AAAD1E /* twentyfiveexercises.png */; };
+		B20621811CC93E6600AAAD1E /* lion.png in Resources */ = {isa = PBXBuildFile; fileRef = B20621761CC93E6600AAAD1E /* lion.png */; };
+		B20621821CC93E6600AAAD1E /* whale.png in Resources */ = {isa = PBXBuildFile; fileRef = B20621771CC93E6600AAAD1E /* whale.png */; };
+		B20621831CC93E6600AAAD1E /* dino.png in Resources */ = {isa = PBXBuildFile; fileRef = B20621781CC93E6600AAAD1E /* dino.png */; };
+		B20621841CC93E6600AAAD1E /* elephant.png in Resources */ = {isa = PBXBuildFile; fileRef = B20621791CC93E6600AAAD1E /* elephant.png */; };
+		B20621851CC93E6600AAAD1E /* onemonth.png in Resources */ = {isa = PBXBuildFile; fileRef = B206217A1CC93E6600AAAD1E /* onemonth.png */; };
+		B20621861CC93E6600AAAD1E /* tendays.png in Resources */ = {isa = PBXBuildFile; fileRef = B206217B1CC93E6600AAAD1E /* tendays.png */; };
+		B20621871CC93E6600AAAD1E /* fivedays.png in Resources */ = {isa = PBXBuildFile; fileRef = B206217C1CC93E6600AAAD1E /* fivedays.png */; };
+		B20621891CC9440300AAAD1E /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20621881CC9440300AAAD1E /* CollectionViewController.swift */; };
+		B206218B1CC9444600AAAD1E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B206218A1CC9444600AAAD1E /* CollectionViewCell.swift */; };
+		B206218F1CC94CCA00AAAD1E /* fiftyreps.png in Resources */ = {isa = PBXBuildFile; fileRef = B206218C1CC94CCA00AAAD1E /* fiftyreps.png */; };
+		B20621901CC94CCA00AAAD1E /* fivehundredreps.png in Resources */ = {isa = PBXBuildFile; fileRef = B206218D1CC94CCA00AAAD1E /* fivehundredreps.png */; };
+		B20621911CC94CCA00AAAD1E /* hundredreps.png in Resources */ = {isa = PBXBuildFile; fileRef = B206218E1CC94CCA00AAAD1E /* hundredreps.png */; };
+		B20621931CC94DBE00AAAD1E /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20621921CC94DBE00AAAD1E /* Picture.swift */; };
+		B20621951CC94E2800AAAD1E /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20621941CC94E2800AAAD1E /* Badges.swift */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
 		B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FB1C7E704000D11A22 /* Assets.xcassets */; };
@@ -80,6 +98,24 @@
 		857F7AA71CC17469001F964C /* ExerciseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseTableCell.xib; sourceTree = "<group>"; };
 		857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		857F7AAD1CC46D6A001F964C /* colorful_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = colorful_background.jpg; sourceTree = "<group>"; };
+		B20621721CC93E6600AAAD1E /* tenexercises.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tenexercises.png; sourceTree = "<group>"; };
+		B20621731CC93E6600AAAD1E /* hundredexercises.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hundredexercises.png; sourceTree = "<group>"; };
+		B20621741CC93E6600AAAD1E /* fiftyexercises.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fiftyexercises.png; sourceTree = "<group>"; };
+		B20621751CC93E6600AAAD1E /* twentyfiveexercises.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twentyfiveexercises.png; sourceTree = "<group>"; };
+		B20621761CC93E6600AAAD1E /* lion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lion.png; sourceTree = "<group>"; };
+		B20621771CC93E6600AAAD1E /* whale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whale.png; sourceTree = "<group>"; };
+		B20621781CC93E6600AAAD1E /* dino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dino.png; sourceTree = "<group>"; };
+		B20621791CC93E6600AAAD1E /* elephant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant.png; sourceTree = "<group>"; };
+		B206217A1CC93E6600AAAD1E /* onemonth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onemonth.png; sourceTree = "<group>"; };
+		B206217B1CC93E6600AAAD1E /* tendays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tendays.png; sourceTree = "<group>"; };
+		B206217C1CC93E6600AAAD1E /* fivedays.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fivedays.png; sourceTree = "<group>"; };
+		B20621881CC9440300AAAD1E /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		B206218A1CC9444600AAAD1E /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B206218C1CC94CCA00AAAD1E /* fiftyreps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fiftyreps.png; sourceTree = "<group>"; };
+		B206218D1CC94CCA00AAAD1E /* fivehundredreps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fivehundredreps.png; sourceTree = "<group>"; };
+		B206218E1CC94CCA00AAAD1E /* hundredreps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hundredreps.png; sourceTree = "<group>"; };
+		B20621921CC94DBE00AAAD1E /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		B20621941CC94E2800AAAD1E /* Badges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20C67F11C7E704000D11A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B20C67F91C7E704000D11A22 /* Gainz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gainz.xcdatamodel; sourceTree = "<group>"; };
@@ -153,6 +189,27 @@
 			path = Gainz;
 			sourceTree = "<group>";
 		};
+		B20621711CC93E5800AAAD1E /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				B206218C1CC94CCA00AAAD1E /* fiftyreps.png */,
+				B206218D1CC94CCA00AAAD1E /* fivehundredreps.png */,
+				B206218E1CC94CCA00AAAD1E /* hundredreps.png */,
+				B20621721CC93E6600AAAD1E /* tenexercises.png */,
+				B20621731CC93E6600AAAD1E /* hundredexercises.png */,
+				B20621741CC93E6600AAAD1E /* fiftyexercises.png */,
+				B20621751CC93E6600AAAD1E /* twentyfiveexercises.png */,
+				B20621761CC93E6600AAAD1E /* lion.png */,
+				B20621771CC93E6600AAAD1E /* whale.png */,
+				B20621781CC93E6600AAAD1E /* dino.png */,
+				B20621791CC93E6600AAAD1E /* elephant.png */,
+				B206217A1CC93E6600AAAD1E /* onemonth.png */,
+				B206217B1CC93E6600AAAD1E /* tendays.png */,
+				B206217C1CC93E6600AAAD1E /* fivedays.png */,
+			);
+			name = Badges;
+			sourceTree = "<group>";
+		};
 		B20C67E51C7E704000D11A22 = {
 			isa = PBXGroup;
 			children = (
@@ -174,12 +231,13 @@
 		B20C67F01C7E704000D11A22 /* Gainz */ = {
 			isa = PBXGroup;
 			children = (
+				B20621711CC93E5800AAAD1E /* Badges */,
 				B2DFDFB61C9A3969006F5ED3 /* Images */,
 				B20C67F11C7E704000D11A22 /* AppDelegate.swift */,
+				B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */,
 				857F7A911CB8BD2A001F964C /* HistoryScrollViewController.swift */,
 				857F7A971CBADF26001F964C /* Workout.swift */,
 				857F7A8F1CB8967D001F964C /* TabBarViewController.swift */,
-				B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */,
 				B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */,
 				853323B91C97778800C9EFB2 /* LoginViewController.swift */,
 				B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */,
@@ -193,6 +251,10 @@
 				B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */,
 				853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */,
 				857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */,
+				B20621881CC9440300AAAD1E /* CollectionViewController.swift */,
+				B206218A1CC9444600AAAD1E /* CollectionViewCell.swift */,
+				B20621921CC94DBE00AAAD1E /* Picture.swift */,
+				B20621941CC94E2800AAAD1E /* Badges.swift */,
 			);
 			path = Gainz;
 			sourceTree = "<group>";
@@ -279,22 +341,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2DFDFE21CA1DA40006F5ED3 /* settings@2x.png in Resources */,
+				B20621811CC93E6600AAAD1E /* lion.png in Resources */,
+				B20621831CC93E6600AAAD1E /* dino.png in Resources */,
 				B2DFDFD81CA1D8B2006F5ED3 /* barbell.png in Resources */,
 				B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */,
 				B2DFDFE41CA1DA5D006F5ED3 /* settings.png in Resources */,
 				B254D16A1CAEEC4B00E8F89E /* red.png in Resources */,
+				B20621901CC94CCA00AAAD1E /* fivehundredreps.png in Resources */,
+				B206217D1CC93E6600AAAD1E /* tenexercises.png in Resources */,
 				853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */,
 				853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */,
 				857F7AA81CC17469001F964C /* ExerciseTableCell.xib in Resources */,
 				B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */,
+				B20621861CC93E6600AAAD1E /* tendays.png in Resources */,
+				B20621841CC93E6600AAAD1E /* elephant.png in Resources */,
+				B20621801CC93E6600AAAD1E /* twentyfiveexercises.png in Resources */,
+				B206217F1CC93E6600AAAD1E /* fiftyexercises.png in Resources */,
 				B2DFDFD61CA1D892006F5ED3 /* barbell@2x.png in Resources */,
 				853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */,
 				857F7AAE1CC46D6A001F964C /* colorful_background.jpg in Resources */,
 				B254D1691CAEEC4B00E8F89E /* orange.png in Resources */,
+				B20621871CC93E6600AAAD1E /* fivedays.png in Resources */,
 				B2DFDFD21CA1D60E006F5ED3 /* today@2x.png in Resources */,
 				B2DFDFDA1CA1D8F0006F5ED3 /* prev@2x.png in Resources */,
+				B20621911CC94CCA00AAAD1E /* hundredreps.png in Resources */,
+				B20621821CC93E6600AAAD1E /* whale.png in Resources */,
+				B206217E1CC93E6600AAAD1E /* hundredexercises.png in Resources */,
 				B20C67FF1C7E704000D11A22 /* LaunchScreen.storyboard in Resources */,
+				B20621851CC93E6600AAAD1E /* onemonth.png in Resources */,
 				B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */,
+				B206218F1CC94CCA00AAAD1E /* fiftyreps.png in Resources */,
 				B2DFDFDC1CA1D909006F5ED3 /* prev.png in Resources */,
 				B2DFDFD41CA1D6C4006F5ED3 /* today.png in Resources */,
 				B254D16B1CAEEC4B00E8F89E /* green.png in Resources */,
@@ -317,9 +393,13 @@
 				853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */,
 				B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */,
 				853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */,
+				B20621891CC9440300AAAD1E /* CollectionViewController.swift in Sources */,
+				B206218B1CC9444600AAAD1E /* CollectionViewCell.swift in Sources */,
+				B20621931CC94DBE00AAAD1E /* Picture.swift in Sources */,
 				857F7A981CBADF26001F964C /* Workout.swift in Sources */,
 				B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */,
 				B2DFDFC81C9DE8CC006F5ED3 /* SettingsTableViewController.swift in Sources */,
+				B20621951CC94E2800AAAD1E /* Badges.swift in Sources */,
 				B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */,
 				853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */,
 			);

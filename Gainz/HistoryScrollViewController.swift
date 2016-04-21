@@ -33,7 +33,8 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         //weight based badges
         //rep based badges
         //five easy in a row
-        //worked out five days in a row
+        //worked out 5/10/31 days in a row
+        //finished 50/100/200 exercises
         
     
     func queryPastWorkouts () {
