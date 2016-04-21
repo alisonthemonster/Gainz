@@ -20,6 +20,7 @@ class Workout {
         self.delegate = delegate
         let query = PFQuery(className: "Exercise")
         query.whereKey("workout", equalTo: workout)
+        query.whereKey("rating", notEqualTo: NSNull())
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if (error != nil) {
                 print (error)

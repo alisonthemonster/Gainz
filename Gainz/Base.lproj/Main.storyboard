@@ -208,9 +208,6 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="f0h-8v-QxX">
                                 <rect key="frame" x="0.0" y="94" width="414" height="248"/>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eod-Ao-XAj">
-                                <rect key="frame" x="-1" y="363" width="415" height="324"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -226,7 +223,6 @@
                     <navigationItem key="navigationItem" title="Workout History" id="gtm-sE-gK0"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="chartView" destination="Eod-Ao-XAj" id="ntF-Fv-XaT"/>
                         <outlet property="dateLabel" destination="Yte-T0-aUR" id="KBO-2H-Kar"/>
                         <outlet property="pageControl" destination="KF4-GA-oWc" id="NnQ-xB-skG"/>
                         <outlet property="scrollView" destination="f0h-8v-QxX" id="BwM-ml-OpS"/>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25ADA239CAD31C0CFE3CB590 /* Pods_Gainz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8004CB5214AF25CFF2F03037 /* Pods_Gainz.framework */; };
 		853323A61C97760700C9EFB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323A51C97760700C9EFB2 /* AudioToolbox.framework */; };
 		853323A81C97760F00C9EFB2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323A71C97760F00C9EFB2 /* CFNetwork.framework */; };
 		853323AA1C97761900C9EFB2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323A91C97761900C9EFB2 /* CoreGraphics.framework */; };
@@ -38,12 +37,9 @@
 		B254D1691CAEEC4B00E8F89E /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1661CAEEC4B00E8F89E /* orange.png */; };
 		B254D16A1CAEEC4B00E8F89E /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1671CAEEC4B00E8F89E /* red.png */; };
 		B254D16B1CAEEC4B00E8F89E /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = B254D1681CAEEC4B00E8F89E /* green.png */; };
-		B267CB661CC7FCC600C70E24 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B267CB631CC7FCC600C70E24 /* Bolts.framework */; };
-		B267CB671CC7FCC600C70E24 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B267CB641CC7FCC600C70E24 /* Parse.framework */; };
-		B267CB681CC7FCC600C70E24 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B267CB651CC7FCC600C70E24 /* ParseUI.framework */; };
-		B267CB6C1CC8001800C70E24 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B267CB6B1CC8001800C70E24 /* SwiftCharts.framework */; };
-		B267CB6E1CC8079400C70E24 /* ChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267CB6D1CC8079400C70E24 /* ChartController.swift */; };
-		B267CB701CC808B900C70E24 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267CB6F1CC808B900C70E24 /* Defaults.swift */; };
+		B267CB741CC85B4000C70E24 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B267CB711CC85B4000C70E24 /* Bolts.framework */; };
+		B267CB751CC85B4000C70E24 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B267CB721CC85B4000C70E24 /* Parse.framework */; };
+		B267CB761CC85B4000C70E24 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B267CB731CC85B4000C70E24 /* ParseUI.framework */; };
 		B2DFDFA61C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */; };
 		B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */; };
 		B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */; };
@@ -61,8 +57,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		721CC2B17AC53F92CCBAC11A /* Pods-Gainz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gainz.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gainz/Pods-Gainz.release.xcconfig"; sourceTree = "<group>"; };
-		8004CB5214AF25CFF2F03037 /* Pods_Gainz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gainz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853323A51C97760700C9EFB2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		853323A71C97760F00C9EFB2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		853323A91C97761900C9EFB2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,12 +89,9 @@
 		B254D1661CAEEC4B00E8F89E /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
 		B254D1671CAEEC4B00E8F89E /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		B254D1681CAEEC4B00E8F89E /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
-		B267CB631CC7FCC600C70E24 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		B267CB641CC7FCC600C70E24 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		B267CB651CC7FCC600C70E24 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		B267CB6B1CC8001800C70E24 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = "Pods/../build/Debug-iphoneos/SwiftCharts.framework"; sourceTree = SOURCE_ROOT; };
-		B267CB6D1CC8079400C70E24 /* ChartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartController.swift; sourceTree = "<group>"; };
-		B267CB6F1CC808B900C70E24 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		B267CB711CC85B4000C70E24 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		B267CB721CC85B4000C70E24 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B267CB731CC85B4000C70E24 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutsViewController.swift; sourceTree = "<group>"; };
 		B2DFDFA71C99EFF4006F5ED3 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		B2DFDFAC1C9A28AD006F5ED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,7 +106,6 @@
 		B2DFDFE11CA1DA40006F5ED3 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		B2DFDFE31CA1DA5D006F5ED3 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
-		D93546354B107EACEBD983C3 /* Pods-Gainz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gainz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gainz/Pods-Gainz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B267CB6C1CC8001800C70E24 /* SwiftCharts.framework in Frameworks */,
 				853323B81C97765B00C9EFB2 /* libsqlite3.tbd in Frameworks */,
 				853323B61C97765200C9EFB2 /* libz.tbd in Frameworks */,
 				853323B41C97764500C9EFB2 /* SystemConfiguration.framework in Frameworks */,
@@ -132,12 +121,11 @@
 				853323AE1C97762B00C9EFB2 /* QuartzCore.framework in Frameworks */,
 				853323AC1C97762400C9EFB2 /* CoreLocation.framework in Frameworks */,
 				853323AA1C97761900C9EFB2 /* CoreGraphics.framework in Frameworks */,
-				B267CB661CC7FCC600C70E24 /* Bolts.framework in Frameworks */,
+				B267CB741CC85B4000C70E24 /* Bolts.framework in Frameworks */,
 				853323A81C97760F00C9EFB2 /* CFNetwork.framework in Frameworks */,
-				B267CB671CC7FCC600C70E24 /* Parse.framework in Frameworks */,
+				B267CB751CC85B4000C70E24 /* Parse.framework in Frameworks */,
 				853323A61C97760700C9EFB2 /* AudioToolbox.framework in Frameworks */,
-				B267CB681CC7FCC600C70E24 /* ParseUI.framework in Frameworks */,
-				25ADA239CAD31C0CFE3CB590 /* Pods_Gainz.framework in Frameworks */,
+				B267CB761CC85B4000C70E24 /* ParseUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,12 +135,11 @@
 		853323A01C97756D00C9EFB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B267CB6B1CC8001800C70E24 /* SwiftCharts.framework */,
 				853323B71C97765B00C9EFB2 /* libsqlite3.tbd */,
 				853323B51C97765200C9EFB2 /* libz.tbd */,
-				B267CB631CC7FCC600C70E24 /* Bolts.framework */,
-				B267CB641CC7FCC600C70E24 /* Parse.framework */,
-				B267CB651CC7FCC600C70E24 /* ParseUI.framework */,
+				B267CB711CC85B4000C70E24 /* Bolts.framework */,
+				B267CB721CC85B4000C70E24 /* Parse.framework */,
+				B267CB731CC85B4000C70E24 /* ParseUI.framework */,
 				853323B31C97764500C9EFB2 /* SystemConfiguration.framework */,
 				853323B11C97763900C9EFB2 /* StoreKit.framework */,
 				853323AF1C97763300C9EFB2 /* Security.framework */,
@@ -161,19 +148,9 @@
 				853323A91C97761900C9EFB2 /* CoreGraphics.framework */,
 				853323A71C97760F00C9EFB2 /* CFNetwork.framework */,
 				853323A51C97760700C9EFB2 /* AudioToolbox.framework */,
-				8004CB5214AF25CFF2F03037 /* Pods_Gainz.framework */,
 			);
 			name = Frameworks;
 			path = Gainz;
-			sourceTree = "<group>";
-		};
-		8C1B1C3C67F1EBC95D1C9088 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D93546354B107EACEBD983C3 /* Pods-Gainz.debug.xcconfig */,
-				721CC2B17AC53F92CCBAC11A /* Pods-Gainz.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		B20C67E51C7E704000D11A22 = {
@@ -183,7 +160,6 @@
 				B20C67F01C7E704000D11A22 /* Gainz */,
 				B20C67EF1C7E704000D11A22 /* Products */,
 				853323A01C97756D00C9EFB2 /* Frameworks */,
-				8C1B1C3C67F1EBC95D1C9088 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,8 +177,6 @@
 				B2DFDFB61C9A3969006F5ED3 /* Images */,
 				B20C67F11C7E704000D11A22 /* AppDelegate.swift */,
 				857F7A911CB8BD2A001F964C /* HistoryScrollViewController.swift */,
-				B267CB6D1CC8079400C70E24 /* ChartController.swift */,
-				B267CB6F1CC808B900C70E24 /* Defaults.swift */,
 				857F7A971CBADF26001F964C /* Workout.swift */,
 				857F7A8F1CB8967D001F964C /* TabBarViewController.swift */,
 				B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */,
@@ -253,12 +227,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B20C68031C7E704000D11A22 /* Build configuration list for PBXNativeTarget "Gainz" */;
 			buildPhases = (
-				5BF1C946BF81372E9B96D779 /* Check Pods Manifest.lock */,
 				B20C67EA1C7E704000D11A22 /* Sources */,
 				B20C67EB1C7E704000D11A22 /* Frameworks */,
 				B20C67EC1C7E704000D11A22 /* Resources */,
-				6EE64DB70BA782C75057D64F /* Embed Pods Frameworks */,
-				BD57167A8B43559C3457F821 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,61 +303,11 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5BF1C946BF81372E9B96D779 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6EE64DB70BA782C75057D64F /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gainz/Pods-Gainz-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BD57167A8B43559C3457F821 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gainz/Pods-Gainz-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B20C67EA1C7E704000D11A22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B267CB6E1CC8079400C70E24 /* ChartController.swift in Sources */,
-				B267CB701CC808B900C70E24 /* Defaults.swift in Sources */,
 				B2DFDFF01CA2624A006F5ED3 /* TodayTableViewController.swift in Sources */,
 				B2DFDFA81C99EFF4006F5ED3 /* CreateAccountViewController.swift in Sources */,
 				857F7A921CB8BD2A001F964C /* HistoryScrollViewController.swift in Sources */,
@@ -511,7 +432,6 @@
 		};
 		B20C68041C7E704000D11A22 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D93546354B107EACEBD983C3 /* Pods-Gainz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -528,7 +448,6 @@
 		};
 		B20C68051C7E704000D11A22 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 721CC2B17AC53F92CCBAC11A /* Pods-Gainz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (

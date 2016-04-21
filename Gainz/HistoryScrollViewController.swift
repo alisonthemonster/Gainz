@@ -8,17 +8,13 @@
 
 import UIKit
 import Parse
-import SwiftCharts
 
 
 class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, ReloadViewDelegate {
     
-    @IBOutlet weak var chartView: UIScrollView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
-    private var theChart: Chart? //arc
     
     let pageOffset = 20
     
@@ -102,94 +98,6 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         // Show something initially.
         loadVisiblePages()
         
-       
-        //Building the chart
-        
-        let labelSettings = ChartLabelSettings(font: Defaults.labelFont)
-        
-        let chartPoints0 = [
-            self.createChartPoint(2, 2, labelSettings),
-            self.createChartPoint(4, -4, labelSettings),
-            self.createChartPoint(7, 1, labelSettings),
-            self.createChartPoint(8.3, 11.5, labelSettings),
-            self.createChartPoint(9, 15.9, labelSettings),
-            self.createChartPoint(10.8, 3, labelSettings),
-            self.createChartPoint(13, 24, labelSettings),
-            self.createChartPoint(15, 0, labelSettings),
-            self.createChartPoint(17.2, 29, labelSettings),
-            self.createChartPoint(20, 10, labelSettings),
-            self.createChartPoint(22.3, 10, labelSettings),
-            self.createChartPoint(27, 15, labelSettings),
-            self.createChartPoint(30, 6, labelSettings),
-            self.createChartPoint(40, 10, labelSettings),
-            self.createChartPoint(50, 2, labelSettings),
-        ]
-        
-        let chartPoints1 = [
-            self.createChartPoint(2, 5, labelSettings),
-            self.createChartPoint(3, 7, labelSettings),
-            self.createChartPoint(5, 9, labelSettings),
-            self.createChartPoint(8, 6, labelSettings),
-            self.createChartPoint(9, 10, labelSettings),
-            self.createChartPoint(10, 20, labelSettings),
-            self.createChartPoint(12, 19, labelSettings),
-            self.createChartPoint(13, 20, labelSettings),
-            self.createChartPoint(14, 25, labelSettings),
-            self.createChartPoint(16, 28, labelSettings),
-            self.createChartPoint(17, 15, labelSettings),
-            self.createChartPoint(19, 6, labelSettings),
-            self.createChartPoint(25, 3, labelSettings),
-            self.createChartPoint(30, 10, labelSettings),
-            self.createChartPoint(45, 15, labelSettings),
-            self.createChartPoint(50, 20, labelSettings),
-        ]
-        
-        let xValues = 2.stride(through: 50, by: 1).map {ChartAxisValueDouble(Double($0), labelSettings: labelSettings)}
-        let yValues = ChartAxisValuesGenerator.generateYAxisValuesWithChartPoints(chartPoints0, minSegmentCount: 10, maxSegmentCount: 20, multiple: 2, axisValueGenerator: {ChartAxisValueDouble($0, labelSettings: labelSettings)}, addPaddingSegmentIfEdge: false)
-        
-        let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings))
-        let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings.defaultVertical()))
-        let scrollViewFrame = Defaults.chartFrame(self.chartView.bounds)
-        let chartFrame = CGRectMake(0, 0, 1400, scrollViewFrame.size.height)
-        
-        // calculate coords space in the background to keep UI smooth
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: Defaults.chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
-                
-                let lineModel0 = ChartLineModel(chartPoints: chartPoints0, lineColor: UIColor.redColor(), animDuration: 1, animDelay: 0)
-                let lineModel1 = ChartLineModel(chartPoints: chartPoints1, lineColor: UIColor.blueColor(), animDuration: 1, animDelay: 0)
-                let chartPointsLineLayer = ChartPointsLineLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, lineModels: [lineModel0, lineModel1])
-                
-                let settings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: Defaults.guidelinesWidth)
-                let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: settings)
-                
-                let scrollView = UIScrollView(frame: scrollViewFrame)
-                scrollView.contentSize = CGSizeMake(chartFrame.size.width, scrollViewFrame.size.height)
-                //        self.automaticallyAdjustsScrollViewInsets = false // nested view controller - this is in parent
-                
-                self.theChart = Chart(
-                    frame: chartFrame,
-                    layers: [
-                        xAxis,
-                        yAxis,
-                        //guidelinesLayer,
-                        chartPointsLineLayer
-                    ]
-                )
-                
-                scrollView.addSubview(self.theChart!.view)
-                self.chartView.addSubview(scrollView)
-                
-            }
-        }
-        
-    }
-    
-    private func createChartPoint(x: Double, _ y: Double, _ labelSettings: ChartLabelSettings) -> ChartPoint {
-        return ChartPoint(x: ChartAxisValueDouble(x, labelSettings: labelSettings), y: ChartAxisValueDouble(y))
     }
     
     override func didReceiveMemoryWarning() {
