@@ -25,6 +25,7 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
     }
     
     // Checks that all data has been properly filled in before popping the view off the stack
+        //TODO check for negative numbers!!!!
     func backButton(sender: UIButton!) {
         var completed:Bool = true
         for (var row = 0; row < tableView.numberOfRowsInSection(0); row++) {

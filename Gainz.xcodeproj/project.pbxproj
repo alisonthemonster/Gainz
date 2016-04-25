@@ -19,9 +19,6 @@
 		853323B81C97765B00C9EFB2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323B71C97765B00C9EFB2 /* libsqlite3.tbd */; };
 		853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323B91C97778800C9EFB2 /* LoginViewController.swift */; };
 		853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */; };
-		853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D31C9BCC9B00C9EFB2 /* weight.png */; };
-		853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D41C9BCC9B00C9EFB2 /* weight@2x.png */; };
-		853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 853323D51C9BCC9B00C9EFB2 /* weight@3x.png */; };
 		853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */; };
 		853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */; };
 		857F7A901CB8967D001F964C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7A8F1CB8967D001F964C /* TabBarViewController.swift */; };
@@ -65,8 +62,6 @@
 		B2DFDFC81C9DE8CC006F5ED3 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */; };
 		B2DFDFD21CA1D60E006F5ED3 /* today@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFD11CA1D60E006F5ED3 /* today@2x.png */; };
 		B2DFDFD41CA1D6C4006F5ED3 /* today.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFD31CA1D6C4006F5ED3 /* today.png */; };
-		B2DFDFD61CA1D892006F5ED3 /* barbell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFD51CA1D892006F5ED3 /* barbell@2x.png */; };
-		B2DFDFD81CA1D8B2006F5ED3 /* barbell.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFD71CA1D8B2006F5ED3 /* barbell.png */; };
 		B2DFDFDA1CA1D8F0006F5ED3 /* prev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFD91CA1D8F0006F5ED3 /* prev@2x.png */; };
 		B2DFDFDC1CA1D909006F5ED3 /* prev.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFDB1CA1D909006F5ED3 /* prev.png */; };
 		B2DFDFE21CA1DA40006F5ED3 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DFDFE11CA1DA40006F5ED3 /* settings@2x.png */; };
@@ -87,9 +82,6 @@
 		853323B71C97765B00C9EFB2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		853323B91C97778800C9EFB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutExerciseViewCell.swift; sourceTree = "<group>"; };
-		853323D31C9BCC9B00C9EFB2 /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
-		853323D41C9BCC9B00C9EFB2 /* weight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@2x.png"; sourceTree = "<group>"; };
-		853323D51C9BCC9B00C9EFB2 /* weight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight@3x.png"; sourceTree = "<group>"; };
 		853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysWorkoutExerciseCell.swift; sourceTree = "<group>"; };
 		853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadViewDelegate.swift; sourceTree = "<group>"; };
 		857F7A8F1CB8967D001F964C /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -135,8 +127,6 @@
 		B2DFDFC71C9DE8CC006F5ED3 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		B2DFDFD11CA1D60E006F5ED3 /* today@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "today@2x.png"; sourceTree = "<group>"; };
 		B2DFDFD31CA1D6C4006F5ED3 /* today.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = today.png; sourceTree = "<group>"; };
-		B2DFDFD51CA1D892006F5ED3 /* barbell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbell@2x.png"; sourceTree = "<group>"; };
-		B2DFDFD71CA1D8B2006F5ED3 /* barbell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barbell.png; sourceTree = "<group>"; };
 		B2DFDFD91CA1D8F0006F5ED3 /* prev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "prev@2x.png"; sourceTree = "<group>"; };
 		B2DFDFDB1CA1D909006F5ED3 /* prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prev.png; sourceTree = "<group>"; };
 		B2DFDFE11CA1DA40006F5ED3 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
@@ -270,13 +260,8 @@
 				B2DFDFE11CA1DA40006F5ED3 /* settings@2x.png */,
 				B2DFDFDB1CA1D909006F5ED3 /* prev.png */,
 				B2DFDFD91CA1D8F0006F5ED3 /* prev@2x.png */,
-				B2DFDFD71CA1D8B2006F5ED3 /* barbell.png */,
-				B2DFDFD51CA1D892006F5ED3 /* barbell@2x.png */,
 				B2DFDFD31CA1D6C4006F5ED3 /* today.png */,
 				B2DFDFD11CA1D60E006F5ED3 /* today@2x.png */,
-				853323D31C9BCC9B00C9EFB2 /* weight.png */,
-				853323D41C9BCC9B00C9EFB2 /* weight@2x.png */,
-				853323D51C9BCC9B00C9EFB2 /* weight@3x.png */,
 				B2DFDFBF1C9A3AE6006F5ED3 /* barbells.jpg */,
 			);
 			name = Images;
@@ -343,22 +328,17 @@
 				B2DFDFE21CA1DA40006F5ED3 /* settings@2x.png in Resources */,
 				B20621811CC93E6600AAAD1E /* lion.png in Resources */,
 				B20621831CC93E6600AAAD1E /* dino.png in Resources */,
-				B2DFDFD81CA1D8B2006F5ED3 /* barbell.png in Resources */,
 				B2DFDFAD1C9A28AD006F5ED3 /* Main.storyboard in Resources */,
 				B2DFDFE41CA1DA5D006F5ED3 /* settings.png in Resources */,
 				B254D16A1CAEEC4B00E8F89E /* red.png in Resources */,
 				B20621901CC94CCA00AAAD1E /* fivehundredreps.png in Resources */,
 				B206217D1CC93E6600AAAD1E /* tenexercises.png in Resources */,
-				853323D81C9BCC9B00C9EFB2 /* weight@3x.png in Resources */,
-				853323D71C9BCC9B00C9EFB2 /* weight@2x.png in Resources */,
 				857F7AA81CC17469001F964C /* ExerciseTableCell.xib in Resources */,
 				B2DFDFC01C9A3AE6006F5ED3 /* barbells.jpg in Resources */,
 				B20621861CC93E6600AAAD1E /* tendays.png in Resources */,
 				B20621841CC93E6600AAAD1E /* elephant.png in Resources */,
 				B20621801CC93E6600AAAD1E /* twentyfiveexercises.png in Resources */,
 				B206217F1CC93E6600AAAD1E /* fiftyexercises.png in Resources */,
-				B2DFDFD61CA1D892006F5ED3 /* barbell@2x.png in Resources */,
-				853323D61C9BCC9B00C9EFB2 /* weight.png in Resources */,
 				857F7AAE1CC46D6A001F964C /* colorful_background.jpg in Resources */,
 				B254D1691CAEEC4B00E8F89E /* orange.png in Resources */,
 				B20621871CC93E6600AAAD1E /* fivedays.png in Resources */,

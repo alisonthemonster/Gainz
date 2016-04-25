@@ -63,10 +63,7 @@ class TodayTableViewController: UITableViewController {
             if (error != nil) {
                 print (error)
                 print("a workout for today was not found")
-                //an unsaved workout hasn't been created for today
-                //TODO create new workout here! 
-                    //use old data to build new exercise objects
-                    //if there is no old data then show message for first time users to direct them to modify screen
+               
             } else {
                 //this is today's workout
                 self.currentWorkout = objects![0]
@@ -84,6 +81,12 @@ class TodayTableViewController: UITableViewController {
                 self.todaysExercises = objects!
                 print("we found todays exercises!")
                 print("there are " + String(self.todaysExercises.count) + " exercises for today")
+                if (self.todaysExercises.count == 0) {
+                    //an unsaved workout hasn't been created for today
+                    //TODO create new workout here!
+                        //use old data to build new exercise objects
+                        //if there is no old data then show message for first time users to direct them to modify screen
+                }
                 print("reloading data")
                 self.tableView.reloadData()
             }
@@ -110,6 +113,7 @@ class TodayTableViewController: UITableViewController {
         
         var totalWeight = 0
         var totalReps = 0
+        var todaysExercises = 0
         
         var newExercises = [PFObject]()
         //build each new exercise based of off the last ones
@@ -127,6 +131,7 @@ class TodayTableViewController: UITableViewController {
                 newExercise["sets"] = sets! + 5
                 totalWeight += weight!*reps!
                 totalReps += sets!*reps!
+                todaysExercises++
             } else if (rating == 2) { //if last workout was too hard
                 newExercise["reps"] = reps! - 5
                 newExercise["weight"] = weight! - 5
@@ -142,12 +147,14 @@ class TodayTableViewController: UITableViewController {
                 }
                 totalWeight += weight!*reps!
                 totalReps += sets!*reps!
+                todaysExercises++
             } else if (rating == 1) { //if last workout was juuust right
                 newExercise["reps"] = reps!
                 newExercise["weight"] = weight!
                 newExercise["sets"] = sets!
                 totalWeight += weight!*reps!
                 totalReps += sets!*reps!
+                todaysExercises++
             } else {
                 newExercise["reps"] = reps!
                 newExercise["weight"] = weight!
@@ -172,6 +179,8 @@ class TodayTableViewController: UITableViewController {
                     object["totalWeight"] = prevWeightTotal! + totalWeight
                     let prevRepsTotal = object.objectForKey("totalReps") as? Int
                     object["totalReps"] = prevRepsTotal! + totalReps
+                    let prevExercisesTotal = object.objectForKey("totalExercises") as? Int
+                    object["totalExercises"] = prevExercisesTotal! + todaysExercises
                     object.saveInBackground()
                 }
             }
@@ -190,6 +199,107 @@ class TodayTableViewController: UITableViewController {
                 print(error)
             }
         }
+        checkForNewEarnedBadges()
+    }
+    
+    func checkForNewEarnedBadges() {
+        let query : PFQuery = PFUser.query()!
+        var totalWeight = 0
+        var totalReps = 0
+        var totalExercises = 0
+        var badgeValues:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+        query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {
+            (object, error) -> Void in
+            if error != nil {
+                print(error)
+            } else {
+                if let object = object {
+                    print("updating user")
+                    totalWeight = (object.objectForKey("totalWeight") as? Int)!
+                    totalReps = (object.objectForKey("totalReps") as? Int)!
+                    totalExercises = (object.objectForKey("totalExercises") as? Int)!
+                    let oldBadgeValues = (object.objectForKey("badges") as? [Bool])!
+                    if (totalReps>=500) {
+                        badgeValues[2] = true
+                    }
+                    if (totalReps>=100) {
+                        badgeValues[1] = true
+                    }
+                    if (totalReps>=50) {
+                        badgeValues[0] = true
+                        print("hellllooooo")
+                    }
+                    if (totalWeight>=400) {
+                        badgeValues[3] = true
+                    }
+                    if (totalWeight>=13000) {
+                        badgeValues[4] = true
+                    }
+                    if (totalWeight>=18000) {
+                        badgeValues[5] = true
+                    }
+                    if (totalWeight>=420000) {
+                        badgeValues[6] = true
+                    }
+                    if (totalExercises>=5) {
+                        badgeValues[7] = true
+                    }
+                    if (totalExercises>=25) {
+                        badgeValues[8] = true
+                    }
+                    if (totalExercises>=50) {
+                        badgeValues[9] = true
+                    }
+                    if (totalExercises>=100) {
+                        badgeValues[1] = true
+                    }
+                    //TODO handle the days in a row badge
+                    
+                    for var i = 0; i < badgeValues.count; ++i {
+                        if (badgeValues[i] != oldBadgeValues[i]) {
+                            print("congrats on the new badge")
+                            let alertMessage = UIAlertController(title: "Congratulations!", message: "You just unlocked a new badge!", preferredStyle: .Alert)
+                            
+                            
+                            let image = self.imageResize(UIImage(named: Badges.fileNames[i])!, sizeChange: CGSize(width: 150, height: 150))
+
+                            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            action.setValue(image.imageWithRenderingMode(.AlwaysOriginal), forKey: "image")
+                            alertMessage .addAction(action)
+                            
+                            self.presentViewController(alertMessage, animated: true, completion: nil)
+                        }
+                    }
+                    
+                    //update parse with these new badge values
+                    let query2 : PFQuery = PFUser.query()!
+                    query2.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {
+                        (object, error) -> Void in
+                        if error != nil {
+                            print(error)
+                        } else {
+                            if let object = object {
+                                object["badges"] = badgeValues
+                                print("updating database with new badges")
+                                object.saveInBackground()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    
+    func imageResize(imageObj:UIImage, sizeChange:CGSize)-> UIImage {
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(sizeChange, false, scale)
+        imageObj.drawInRect(CGRect(origin: CGPointZero, size: sizeChange))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext() // !!!
+        return scaledImage
     }
     
     

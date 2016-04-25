@@ -11,21 +11,23 @@ import UIKit
 class Badges: NSObject {
     private var list:[Picture] = [Picture]()
     
+    static var fileNames = ["fiftyreps.png", "hundredreps.png", "fivehundredreps.png", "lion.png", "elephant.png", "dino.png", "whale.png", "tenexercises.png", "twentyfiveexercises.png", "fiftyexercises.png", "hundredexercises.png", "fivedays.png", "tendays.png", "onemonth.png"]
+    
     //OFFICIAL BADGE ORDER
-        //50reps
-        //100reps
-        //500reps
-        //lion
-        //elephant
-        //dino
-        //whale
-        //10exer
-        //25exer
-        //50exer
-        //100exercises
-        //5day
-        //10day
-        //1month
+        //0: 50reps
+        //1: 100reps
+        //2: 500reps
+        //3: lion
+        //4: elephant
+        //5: dino
+        //6: whale
+        //7: 10exer
+        //8: 25exer
+        //9: 50exer
+        //10: 100exercises
+        //11: 5day
+        //12: 10day
+        //13: 1month
     
     
     override init() {
