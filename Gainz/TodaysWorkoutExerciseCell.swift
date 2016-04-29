@@ -24,10 +24,4 @@ class TodaysWorkoutExerciseCell: PFTableViewCell, UITextFieldDelegate {
     var rating:Int = -1
     var object:PFObject?
     
-//    override func awakeFromNib() {
-//        self.setsField.delegate = self
-//        self.repsField.delegate = self
-//        self.weightField.delegate = self
-//    }
-    
    }

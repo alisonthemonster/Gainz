@@ -25,10 +25,6 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         queryPastWorkouts()
     }
     
-    //TODO
-        //if no workout was rated dont create a new page!!!
-        
-    
     func queryPastWorkouts () {
         let workoutQuery = PFQuery(className: "Workout")
         workoutQuery.whereKey("saved", equalTo: true)
@@ -40,7 +36,6 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
             if (error != nil) {
                 print (error)
                 print("past workouts not found")
-                //TODO Display Message
             } else {
                 //this is today's workout
                 print("we found the most recent workouts!")

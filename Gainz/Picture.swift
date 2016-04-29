@@ -28,19 +28,6 @@ class Picture : NSObject {
     }
     
     func getGreyImage() -> UIImage? {
-//        let imageRect:CGRect = CGRectMake(0, 0, image!.size.width, self.image!.size.height)
-//        let colorSpace = CGColorSpaceCreateDeviceGray()
-//        let width = self.image!.size.width
-//        let height = self.image!.size.height
-//        
-//        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.None.rawValue)
-//        let context = CGBitmapContextCreate(nil, Int(width), Int(height), 8, 0, colorSpace, bitmapInfo.rawValue)
-//        
-//        CGContextDrawImage(context, imageRect, self.image!.CGImage)
-//        let imageRef = CGBitmapContextCreateImage(context)
-//        let newImage = UIImage(CGImage: imageRef!)
-//        
-//        return newImage
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.Only.rawValue)
         let context = CGBitmapContextCreate(nil, Int(self.image!.size.width), Int(self.image!.size.height), 8, 0, nil, bitmapInfo.rawValue)
         CGContextDrawImage(context, CGRectMake(0, 0, self.image!.size.width, self.image!.size.height), self.image!.CGImage);

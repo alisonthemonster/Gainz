@@ -68,7 +68,6 @@ class CollectionViewController: UICollectionViewController {
         // Get the image for this cell
         let picture:Picture = self.badges.getPicture(index: index)
         //if unachieved
-        print(index)
         if (!badgeValues[index]) {
             cell.image.image = picture.getGreyImage()
         } else {

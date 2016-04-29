@@ -219,48 +219,13 @@ class TodayTableViewController: UITableViewController {
                     totalReps = (object.objectForKey("totalReps") as? Int)!
                     totalExercises = (object.objectForKey("totalExercises") as? Int)!
                     let oldBadgeValues = (object.objectForKey("badges") as? [Bool])!
-                    if (totalReps>=500) {
-                        badgeValues[2] = true
-                    }
-                    if (totalReps>=100) {
-                        badgeValues[1] = true
-                    }
-                    if (totalReps>=50) {
-                        badgeValues[0] = true
-                        print("hellllooooo")
-                    }
-                    if (totalWeight>=400) {
-                        badgeValues[3] = true
-                    }
-                    if (totalWeight>=13000) {
-                        badgeValues[4] = true
-                    }
-                    if (totalWeight>=18000) {
-                        badgeValues[5] = true
-                    }
-                    if (totalWeight>=420000) {
-                        badgeValues[6] = true
-                    }
-                    if (totalExercises>=5) {
-                        badgeValues[7] = true
-                    }
-                    if (totalExercises>=25) {
-                        badgeValues[8] = true
-                    }
-                    if (totalExercises>=50) {
-                        badgeValues[9] = true
-                    }
-                    if (totalExercises>=100) {
-                        badgeValues[1] = true
-                    }
-                    //TODO handle the days in a row badge
-                    
+                    self.checkBadgeValues(totalReps, totalWeight: totalWeight, totalExercises: totalExercises, badgeValues: badgeValues)
                     for var i = 0; i < badgeValues.count; ++i {
                         if (badgeValues[i] != oldBadgeValues[i]) {
                             print("congrats on the new badge")
                             let alertMessage = UIAlertController(title: "Congratulations!", message: "You just unlocked a new badge!", preferredStyle: .Alert)
                             
-                            
+                            //TODO align image better
                             let image = self.imageResize(UIImage(named: Badges.fileNames[i])!, sizeChange: CGSize(width: 150, height: 150))
 
                             let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
@@ -291,6 +256,45 @@ class TodayTableViewController: UITableViewController {
 
     }
     
+    //checks to see which badges have been unlocked
+    func checkBadgeValues(totalReps:Int, totalWeight:Int, totalExercises:Int, var badgeValues:[Bool]) {
+        if (totalReps>=500) {
+            badgeValues[2] = true
+        }
+        if (totalReps>=100) {
+            badgeValues[1] = true
+        }
+        if (totalReps>=50) {
+            badgeValues[0] = true
+        }
+        if (totalWeight>=400) {
+            badgeValues[3] = true
+        }
+        if (totalWeight>=13000) {
+            badgeValues[4] = true
+        }
+        if (totalWeight>=18000) {
+            badgeValues[5] = true
+        }
+        if (totalWeight>=420000) {
+            badgeValues[6] = true
+        }
+        if (totalExercises>=5) {
+            badgeValues[7] = true
+        }
+        if (totalExercises>=25) {
+            badgeValues[8] = true
+        }
+        if (totalExercises>=50) {
+            badgeValues[9] = true
+        }
+        if (totalExercises>=100) {
+            badgeValues[1] = true
+        }
+        //TODO handle the days in a row badge
+    }
+    
+    //resizes an image
     func imageResize(imageObj:UIImage, sizeChange:CGSize)-> UIImage {
         let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
         
