@@ -270,20 +270,14 @@ class TodayTableViewController: UITableViewController {
                     totalExercises = (object.objectForKey("totalExercises") as? Int)!
                     let oldBadgeValues = (object.objectForKey("badges") as? [Bool])!
                     badgeValues = self.checkBadgeValues(totalReps, totalWeight: totalWeight, totalExercises: totalExercises)
-                    for var i = 0; i < badgeValues.count; ++i {
-                        if (badgeValues[i] != oldBadgeValues[i]) {
-                            print("congrats on the new badge")
-                            let alertMessage = UIAlertController(title: "Congratulations!", message: "You just unlocked a new badge!", preferredStyle: .Alert)
-                            
-                            //TODO align image better
-                            let image = self.imageResize(UIImage(named: Badges.fileNames[i])!, sizeChange: CGSize(width: 170, height: 170))
-
-                            let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                            action.setValue(image.imageWithRenderingMode(.AlwaysOriginal), forKey: "image")
-                            alertMessage .addAction(action)
-                            
-                            self.presentViewController(alertMessage, animated: true, completion: nil)
-                        }
+                    if (badgeValues != oldBadgeValues) {
+                        print("congrats on the new badge")
+                        let alertMessage = UIAlertController(title: "Congratulations!", message: "You just unlocked a new badge!", preferredStyle: .Alert)
+                        
+                        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                        alertMessage .addAction(action)
+                        
+                        self.presentViewController(alertMessage, animated: true, completion: nil)
                     }
                     
                     //update parse with these new badge values
@@ -333,7 +327,7 @@ class TodayTableViewController: UITableViewController {
         if (totalWeight>=420000) {
             badgeValues[6] = true
         }
-        if (totalExercises>=5) {
+        if (totalExercises>=10) {
             badgeValues[7] = true
         }
         if (totalExercises>=25) {
