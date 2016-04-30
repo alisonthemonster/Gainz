@@ -34,18 +34,42 @@ class TodayTableViewController: UITableViewController {
     }
     
     @IBAction func doneButton(sender: AnyObject) {
-        self.alertController = UIAlertController(title: "All done?", message: "Are you sure you're finished? Once you press okay we'll generate your next workout for you and this workout can be found in your history. ", preferredStyle: UIAlertControllerStyle.Alert)
-        let done = UIAlertAction(title: "Done!", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-            print("Button One Pressed")
-            self.createNewWorkout()
-        })
-        let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
-            print("Cancel Button Pressed")
-        }
-        self.alertController!.addAction(done)
-        self.alertController!.addAction(buttonCancel)
         
-        presentViewController(self.alertController!, animated: true, completion: nil)
+        var completed:Bool = false
+        for (var row = 0; row < tableView.numberOfRowsInSection(0); row++) {
+            let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: row, inSection: 0)) as! ExerciseTableViewCell
+            if cell.rating != -1 {
+                completed = true
+                break
+            }
+            
+        }
+        
+        if (!completed) {
+            let alertController = UIAlertController(title: "No Completed Exercises", message: "Tap an exercise to rate it and mark it as completed. You cannot complete a workout unless you have completed at least one of your exercises!", preferredStyle: UIAlertControllerStyle.Alert)
+                
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action:UIAlertAction) in
+                print("Ok Button Pressed 1");
+            }
+            alertController.addAction(okAction)
+                
+            self.presentViewController(alertController, animated: true, completion:nil)
+        }
+        
+        else {
+            self.alertController = UIAlertController(title: "All done?", message: "Are you sure you're finished? Once you press okay we'll generate your next workout for you and this workout can be found in your history. \n \nNote: Unrated exercises will not be saved in your History.", preferredStyle: UIAlertControllerStyle.Alert)
+            let done = UIAlertAction(title: "Done!", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+                print("Button One Pressed")
+                self.createNewWorkout()
+            })
+            let buttonCancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
+                print("Cancel Button Pressed")
+            }
+            self.alertController!.addAction(done)
+            self.alertController!.addAction(buttonCancel)
+        
+            presentViewController(self.alertController!, animated: true, completion: nil)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -86,6 +110,10 @@ class TodayTableViewController: UITableViewController {
                     //TODO create new workout here!
                         //use old data to build new exercise objects
                         //if there is no old data then show message for first time users to direct them to modify screen
+                    self.createEmptyStateView()
+                }
+                else {
+                    self.tableView.backgroundView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
                 }
                 print("reloading data")
                 self.tableView.reloadData()
@@ -99,6 +127,26 @@ class TodayTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func createEmptyStateView() {
+        let frame = self.view.frame
+        let view = UIView(frame: frame)
+        let imageView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
+        let label = UILabel(frame: frame)
+        label.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
+        
+        label.text = "You haven't created a workout yet!\n\nGo to Edit to make your first routine"
+        label.numberOfLines = 0
+        label.textAlignment = NSTextAlignment.Center
+        view.addSubview(label)
+        view.addSubview(imageView)
+        view.sendSubviewToBack(imageView)
+        let horizontalConstraint = NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0)
+        view.addConstraint(horizontalConstraint)
+        
+        let verticalConstraint = NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
+        view.addConstraint(verticalConstraint)
+        self.tableView.backgroundView = view
+    }
     
     //builds the new workout based on the current workout and updates table
     func createNewWorkout() {
@@ -345,11 +393,14 @@ class TodayTableViewController: UITableViewController {
         
         
         if let rating = (object.objectForKey("rating") as? Int) {
-            if (rating==0) {
+            if (rating == 0) {
+                cell.rating = 0
                 cell.checkMark.image = UIImage(named: "green")
-            } else if (rating==1) {
+            } else if (rating == 1) {
+                cell.rating = 1
                 cell.checkMark.image = UIImage(named: "orange")
-            } else if (rating==2) {
+            } else if (rating == 2) {
+                cell.rating = 2
                 cell.checkMark.image = UIImage(named: "red")
             }
             cell.backgroundColor = UIColor(white: 1.0, alpha: 0.35)

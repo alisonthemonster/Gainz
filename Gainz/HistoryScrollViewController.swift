@@ -15,6 +15,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var emptyStateLabel: UILabel!
     
     let pageOffset = 20
     
@@ -46,7 +47,9 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
                     let workout = Workout(workout: object, delegate: self, index: index)
                     self.pastWorkouts.append(workout)
                     index += 1
+                    self.emptyStateLabel.hidden = true
                 }
+                
             }
             print("inside the block!")
         }
@@ -70,6 +73,8 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         view.addSubview(imageView)
         self.view.sendSubviewToBack(imageView)
         
+        self.emptyStateLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
+        self.emptyStateLabel.frame = self.view.frame
         self.dateLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
         
         self.automaticallyAdjustsScrollViewInsets = false
@@ -160,7 +165,11 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'"
             dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
+            self.dateLabel.hidden = false
             self.dateLabel.text = dateFormatter.stringFromDate(date! as NSDate)
+        } else {
+            self.dateLabel.hidden = true
+            
         }
         
         

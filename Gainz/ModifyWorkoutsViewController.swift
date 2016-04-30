@@ -61,13 +61,14 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
                 print (error)
             } else {
                 self.currentWorkout = objects![0]
+                self.tableView.backgroundView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
+                self.addButton.backgroundColor = UIColor(white: 1.0, alpha: 0.80)
             }
         }
         return query
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
         let cell = tableView.dequeueReusableCellWithIdentifier("modifyCell", forIndexPath: indexPath) as! ModifyWorkoutExerciseViewCell
         
         object?.pinInBackgroundWithName("localExercises")
@@ -98,6 +99,7 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
                 if (success) {
                     print ("successful Delete")
                     self.loadObjects()
+                    self.addButton.backgroundColor = UIColor(white: 1.0, alpha: 0.80)
                     self.tableView.reloadData()
                 }
                 else {
@@ -114,6 +116,7 @@ class ModifyWorkoutsViewController: PFQueryTableViewController, UINavigationCont
             if (success) {
                 print ("successful save")
                 self.loadObjects()
+                self.addButton.backgroundColor = UIColor(white: 1.0, alpha: 0.80)
                 self.tableView.reloadData()
             } else {
                 print ("it failed")

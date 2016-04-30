@@ -19,7 +19,6 @@
 		853323B81C97765B00C9EFB2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 853323B71C97765B00C9EFB2 /* libsqlite3.tbd */; };
 		853323BA1C97778800C9EFB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323B91C97778800C9EFB2 /* LoginViewController.swift */; };
 		853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */; };
-		853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */; };
 		853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */; };
 		857F7A901CB8967D001F964C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7A8F1CB8967D001F964C /* TabBarViewController.swift */; };
 		857F7A921CB8BD2A001F964C /* HistoryScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857F7A911CB8BD2A001F964C /* HistoryScrollViewController.swift */; };
@@ -82,12 +81,11 @@
 		853323B71C97765B00C9EFB2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		853323B91C97778800C9EFB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModifyWorkoutExerciseViewCell.swift; sourceTree = "<group>"; };
-		853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysWorkoutExerciseCell.swift; sourceTree = "<group>"; };
 		853323E11C9CF90200C9EFB2 /* ReloadViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadViewDelegate.swift; sourceTree = "<group>"; };
 		857F7A8F1CB8967D001F964C /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		857F7A911CB8BD2A001F964C /* HistoryScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryScrollViewController.swift; sourceTree = "<group>"; };
 		857F7A971CBADF26001F964C /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		857F7AA71CC17469001F964C /* ExerciseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseTableCell.xib; sourceTree = "<group>"; };
+		857F7AA71CC17469001F964C /* ExerciseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExerciseTableCell.xib; path = ../ExerciseTableCell.xib; sourceTree = "<group>"; };
 		857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		857F7AAD1CC46D6A001F964C /* colorful_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = colorful_background.jpg; sourceTree = "<group>"; };
 		B20621721CC93E6600AAAD1E /* tenexercises.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tenexercises.png; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 		B20C67E51C7E704000D11A22 = {
 			isa = PBXGroup;
 			children = (
-				857F7AA71CC17469001F964C /* ExerciseTableCell.xib */,
 				B20C67F01C7E704000D11A22 /* Gainz */,
 				B20C67EF1C7E704000D11A22 /* Products */,
 				853323A01C97756D00C9EFB2 /* Frameworks */,
@@ -224,6 +221,7 @@
 				B20621711CC93E5800AAAD1E /* Badges */,
 				B2DFDFB61C9A3969006F5ED3 /* Images */,
 				B20C67F11C7E704000D11A22 /* AppDelegate.swift */,
+				857F7AA71CC17469001F964C /* ExerciseTableCell.xib */,
 				B2DFDFAB1C9A28AD006F5ED3 /* Main.storyboard */,
 				857F7A911CB8BD2A001F964C /* HistoryScrollViewController.swift */,
 				857F7A971CBADF26001F964C /* Workout.swift */,
@@ -239,7 +237,6 @@
 				B2DFDFA51C99EDC7006F5ED3 /* ModifyWorkoutsViewController.swift */,
 				853323C91C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift */,
 				B2DFDFEF1CA2624A006F5ED3 /* TodayTableViewController.swift */,
-				853323DD1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift */,
 				857F7AA91CC1768D001F964C /* ExerciseTableViewCell.swift */,
 				B20621881CC9440300AAAD1E /* CollectionViewController.swift */,
 				B206218A1CC9444600AAAD1E /* CollectionViewCell.swift */,
@@ -372,7 +369,6 @@
 				857F7AAA1CC1768D001F964C /* ExerciseTableViewCell.swift in Sources */,
 				853323CA1C9A6CC100C9EFB2 /* ModifyWorkoutExerciseViewCell.swift in Sources */,
 				B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */,
-				853323DE1C9CE71A00C9EFB2 /* TodaysWorkoutExerciseCell.swift in Sources */,
 				B20621891CC9440300AAAD1E /* CollectionViewController.swift in Sources */,
 				B206218B1CC9444600AAAD1E /* CollectionViewCell.swift in Sources */,
 				B20621931CC94DBE00AAAD1E /* Picture.swift in Sources */,
