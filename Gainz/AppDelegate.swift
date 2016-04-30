@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
             print("is logged in as: " + (currentUser?.username)!)
         } else {
             // Show the signup or login screen
-            vc = storyboard.instantiateViewControllerWithIdentifier("login")
+            vc = storyboard.instantiateViewControllerWithIdentifier("initNavControl")
             print("not logged in")
         }
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
