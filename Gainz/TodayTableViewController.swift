@@ -150,6 +150,7 @@ class TodayTableViewController: UITableViewController {
     
     //builds the new workout based on the current workout and updates table
     func createNewWorkout() {
+        print("building new workout")
         //save current workout
         currentWorkout!["saved"] = true
         currentWorkout?.saveInBackground()
@@ -251,6 +252,7 @@ class TodayTableViewController: UITableViewController {
     }
     
     func checkForNewEarnedBadges() {
+        print("checking for new earned badges")
         let query : PFQuery = PFUser.query()!
         var totalWeight = 0
         var totalReps = 0
@@ -267,14 +269,14 @@ class TodayTableViewController: UITableViewController {
                     totalReps = (object.objectForKey("totalReps") as? Int)!
                     totalExercises = (object.objectForKey("totalExercises") as? Int)!
                     let oldBadgeValues = (object.objectForKey("badges") as? [Bool])!
-                    self.checkBadgeValues(totalReps, totalWeight: totalWeight, totalExercises: totalExercises, badgeValues: badgeValues)
+                    badgeValues = self.checkBadgeValues(totalReps, totalWeight: totalWeight, totalExercises: totalExercises)
                     for var i = 0; i < badgeValues.count; ++i {
                         if (badgeValues[i] != oldBadgeValues[i]) {
                             print("congrats on the new badge")
                             let alertMessage = UIAlertController(title: "Congratulations!", message: "You just unlocked a new badge!", preferredStyle: .Alert)
                             
                             //TODO align image better
-                            let image = self.imageResize(UIImage(named: Badges.fileNames[i])!, sizeChange: CGSize(width: 150, height: 150))
+                            let image = self.imageResize(UIImage(named: Badges.fileNames[i])!, sizeChange: CGSize(width: 170, height: 170))
 
                             let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
                             action.setValue(image.imageWithRenderingMode(.AlwaysOriginal), forKey: "image")
@@ -305,7 +307,11 @@ class TodayTableViewController: UITableViewController {
     }
     
     //checks to see which badges have been unlocked
-    func checkBadgeValues(totalReps:Int, totalWeight:Int, totalExercises:Int, var badgeValues:[Bool]) {
+    func checkBadgeValues(totalReps:Int, totalWeight:Int, totalExercises:Int) -> [Bool] {
+        print("checking values")
+        var badgeValues:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+        
+        print(String(totalReps))
         if (totalReps>=500) {
             badgeValues[2] = true
         }
@@ -340,6 +346,8 @@ class TodayTableViewController: UITableViewController {
             badgeValues[1] = true
         }
         //TODO handle the days in a row badge
+        
+        return badgeValues
     }
     
     //resizes an image
