@@ -16,6 +16,10 @@ class TodayTableViewController: UITableViewController {
     var currentWorkout:PFObject?
     var todaysExercises = [PFObject]()
     
+    var easyNum = 5
+    var mediumNum = 0
+    var hardNum = -5
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -119,6 +123,24 @@ class TodayTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        let query2 : PFQuery = PFUser.query()!
+        query2.whereKey("username", equalTo: (PFUser.currentUser()?.username)!)
+        query2.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                // The find succeeded.
+                if let objects = objects {
+                    let user = objects[0]
+                    self.easyNum = user["easy"] as! Int
+                    self.mediumNum = user["medium"] as! Int
+                    self.hardNum = user["hard"] as! Int
+                }
+            } else {
+                // Log details of the failure
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
     }
 
 
@@ -172,43 +194,24 @@ class TodayTableViewController: UITableViewController {
             let reps = (exercise.objectForKey("reps") as? Int)
             let weight = (exercise.objectForKey("weight") as? Int)
             let sets = (exercise.objectForKey("sets") as? Int)
-            
 
             if (rating == 0) { //if last workout was too easy
-                newExercise["reps"] = reps! + 5
-                newExercise["weight"] = weight! + 5
-                newExercise["sets"] = sets! + 5
-                totalWeight += weight!*reps!
-                totalReps += sets!*reps!
-                todaysExercises++
+                newExercise["weight"] = weight! + easyNum
             } else if (rating == 2) { //if last workout was too hard
-                newExercise["reps"] = reps! - 5
-                newExercise["weight"] = weight! - 5
-                newExercise["sets"] = sets! - 5
-                if (reps! - 5 < 0) {
-                    newExercise["reps"] = 0
-                }
-                if (sets! - 5 < 0) {
-                    newExercise["sets"] = 0
-                }
-                if (weight! - 5 < 0) {
-                    newExercise["weight"] = 0
-                }
-                totalWeight += weight!*reps!
-                totalReps += sets!*reps!
-                todaysExercises++
+                newExercise["weight"] = weight! + hardNum
             } else if (rating == 1) { //if last workout was juuust right
-                newExercise["reps"] = reps!
-                newExercise["weight"] = weight!
-                newExercise["sets"] = sets!
-                totalWeight += weight!*reps!
-                totalReps += sets!*reps!
-                todaysExercises++
+                newExercise["weight"] = weight! + mediumNum
             } else {
-                newExercise["reps"] = reps!
                 newExercise["weight"] = weight!
-                newExercise["sets"] = sets!
             }
+            if (weight! - 5 < 0) {
+                newExercise["weight"] = 1
+            }
+            newExercise["reps"] = reps!
+            newExercise["sets"] = sets!
+            totalWeight += weight!*reps!
+            totalReps += sets!*reps!
+            todaysExercises++
             newExercise["name"] = exercise.objectForKey("name") as? String
             newExercise["workout"] = newWorkout
             newExercise.saveInBackground()
@@ -216,8 +219,8 @@ class TodayTableViewController: UITableViewController {
         }
         
         //udpate the user object with the new total weights and sets
-        let query : PFQuery = PFUser.query()!
-        query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {
+        let query2 : PFQuery = PFUser.query()!
+        query2.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {
             (object, error) -> Void in
             if error != nil {
                 print(error)

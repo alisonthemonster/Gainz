@@ -44,6 +44,7 @@
 		B20621911CC94CCA00AAAD1E /* hundredreps.png in Resources */ = {isa = PBXBuildFile; fileRef = B206218E1CC94CCA00AAAD1E /* hundredreps.png */; };
 		B20621931CC94DBE00AAAD1E /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20621921CC94DBE00AAAD1E /* Picture.swift */; };
 		B20621951CC94E2800AAAD1E /* Badges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20621941CC94E2800AAAD1E /* Badges.swift */; };
+		B20936061CD5753500B2FD05 /* AlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20936051CD5753500B2FD05 /* AlgorithmViewController.swift */; };
 		B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F11C7E704000D11A22 /* AppDelegate.swift */; };
 		B20C67FA1C7E704000D11A22 /* Gainz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B20C67F81C7E704000D11A22 /* Gainz.xcdatamodeld */; };
 		B20C67FC1C7E704000D11A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20C67FB1C7E704000D11A22 /* Assets.xcassets */; };
@@ -106,6 +107,7 @@
 		B206218E1CC94CCA00AAAD1E /* hundredreps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hundredreps.png; sourceTree = "<group>"; };
 		B20621921CC94DBE00AAAD1E /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		B20621941CC94E2800AAAD1E /* Badges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badges.swift; sourceTree = "<group>"; };
+		B20936051CD5753500B2FD05 /* AlgorithmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmViewController.swift; sourceTree = "<group>"; };
 		B20C67EE1C7E704000D11A22 /* Gainz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gainz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B20C67F11C7E704000D11A22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B20C67F91C7E704000D11A22 /* Gainz.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gainz.xcdatamodel; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				B206218A1CC9444600AAAD1E /* CollectionViewCell.swift */,
 				B20621921CC94DBE00AAAD1E /* Picture.swift */,
 				B20621941CC94E2800AAAD1E /* Badges.swift */,
+				B20936051CD5753500B2FD05 /* AlgorithmViewController.swift */,
 			);
 			path = Gainz;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				B2DFDFC81C9DE8CC006F5ED3 /* SettingsTableViewController.swift in Sources */,
 				B20621951CC94E2800AAAD1E /* Badges.swift in Sources */,
 				B20C67F21C7E704000D11A22 /* AppDelegate.swift in Sources */,
+				B20936061CD5753500B2FD05 /* AlgorithmViewController.swift in Sources */,
 				853323E21C9CF90200C9EFB2 /* ReloadViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

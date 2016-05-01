@@ -80,6 +80,9 @@ class CreateAccountViewController: UIViewController {
             user["totalWeight"] = 0
             user["totalReps"] = 0
             user["totalExercises"] = 0
+            user["easy"] = 5
+            user["medium"] = 0
+            user["hard"] = -5
             user["badges"] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
             user.signUpInBackgroundWithBlock {
                 (succeeded: Bool, error: NSError?) -> Void in
