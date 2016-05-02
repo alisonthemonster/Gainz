@@ -12,7 +12,7 @@ import Parse
 class CollectionViewController: UICollectionViewController {
 
     private let reuseIdentifier = "badge"
-    private let sectionInsets = UIEdgeInsets(top: 25.0, left: 10.0, bottom: 25.0, right: 10.0)
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 25.0, right: 10.0)
     
     private var badgeValues:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     private var badges:Badges = Badges()
