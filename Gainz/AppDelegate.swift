@@ -71,9 +71,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        
-        //let tabBarController = self.window?.rootViewController as! UITabBarController
-        //tabBarController.selectedIndex = 1
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            let tabBarController = self.window?.rootViewController as! UITabBarController
+            tabBarController.selectedIndex = 1
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {
