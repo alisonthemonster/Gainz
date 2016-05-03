@@ -425,13 +425,13 @@ class TodayTableViewController: UITableViewController {
         
         
         print("creating alert controller")
-        self.alertController = UIAlertController(title: "Rate this workout", message: "Was this workout easy, medium, or hard? We'll plan your next workout based on your feedback.", preferredStyle: UIAlertControllerStyle.Alert)
+        self.alertController = UIAlertController(title: "Rate this exercise", message: "Was this exercise easy, medium, or hard? We'll plan your next workout based on your feedback.", preferredStyle: UIAlertControllerStyle.Alert)
         
         if let rating = (exercise.objectForKey("rating") as? Int) {
             if (rating==0 || rating==1 || rating==2) {
                 print("already rated!")
-                self.alertController?.title = "Re-Rate this workout"
-                self.alertController?.message = "NOTICE: you already rated this workout, you will be overwriting your previous rating."
+                self.alertController?.title = "Re-Rate this exercise"
+                self.alertController?.message = "NOTICE: you already rated this exercise, you will be overwriting your previous rating."
             }
         }
         
