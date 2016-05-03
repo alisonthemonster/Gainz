@@ -111,8 +111,7 @@ class TodayTableViewController: UITableViewController {
                 print("there are " + String(self.todaysExercises.count) + " exercises for today")
                 if (self.todaysExercises.count == 0) {
                     self.createEmptyStateView()
-                }
-                else {
+                } else {
                     self.tableView.backgroundView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
                 }
                 print("reloading data")
@@ -146,10 +145,10 @@ class TodayTableViewController: UITableViewController {
     }
     
     func createEmptyStateView() {
-        let frame = self.view.frame
-        let view = UIView(frame: frame)
+        let view = UIView(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)))
         let imageView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
-        let label = UILabel(frame: frame)
+        imageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))
+        let label = UILabel(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)))
         label.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
         
         label.text = "You haven't created a workout yet!\n\nGo to Edit to make your first routine"
@@ -162,6 +161,7 @@ class TodayTableViewController: UITableViewController {
         view.addConstraint(horizontalConstraint)
         
         let verticalConstraint = NSLayoutConstraint(item: label, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0)
+        
         view.addConstraint(verticalConstraint)
         self.tableView.backgroundView = view
     }

@@ -16,6 +16,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var emptyStateLabel: UILabel!
+    @IBOutlet weak var badgesLabel: UILabel!
     
     let pageOffset = 20
     
@@ -49,7 +50,9 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
                     index += 1
                     self.emptyStateLabel.hidden = true
                 }
-                
+                if self.pastWorkouts.count == 0 {
+                    self.emptyStateLabel.hidden = false
+                }
             }
             print("inside the block!")
         }
@@ -76,6 +79,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
         self.emptyStateLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
         self.emptyStateLabel.frame = self.view.frame
         self.dateLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
+        self.badgesLabel.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.scrollView.delegate = self
