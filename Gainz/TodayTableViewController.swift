@@ -110,10 +110,6 @@ class TodayTableViewController: UITableViewController {
                 print("we found todays exercises!")
                 print("there are " + String(self.todaysExercises.count) + " exercises for today")
                 if (self.todaysExercises.count == 0) {
-                    //an unsaved workout hasn't been created for today
-                    //TODO create new workout here!
-                        //use old data to build new exercise objects
-                        //if there is no old data then show message for first time users to direct them to modify screen
                     self.createEmptyStateView()
                 }
                 else {

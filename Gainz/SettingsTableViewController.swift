@@ -59,9 +59,6 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.row == 0) { //CHANGE PASSWORD
-            //TODO
-        }
         if (indexPath.row == 1) { //LOG OUT
             PFUser.logOut()
             print("Logging out!")
