@@ -241,7 +241,7 @@ class HistoryScrollViewController: UIViewController, UIScrollViewDelegate, UITab
                     cell.checkMark.image = UIImage()
                 }
                 cell.contentView.backgroundColor = UIColor.clearColor()
-                cell.backgroundColor = UIColor(white: 1.0, alpha: 0.35)
+                cell.backgroundColor = UIColor(white: 1.0, alpha: 0.25)
                 
             }
         }
