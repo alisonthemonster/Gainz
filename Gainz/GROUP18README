@@ -1,23 +1,25 @@
 Contributions:
 Alison Wyllie: 50%
-• Create main workout plan screen
-	• create view in the storyboard
-	• add checkmarks to show the completed activities
-	• pressing the done button submits the workout and generates a new workout
-• Create popups to allow users to rate the workout when they finish
-	• popups send rating data to parse
-	• checkmarks update based on rating
+• Add badges
+	• update user data in parse to keep track of goals
+	• design badges
+	• create collection view to display the badges
+• Change Recommendation Screen
+	• update the user object to keep track of their desired changes
+	• add new screen for updating their preferences
+	• when a workout is completed new workouts are generated based on these custom recommendations
 
 Siena McFetridge: 50%
-• Create main workout plan screen
-	• pull relevant data from parse
-	• connect the table view elements to the matching data from parse
-• Creating the algorithm
-• Update the data model to have user specific workouts
+• Updated user interface
+	• Implemented Auto Layout on all views to allow different screen sizes 
+	• Created cohesive design between all screens that matched badge color scheme
+	• Polished UI Elements 
+• Added History scroll view
+	• Populated scroll view element to show past workouts 
+• Edge cases
+	• Added additional error checking functionality to several views
+	• Created empty states for the History and Today views for first time users
 
 
 Differences:
 None
-
-Notes:
-History tab is to be finished for the final version along with more advanced settings. Autolayout in progress.
