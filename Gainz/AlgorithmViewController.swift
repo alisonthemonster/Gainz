@@ -23,6 +23,11 @@ class AlgorithmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let imageView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
+        imageView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))
+        self.view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
 
         let query : PFQuery = PFUser.query()!
         query.whereKey("username", equalTo: (PFUser.currentUser()?.username)!)

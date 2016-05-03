@@ -114,6 +114,9 @@ class TodayTableViewController: UITableViewController {
                     //TODO create new workout here!
                         //use old data to build new exercise objects
                         //if there is no old data then show message for first time users to direct them to modify screen
+                    self.createEmptyStateView()
+                } else {
+                    self.tableView.backgroundView = UIImageView(image: UIImage(named: "colorful_background.jpg"))
                 }
                 print("reloading data")
                 self.tableView.reloadData()
@@ -136,12 +139,6 @@ class TodayTableViewController: UITableViewController {
                 // Log details of the failure
                 print("Error: \(error!) \(error!.userInfo)")
             }
-        }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        if (self.todaysExercises.count == 0) {
-            self.createEmptyStateView()
         }
     }
 
