@@ -229,6 +229,16 @@ class TodayTableViewController: UITableViewController {
                     object["totalReps"] = prevRepsTotal! + totalReps
                     let prevExercisesTotal = object.objectForKey("totalExercises") as? Int
                     object["totalExercises"] = prevExercisesTotal! + todaysExercises
+                    let prevDaysTotal = object.objectForKey("days") as? Int
+                    let lastUpdate = object.updatedAt! as NSDate
+                    let calendar = NSCalendar.currentCalendar()
+                    let yesterday = calendar.dateByAddingUnit(.Day, value: -1, toDate: NSDate(), options: [])
+                    //if they have a streak going, then increase
+                    if (lastUpdate.isEqualToDate(yesterday!)) {
+                        object["totalExercises"] = prevDaysTotal! + 1
+                    } else { //otherwise reset
+                        object["totalExercises"] = 0
+                    }
                     object.saveInBackground()
                 }
             }
@@ -256,6 +266,7 @@ class TodayTableViewController: UITableViewController {
         var totalWeight = 0
         var totalReps = 0
         var totalExercises = 0
+        var days = 0
         var badgeValues:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
         query.getObjectInBackgroundWithId(PFUser.currentUser()!.objectId!) {
             (object, error) -> Void in
@@ -267,8 +278,10 @@ class TodayTableViewController: UITableViewController {
                     totalWeight = (object.objectForKey("totalWeight") as? Int)!
                     totalReps = (object.objectForKey("totalReps") as? Int)!
                     totalExercises = (object.objectForKey("totalExercises") as? Int)!
+                    days = (object.objectForKey("days") as? Int)!
                     let oldBadgeValues = (object.objectForKey("badges") as? [Bool])!
-                    badgeValues = self.checkBadgeValues(totalReps, totalWeight: totalWeight, totalExercises: totalExercises)
+                    badgeValues = self.checkBadgeValues(totalReps, totalWeight: totalWeight, totalExercises: totalExercises, days: days, oldBadgeValues: oldBadgeValues)
+                
                     if (badgeValues != oldBadgeValues) {
                         print("congrats on the new badge")
                         let alertMessage = UIAlertController(title: "Congratulations!", message: "You just unlocked a new badge!", preferredStyle: .Alert)
@@ -300,7 +313,7 @@ class TodayTableViewController: UITableViewController {
     }
     
     //checks to see which badges have been unlocked
-    func checkBadgeValues(totalReps:Int, totalWeight:Int, totalExercises:Int) -> [Bool] {
+    func checkBadgeValues(totalReps:Int, totalWeight:Int, totalExercises:Int, days:Int, oldBadgeValues:[Bool]) -> [Bool] {
         print("checking values")
         var badgeValues:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
         
@@ -338,8 +351,20 @@ class TodayTableViewController: UITableViewController {
         if (totalExercises>=100) {
             badgeValues[1] = true
         }
-        //TODO handle the days in a row badge
-        
+        //get previous badge values for these
+        badgeValues[10] = oldBadgeValues[10]
+        badgeValues[11] = oldBadgeValues[11]
+        badgeValues[12] = oldBadgeValues[12]
+        //update them if a new badge has been unlocked
+        if (days>=5) {
+            badgeValues[10] = true
+        }
+        if (days>=10) {
+            badgeValues[11] = true
+        }
+        if (days>=31) {
+            badgeValues[12] = true
+        }
         return badgeValues
     }
     
